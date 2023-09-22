@@ -1,0 +1,236 @@
+# Bin ve obj klasörleri
+bin/
+obj/
+
+# User-specific dosyalar
+*.suo
+*.user
+*.sln.docstates
+
+# Visual Studio tarafından oluşturulan dosyalar
+.vscode/
+.vs2019/
+.vs/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln.docstates
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.suo
+*.suo.psess
+*.suo.trx
+
+# ReSharper tarafından oluşturulan dosyalar
+_ReSharper*/
+*.sln.iml
+*.suo
+*.suo.psess
+*.suo.trx
+.idea/
+
+# Rider tarafından oluşturulan dosyalar
+.idea/
+
+# User-specific dosyalar
+*.suo
+*.user
+*.sln.docstates
+
+# .NET Core tarafından oluşturulan dosyalar
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Visual Studio Code tarafından oluşturulan dosyalar
+.vscode/
+
+# Paketleme sırasında oluşturulan dosyalar
+*.packproj
+packages/
+
+# Npm ve Node.js tarafından oluşturulan dosyalar
+node_modules/
+npm-debug.log*
+
+# Veritabanı dosyaları
+*.mdf
+*.ldf
+
+# Kullanıcı tarafından oluşturulan yedeği alınmış Visual Studio iş ayarları
+.vscode/
+.vs2019/
+.vs/
+.suo
+*.suo.psess
+*.suo.trx
+*.user
+*.userosscache
+*.userprefs
+*.userprops
+
+# Rider tarafından oluşturulan dosyalar
+.idea/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/.name
+.idea/.idea.*
+.idea/*.iml
+.idea/misc.xml
+.idea/vcs.xml
+.idea/modules.xml
+.idea/dictionaries
+.idea/shelf
+.idea/caches
+
+# User-specific dosyalar
+*.suo
+*.user
+*.sln.docstates
+
+# .NET Core tarafından oluşturulan dosyalar
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Visual Studio Code tarafından oluşturulan dosyalar
+.vscode/
+
+# Paketleme sırasında oluşturulan dosyalar
+*.packproj
+packages/
+
+# Npm ve Node.js tarafından oluşturulan dosyalar
+node_modules/
+npm-debug.log*
+npm-debug.log
+yarn-debug.log*
+yarn-error.log*
+
+# Veritabanı dosyaları
+*.mdf
+*.ldf
+*.sdf
+
+# Kullanılmayan görüntüler
+Thumbs.db
+ehthumbs.db
+
+# Verileri ve uygulama güncellemelerini saklamak için kullanılan veri klasörleri
+App_Data/
+
+# Backup files
+*.bak
+
+# Visual Studio tarafından oluşturulan dosyalar
+.vscode/
+.vs2019/
+.vs/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln.docstates
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.suo
+*.suo.psess
+*.suo.trx
+
+# Rider tarafından oluşturulan dosyalar
+.idea/
+
+# User-specific dosyalar
+*.suo
+*.user
+*.sln.docstates
+
+# .NET Core tarafından oluşturulan dosyalar
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Visual Studio Code tarafından oluşturulan dosyalar
+.vscode/
+
+# Paketleme sırasında oluşturulan dosyalar
+*.packproj
+packages/
+
+# Npm ve Node.js tarafından oluşturulan dosyalar
+node_modules/
+npm-debug.log*
+
+# Veritabanı dosyaları
+*.mdf
+*.ldf
+
+# Kullanıcı tarafından oluşturulan yedeği alınmış Visual Studio iş ayarları
+.vscode/
+.vs2019/
+.vs/
+.suo
+*.suo.psess
+*.suo.trx
+*.user
+*.userosscache
+*.userprefs
+*.userprops
+
+# Rider tarafından oluşturulan dosyalar
+.idea/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/.name
+.idea/.idea.*
+.idea/*.iml
+.idea/misc.xml
+.idea/vcs.xml
+.idea/modules.xml
+.idea/dictionaries
+.idea/shelf
+.idea/caches
+
+# User-specific dosyalar
+*.suo
+*.user
+*.sln.docstates
+
+# .NET Core tarafından oluşturulan dosyalar
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Visual Studio Code tarafından oluşturulan dosyalar
+.vscode/
+
+# Paketleme sırasında oluşturulan dosyalar
+*.packproj
+packages/
+
+# Npm ve Node.js tarafından oluşturulan dosyalar
+node_modules/
+npm-debug.log*
+npm-debug.log
+yarn-debug.log*
+yarn-error.log*
+
+# Veritabanı dosyaları
+*.mdf
+*.ldf
+*.sdf
+
+# Kullanılmayan görüntüler
+Thumbs.db
+ehthumbs.db
+
+# Verileri ve uygulama güncellemelerini saklamak için kullanılan veri klasörleri
+App_Data/
+
+# Backup files
+*.bak
