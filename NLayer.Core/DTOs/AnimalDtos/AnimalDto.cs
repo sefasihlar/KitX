@@ -13,7 +13,6 @@ namespace NLayer.Core.DTOs.AnimalDtos
         public string? DrugInformation { get; set; }
         public string? Address1 { get; set; }
         public string? Address2 { get; set; }
-        public string? ImageUrl { get; set; }
         public string? Name { get; set; }
         public int Age { get; set; }
         public string? Color { get; set; }

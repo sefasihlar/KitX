@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 namespace NLayer.API
 {
-    public sealed class IPHub : Hub
+    public sealed class IPHubb : Hub
     {
         public override async Task OnConnectedAsync()
         {

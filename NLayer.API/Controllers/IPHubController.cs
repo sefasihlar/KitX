@@ -1,17 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using NLayer.API;
+using NLayer.Core.Services;
+using NLayer.Service.Services;
 using System.Threading.Tasks;
 
 [Route("api/[controller]")]
 [ApiController]
 public class IPHubController : ControllerBase
 {
-    private readonly IHubContext<IPHub> _hubContext;
+    private readonly IHubContext<IPHubService> _hubContext;
+    private readonly IIHubService _hubService;
 
-    public IPHubController(IHubContext<IPHub> hubContext)
+
+    public IPHubController(IHubContext<IPHubService> hubContext, IIHubService hubService)
     {
         _hubContext = hubContext;
+        _hubService=hubService;
     }
 
     [HttpGet("test")]
@@ -20,7 +25,8 @@ public class IPHubController : ControllerBase
         try
         {
             // QR kod okutulduğunda sinyal gönder
-            await _hubContext.Clients.All.SendAsync("QrCodeRead", "Qr code okutuldu.");
+           
+            await _hubContext.Clients.All.SendAsync("QrCodeRead", "Swagger Üzerinden Test Bildirimi gönderildi");
             return Ok("Qr code okutuldu sinyali gönderildi.");
         }
         catch (Exception ex)

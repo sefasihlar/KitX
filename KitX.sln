@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLayer.Repository", "NLayer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLayer.Service", "NLayer.Service\NLayer.Service.csproj", "{31700BD2-B6AF-4CB9-9222-000BE8318B4C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRClient", "SignalRClient\SignalRClient.csproj", "{01C9A685-CBB6-49CB-B01C-08480F8458C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRClient-2", "SignalRClient-2\SignalRClient-2.csproj", "{AE2F5843-7E1F-4F8A-B3DE-BF477687EE1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{31700BD2-B6AF-4CB9-9222-000BE8318B4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31700BD2-B6AF-4CB9-9222-000BE8318B4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31700BD2-B6AF-4CB9-9222-000BE8318B4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01C9A685-CBB6-49CB-B01C-08480F8458C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01C9A685-CBB6-49CB-B01C-08480F8458C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01C9A685-CBB6-49CB-B01C-08480F8458C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01C9A685-CBB6-49CB-B01C-08480F8458C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE2F5843-7E1F-4F8A-B3DE-BF477687EE1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE2F5843-7E1F-4F8A-B3DE-BF477687EE1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE2F5843-7E1F-4F8A-B3DE-BF477687EE1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE2F5843-7E1F-4F8A-B3DE-BF477687EE1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,12 +11,14 @@ using NLayer.API;
 using NLayer.API.Middlewares;
 using NLayer.API.Modules;
 using NLayer.Core.Concreate;
+using NLayer.Core.Services;
 using NLayer.Core.Token;
 using NLayer.Core.UnitOfWorks;
 using NLayer.Repository.Concreate;
 using NLayer.Repository.UnitOfWorks;
 
 using NLayer.Service.Mapping;
+using NLayer.Service.Services;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
 using System.Text;
@@ -39,6 +41,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddScoped<ITokenHandler, TokenHandler>();
+builder.Services.AddScoped<IIHubService, IPHubService>();
+
 
 builder.Services.AddAutoMapper(typeof(MapProfile));
 
@@ -202,7 +206,7 @@ app.UserCustomException();
 
 
 app.MapControllers();
-app.MapHub<IPHub>("ip-hub");
+app.MapHub<IPHubService>("ip-hub");
 app.Run();
 
 public class AuthorizeCheckOperationFilter : IOperationFilter

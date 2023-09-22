@@ -5,6 +5,6 @@ namespace NLayer.Core.Repositories
     public interface IIPAddressRepository : GenericRepository<IPAddress>
     {
         Task<List<IPAddress>> GetWithProductListAsync();
-        Task<IPAddress> GetByIpAddressWithProductId(int productId);
+        Task<List<IPAddress>> GetByIpAddressWithProductId(int productId);
     }
 }

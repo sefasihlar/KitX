@@ -34,6 +34,7 @@ namespace NLayer.API.Controllers
         [HttpPost()]
         public async Task<IActionResult> Create(AnimalDto anmimalDto)
         {
+            anmimalDto.CreatedDate = DateTime.Now;
             var Animal = await _animalService.AddAsycn(_mapper.Map<Animal>(anmimalDto));
             var AnimalsDto = _mapper.Map<AnimalDto>(Animal);
             return CreateActionResult(CustomResponseDto<AnimalDto>.Success(201, AnimalsDto));

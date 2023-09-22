@@ -41,9 +41,9 @@ namespace NLayer.API.Controllers
         public async Task<IActionResult> GetIPAddress(int productId)
         {
             var values = await _ipAddressService.GetByIpAddressWithProductId(productId);
-            var valuesDto = _mapper.Map<IPAddressDto>(values);
+            var valuesDto = _mapper.Map<List<IPAddressDto>>(values);
             
-            return CreateActionResult(CustomResponseDto<IPAddressDto>.Success(200, valuesDto));
+            return CreateActionResult(CustomResponseDto<List<IPAddressDto>>.Success(200, valuesDto));
         }
 
     }

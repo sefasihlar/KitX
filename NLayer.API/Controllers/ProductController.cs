@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using NLayer.API.Controllers.BaseController;
 using NLayer.Core.Concreate;
 using NLayer.Core.DTOs;
@@ -20,13 +21,15 @@ namespace NLayer.API.Controllers
     [EnableCors("AllowMyOrigin")]
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : CustomBaseController
+    public class ProductController :CustomBaseController
     {
         private readonly IProductService _productService;
         private readonly IAnimalService _animalService;
         private readonly IAppUserRepository _appUserRepository;
         private readonly IUserProductService _userProductService;
         private readonly IAnimalPhotoService _animalPhotoService;
+        private readonly IHubContext<IPHubService> _hubContext;
+
         private readonly IMapper _mapper;
 
      
@@ -34,7 +37,7 @@ namespace NLayer.API.Controllers
         private readonly IIPAddressService _ipAddressService;
 
 
-        public ProductController(IProductService productService, IMapper mapper, IAnimalService animalService, IAppUserRepository appUserRepository, IUserProductService userProductService, IHttpContextAccessor httpContextAccessor, IIPAddressService ipAddressService, IAnimalPhotoService animalPhotoService)
+        public ProductController(IProductService productService, IMapper mapper, IAnimalService animalService, IAppUserRepository appUserRepository, IUserProductService userProductService, IHttpContextAccessor httpContextAccessor, IIPAddressService ipAddressService, IAnimalPhotoService animalPhotoService, IIHubService hubService, IHubContext<IPHubService> hubContext)
         {
             _productService=productService;
             _mapper=mapper;
@@ -44,6 +47,7 @@ namespace NLayer.API.Controllers
             _httpContextAccessor=httpContextAccessor;
             _ipAddressService=ipAddressService;
             _animalPhotoService=animalPhotoService;
+            _hubContext=hubContext;
         }
         [HttpGet]
         public async Task<IActionResult> GetAll()
@@ -89,10 +93,16 @@ namespace NLayer.API.Controllers
             };
 
             await _ipAddressService.AddAsycn(_mapper.Map<IPAddress>(ipAdressValues));
-
+            
             var product = await _productService.GetByUserProduct(id);
             var valuesDto = _mapper.Map<GetWithProductDto>(product);
-       
+           
+           
+                // QR kod okutulduğunda sinyal gönder
+
+            await _hubContext.Clients.All.SendAsync("QrCodeRead", $"IPAddress:{ipAddress}|ProdocutId:{id}");
+
+            
             return CreateActionResult(CustomResponseDto<GetWithProductDto>.Success(200, valuesDto));
 
         }
@@ -126,6 +136,9 @@ namespace NLayer.API.Controllers
             animal.PassportNumber = dto.PassportNumber;
             animal.Race = dto.Race;
             animal.Type = dto.Type;
+            animal.Address1 = dto.Address1;
+            animal.Address2 = dto.Address2;
+            animal.UpdatedDate = DateTime.Now;
             animal.VaccineInformation = dto.VaccineInformation;
             await _animalService.UpdateAsycn(animal);
 

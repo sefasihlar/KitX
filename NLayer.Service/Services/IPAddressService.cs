@@ -17,10 +17,10 @@ namespace NLayer.Service.Services
             _mapper=mapper;
         }
 
-        public async Task<IPAddress> GetByIpAddressWithProductId(int productId)
+        public async Task<List<IPAddress>> GetByIpAddressWithProductId(int productId)
         {
             var values = await _ipAddressRepository.GetByIpAddressWithProductId(productId);
-            return values;
+            return values.ToList();
         }
 
         public async Task<List<IPAddress>> GetWithProductListAsync()

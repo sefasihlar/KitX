@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace NLayer.Core.Services
 {
-    public interface IIPHubService
+    public interface IIHubService
     {
+        Task SendQrCodeReadMessageAsync(string IPAddress);
     }
 }

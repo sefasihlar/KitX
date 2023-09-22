@@ -11,10 +11,11 @@ namespace NLayer.Repository.Repositories
         {
         }
 
-        public async Task<IPAddress> GetByIpAddressWithProductId(int productId)
+        public async Task<List<IPAddress>> GetByIpAddressWithProductId(int productId)
         {
             return await _context.IPAddresses
-                .FirstOrDefaultAsync(x => x.ProductId == productId);
+                .Where(x => x.ProductId == productId)
+                .ToListAsync();
 
 
         }
