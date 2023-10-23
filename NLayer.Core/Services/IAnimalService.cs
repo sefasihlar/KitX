@@ -2,7 +2,7 @@
 
 namespace NLayer.Core.Services
 {
-    public interface IAnimalService : IService<Animal>
+    public interface IAnimalService : IService<Product>
     {
     }
 }

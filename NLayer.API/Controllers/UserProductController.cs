@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using NLayer.API.Controllers.BaseController;
@@ -9,6 +10,7 @@ namespace NLayer.API.Controllers
     [EnableCors("AllowMyOrigin")]
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UserProductController : CustomBaseController
     {
         private readonly IUserProductRepository _userProductRepository;

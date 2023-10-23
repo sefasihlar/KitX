@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using NLayer.API;
 using NLayer.API.Middlewares;
 using NLayer.API.Modules;
 using NLayer.Core.Concreate;
@@ -37,7 +36,7 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddHttpClient();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddScoped<ITokenHandler, TokenHandler>();
@@ -81,6 +80,7 @@ builder.Services.AddSignalR();
 //        Name = "Student.Security.Cookie"
 //    };
 //});
+
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer("Roles", options =>
@@ -161,14 +161,32 @@ builder.Services.AddSwaggerGen(c =>
 
 
 
+
+builder.Services.AddSignalR(options =>
+{
+    options.EnableDetailedErrors = true;
+});
+
+
+
 builder.Host.UseServiceProviderFactory(
 
     new AutofacServiceProviderFactory()
 
     );
+
+
 //builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 //Module start
-builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder => containerBuilder.RegisterModule(new RepoServiceModule()));
+builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
+{
+    // Diðer kayýtlarý ekleyin
+    containerBuilder.RegisterModule(new RepoServiceModule());
+
+    // WindowNavigatorGeolocation sýnýfýný kaydedin
+
+});
+
 
 var app = builder.Build();
 
@@ -192,6 +210,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseCors("AllowMyOrigin");
+
 app.UseAuthentication();
 
 app.UseAuthorization();

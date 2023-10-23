@@ -26,11 +26,11 @@ namespace NLayer.WebUI.Controllers
         {
             for (int i = 1; i <= length; i++)
             {
-                var animal = new Animal();
                 var product = new Product();
+                var qrcode = new QrCode();
 
                 await _animalService.AddAsycn(animal);
-                product.AnimalId = animal.Id;
+                product. = animal.Id;
                 var val = await _productService.AddAsycn(product);
 
                 var data = await _productService.QrCodeToProductAsync(val.Id);

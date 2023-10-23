@@ -2,16 +2,18 @@
 
 namespace NLayer.Core.Concreate
 {
-    public class Product : BaseEntity
+    public class Product : BaseProduct
     {
-        public string? ImageUrl { get; set; }
-        public string? SerialNumber { get; set; }
-        public string? Code { get; set; }
-        public int? AnimalId { get; set; }
-        public Animal? Animal { get; set; }
 
-        public List<UserProduct> UserProducts { get; set; }
+        public int CategoryId { get; set; }
+        public Category? Category { get; set; }
 
+        public List<UserProduct> UserProduct { get; set; }
 
+        public List<ProductPhoto>? ProductPhotos { get; set; }
+        public AnimalProductFeature? AnimalProductFeature { get; set; }
+        public BelongingProductFeature? BelongingProductFeature { get; set; }
+        public PersonProductFeature? PersonProductFeature { get; set; }
+        public SpecialProductFeature? SpecialProductFeature { get; set; }
     }
 }

@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
-using NLayer.API;
 using NLayer.Core.Services;
 using NLayer.Service.Services;
-using System.Threading.Tasks;
 
+[Authorize(AuthenticationSchemes = "Roles")]
+[EnableCors("AllowMyOrigin")]
 [Route("api/[controller]")]
 [ApiController]
 public class IPHubController : ControllerBase
@@ -25,7 +27,7 @@ public class IPHubController : ControllerBase
         try
         {
             // QR kod okutulduğunda sinyal gönder
-           
+
             await _hubContext.Clients.All.SendAsync("QrCodeRead", "Swagger Üzerinden Test Bildirimi gönderildi");
             return Ok("Qr code okutuldu sinyali gönderildi.");
         }

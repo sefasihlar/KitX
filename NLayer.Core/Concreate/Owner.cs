@@ -9,7 +9,7 @@ namespace NLayer.Core.Concreate
         public string? Adress { get; set; }
 
         public int ProductId { get; set; }
-        public Product? Product { get; set; }
+        public QrCode? Product { get; set; }
 
     }
 }

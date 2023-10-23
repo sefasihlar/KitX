@@ -19,6 +19,10 @@ namespace NLayer.Core.DTOs
         {
             return new CustomResponseDto<T> { StatusCode = statusCode, Data = data };
         }
+        public static CustomResponseDto<T> QrCodeSuccess(int statusCode, T data)
+        {
+            return new CustomResponseDto<T> { StatusCode = statusCode, Data = data };
+        }
 
         public static CustomResponseDto<T> Success(int statusCode)
         {

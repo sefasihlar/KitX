@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using NLayer.API.Controllers.BaseController;
 using NLayer.Core.Concreate;
 using NLayer.Core.DTOs;
@@ -12,7 +12,8 @@ namespace NLayer.API.Controllers
 {
 
     //[Authorize(AuthenticationSchemes = "Roles")]
-   
+    [Authorize(AuthenticationSchemes = "Roles")]
+    [EnableCors("AllowMyOrigin")]
     [Route("api/[controller]")]
     [ApiController]
     public class RoleController : CustomBaseController
@@ -65,42 +66,21 @@ namespace NLayer.API.Controllers
         public async Task<IActionResult> Update(UpdateRoleDto appRoleDto)
         {
             var appRole = _mapper.Map<AppRole>(appRoleDto);
+            var role = await _roleManager.GetRoleIdAsync(appRole);
 
-            try
+            appRole.Name = appRoleDto.Name;
+
+
+            var result = await _roleManager.UpdateAsync(appRole);
+
+            if (result.Succeeded)
             {
-                var result = await _roleManager.UpdateAsync(appRole);
-
-                if (result.Succeeded)
-                {
-                    return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
-                }
-                else
-                {
-                    // Hata mesajlarını loglama işlemi
-                    foreach (var error in result.Errors)
-                    {
-                        // Hata mesajını loglama mekanizmanızı kullanarak kaydedin
-                        _logger.LogError($"Hata Kodu: {error.Code}, Hata Mesajı: {error.Description}");
-                    }
-
-                    // Kullanıcıya daha açıklayıcı bir hata mesajı dön
-                    var errorMessage = "Güncelleme işlemi başarısız. Lütfen daha sonra tekrar deneyin.";
-                    var errorDescriptions = result.Errors.Select(e => e.Description).ToList();
-
-                    // Hata ayrıntılarını kullanıcıya göster
-                    if (errorDescriptions.Any())
-                    {
-                        errorMessage += " Hata Detayları: " + string.Join(", ", errorDescriptions);
-                    }
-
-                    return CreateActionResult(CustomResponseDto<UpdateRoleDto>.Fail(400, errorMessage));
-                }
+                return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
             }
-            catch (DbUpdateConcurrencyException ex)
+
+            else
             {
-                // Eş zamanlılık hatasını yakalayın ve kullanıcıya açıklayıcı bir mesaj döndürün
-                _logger.LogError("Eş Zamanlılık Hatası: " + ex.Message);
-                return CreateActionResult(CustomResponseDto<UpdateRoleDto>.Fail(409, "Veri başkası tarafından güncellendi. Lütfen daha sonra tekrar deneyin."));
+                return CreateActionResult(CustomResponseDto<UpdateRoleDto>.Fail(400, "Güncelleme işlemi başarısız."));
             }
         }
 
@@ -121,28 +101,29 @@ namespace NLayer.API.Controllers
             return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Role silme işlemi başarısız"));
         }
 
-        [HttpPost("AssignRole")]
-        public async Task<IActionResult> AssignRole(RoleAssingDto roleAssingDto)
+        [HttpPost("AssingRole")]
+        public async Task<IActionResult> AssignRole([FromBody] RoleAssingDto model)
         {
-            var user = _userManager.Users.FirstOrDefault(x => x.Id == roleAssingDto.UserId);
-            var userValue = _mapper.Map<AppUser>(user);
+            var userId = model.UserId;
 
-            var role = _roleManager.Roles.FirstOrDefault(x => x.Id == roleAssingDto.RoleId);
-            var roleValue = _mapper.Map<AppRole>(role);
+            var user = _userManager.Users.FirstOrDefault(x => x.Id == userId);
 
+            // Mevcut kullanıcının rollerini kaldırın
+            var userRoles = await _userManager.GetRolesAsync(user);
+            await _userManager.RemoveFromRolesAsync(user, userRoles);
 
-
-
-            if (user != null && role != null)
+            foreach (var roleId in model.SelectedRoles)
             {
-                var result = await _userManager.AddToRoleAsync(userValue, roleValue.Name);
-                if (result.Succeeded)
+                var role = _roleManager.Roles.FirstOrDefault(r => r.Id == roleId);
+
+                if (role != null)
                 {
-                    return CreateActionResult(CustomResponseDto<RoleAssingDto>.Success(201, roleAssingDto));
+                    // Seçilen yeni rolleri kullanıcıya ekleyin
+                    await _userManager.AddToRoleAsync(user, role.Name);
+
                 }
             }
-
-            return BadRequest("Role atama işlemi başarısız.");
+            return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
         }
 
 
@@ -154,9 +135,6 @@ namespace NLayer.API.Controllers
 
             var role = _roleManager.Roles.FirstOrDefault(x => x.Id == roleAssingDto.RoleId);
             var roleValue = _mapper.Map<AppRole>(role);
-
-
-
 
             if (user != null && role != null)
             {

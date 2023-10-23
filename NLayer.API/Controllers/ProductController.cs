@@ -1,27 +1,30 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
+using Newtonsoft.Json;
 using NLayer.API.Controllers.BaseController;
 using NLayer.Core.Concreate;
 using NLayer.Core.DTOs;
-using NLayer.Core.DTOs.AnimalDtos;
-using NLayer.Core.DTOs.AnimalPhotoDtos;
+using NLayer.Core.DTOs.FeatureProductUserDtos;
+using NLayer.Core.DTOs.IP2LocationsDtos;
 using NLayer.Core.DTOs.IPAddressDtos;
 using NLayer.Core.DTOs.ProductDtos;
+using NLayer.Core.DTOs.QRCodeDtos;
 using NLayer.Core.DTOs.UserDtos;
 using NLayer.Core.DTOs.UserProduct;
 using NLayer.Core.Repositories;
 using NLayer.Core.Services;
 using NLayer.Service.Services;
-using System.Runtime.CompilerServices;
 
 namespace NLayer.API.Controllers
 {
+ 
     [EnableCors("AllowMyOrigin")]
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController :CustomBaseController
+    public class ProductController : CustomBaseController
     {
         private readonly IProductService _productService;
         private readonly IAnimalService _animalService;
@@ -29,15 +32,24 @@ namespace NLayer.API.Controllers
         private readonly IUserProductService _userProductService;
         private readonly IAnimalPhotoService _animalPhotoService;
         private readonly IHubContext<IPHubService> _hubContext;
+        private readonly ICategoryService _categoryService;
+        private readonly IQRGeneratorService _qrGeneratorService;
+        private readonly IQRCodeService _qrCodeService;
+        private readonly IPersonelProductFeatureService _personelProductFeatureService;
+        private readonly ISpecialProductFeatureService _specialProductFeatureService;
+        private readonly IAnimalProductFeatureService _animalProductFeatureService;
+        private readonly IBelongingProductFeatureService _belongingProductFeatureService;
+        private readonly HttpClient _httpClient;
+
 
         private readonly IMapper _mapper;
 
-     
+
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IIPAddressService _ipAddressService;
 
 
-        public ProductController(IProductService productService, IMapper mapper, IAnimalService animalService, IAppUserRepository appUserRepository, IUserProductService userProductService, IHttpContextAccessor httpContextAccessor, IIPAddressService ipAddressService, IAnimalPhotoService animalPhotoService, IIHubService hubService, IHubContext<IPHubService> hubContext)
+        public ProductController(IProductService productService, IMapper mapper, IAnimalService animalService, IAppUserRepository appUserRepository, IUserProductService userProductService, IHttpContextAccessor httpContextAccessor, IIPAddressService ipAddressService, IAnimalPhotoService animalPhotoService, IIHubService hubService, IHubContext<IPHubService> hubContext, HttpClient httpClient, IQRGeneratorService qrGeneratorService, IQRCodeService qrCodeService, ICategoryService categoryService, IPersonelProductFeatureService personelProductFeatureService, ISpecialProductFeatureService specialProductFeatureService, IAnimalProductFeatureService animalProductFeatureService, IBelongingProductFeatureService belongingProductFeatureService)
         {
             _productService=productService;
             _mapper=mapper;
@@ -48,7 +60,16 @@ namespace NLayer.API.Controllers
             _ipAddressService=ipAddressService;
             _animalPhotoService=animalPhotoService;
             _hubContext=hubContext;
+            _httpClient=httpClient;
+            _qrGeneratorService=qrGeneratorService;
+            _qrCodeService=qrCodeService;
+            _categoryService=categoryService;
+            _personelProductFeatureService=personelProductFeatureService;
+            _specialProductFeatureService=specialProductFeatureService;
+            _animalProductFeatureService=animalProductFeatureService;
+            _belongingProductFeatureService=belongingProductFeatureService;
         }
+
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -64,7 +85,7 @@ namespace NLayer.API.Controllers
         public async Task<IActionResult> GetById(int id)
         {
             var values = await _productService.GetByIdAsycn(id);
-            var valuesDto =  _mapper.Map<ProductDto>(values);
+            var valuesDto = _mapper.Map<ProductDto>(values);
             return CreateActionResult(CustomResponseDto<ProductDto>.Success(200, valuesDto));
 
         }
@@ -86,81 +107,163 @@ namespace NLayer.API.Controllers
                 ipAddress = "IP adresi bulunamadı.";
             }
 
+            var product = await _productService.GetByUserProduct(id);
+
+            var userproduct = product.UserProduct.FirstOrDefault(x => x.ProductId == id);
+
+            var valuesDto = _mapper.Map<GetWithProductDto>(product);
+
+            var valuesUserDto = userproduct.User;
+
+            if (userproduct!=null)
+            {
+                var userId = userproduct.UserId;
+                await _hubContext.Clients.All.SendAsync("QrCodeRead", $"IPAddress:{ipAddress}|ProdocutId:{id}|UserId:{userId}");
+            }
+
+            var apiUrl = $"https://api.ip2location.io/?key=E4042F9F8F99539DAD788952EE48B576&ip={ipAddress}&format=json";
+
+            var response = await _httpClient.GetStringAsync(apiUrl);
+
+
+            var ipLocationInfo = JsonConvert.DeserializeObject<IpLocationInfo>(response);
+
+
+            var IPAddress = ipLocationInfo.ip;
+            var countryCode = ipLocationInfo.country_code;
+            var countryName = ipLocationInfo.country_name;
+
+
             var ipAdressValues = new IPAddressDto()
             {
-                IPAdress = ipAddress,
-                ProductId = id
+                IPAdress = ipLocationInfo.ip,
+                ProductId = id,
+                Country_Code = ipLocationInfo.country_code,
+                Country_Name = ipLocationInfo.country_name,
+                Region_Name = ipLocationInfo.region_name,
+                City_Name = ipLocationInfo.city_name,
+                Latitude =Convert.ToString(ipLocationInfo.latitude),
+                Longitude = Convert.ToString(ipLocationInfo.longitude),
+                Zip_Code = ipLocationInfo.zip_code,
+                Time_Zone = ipLocationInfo.time_zone,
+                Asn = ipLocationInfo.asn,
+                As = ipLocationInfo.As,
+                is_proxy = ipLocationInfo.is_proxy,
+
+
             };
 
             await _ipAddressService.AddAsycn(_mapper.Map<IPAddress>(ipAdressValues));
-            
-            var product = await _productService.GetByUserProduct(id);
-            var valuesDto = _mapper.Map<GetWithProductDto>(product);
-           
-           
-                // QR kod okutulduğunda sinyal gönder
 
-            await _hubContext.Clients.All.SendAsync("QrCodeRead", $"IPAddress:{ipAddress}|ProdocutId:{id}");
-
-            
-            return CreateActionResult(CustomResponseDto<GetWithProductDto>.Success(200, valuesDto));
-
-        }
-
-        [HttpGet("[action]/{productId}")]
-        public async Task<IActionResult> GetByIdWithAnimal(int productId)
-        {
-            var product = await _productService.GetAnimalWithProductId(productId);
-            var productDto = _mapper.Map<GetByIdWithAnimalDto>(product);
-
-            return CreateActionResult(CustomResponseDto<GetByIdWithAnimalDto>.Success(200, productDto));
-        }
-
-        [HttpPut("[action]")]
-        public async Task<IActionResult> UpdateAnimalProperty(UpdateAnimalDto dto)
-        {
-            var product = await _productService.GetByIdAsycn(dto.ProductId);
-            product.Condition = true;
-            await _productService.UpdateAsycn(product);
-
-            var animal = await _animalService.GetByIdAsycn(Convert.ToInt32(dto.Id));
-
-            animal.Name = dto.Name;
-            animal.Age = dto.Age;
-            animal.Color = dto.Color;
-            animal.UpdatedDate = DateTime.Now;
-            animal.Condition = true;
-            animal.Birthday = dto.Birthday;
-            animal.DiseaseInformation = dto.DiseaseInformation;
-            animal.DrugInformation = dto.DrugInformation;
-            animal.PassportNumber = dto.PassportNumber;
-            animal.Race = dto.Race;
-            animal.Type = dto.Type;
-            animal.Address1 = dto.Address1;
-            animal.Address2 = dto.Address2;
-            animal.UpdatedDate = DateTime.Now;
-            animal.VaccineInformation = dto.VaccineInformation;
-            await _animalService.UpdateAsycn(animal);
+            var category = await _categoryService.GetByIdAsycn(product.CategoryId);
 
 
-            var userProductValues = new UserProductDto()
+            if (category!=null)
             {
-                UserId = dto.UserId,
-                ProductId = dto.ProductId,
-            };
+                if (category.Name == "Person")
+                {
+                    var productFeature = await _personelProductFeatureService.FindByProductIdAsync(id);
+                    var productDto = _mapper.Map<PersonFeatureUserDto>(productFeature);
+                    productDto.User =_mapper.Map<AppUserDto>(valuesUserDto);
 
-            //daha önce bir ilişki oluşturlmuşmu
-            var userproductsin = await _userProductService.GetByIdsAsycn(dto.UserId, dto.ProductId);
+                    return CreateActionResult(CustomResponseDto<PersonFeatureUserDto>.Success(200, productDto));
+                }
 
-            if (userproductsin==null)
-            {
-                await _userProductService.AddAsycn(_mapper.Map<UserProduct>(userProductValues));
+
+                else if (category.Name =="Animal")
+                {
+                    var productFeature = await _animalProductFeatureService.FindByProductIdAsync(id);
+                    var productDto = _mapper.Map<AnimalFeatureUserDto>(productFeature);
+                    productDto.User =_mapper.Map<AppUserDto>(valuesUserDto);
+                    return CreateActionResult(CustomResponseDto<AnimalFeatureUserDto>.Success(200, productDto));
+                }
+
+                else if (category.Name =="Special")
+                {
+                    var productFeature = await _specialProductFeatureService.FindByProductIdAsync(id);
+                    var productDto = _mapper.Map<SpecialFeatureUserDto>(productFeature);
+                    productDto.User =_mapper.Map<AppUserDto>(valuesUserDto);
+                    return CreateActionResult(CustomResponseDto<SpecialFeatureUserDto>.Success(200, productDto));
+                }
+
+                else
+                {
+                    var productFeature = await _belongingProductFeatureService.FindByProductIdAsync(id);
+                    var productDto = _mapper.Map<BelongingFeatureUserDto>(productFeature);
+                    productDto.User =_mapper.Map<AppUserDto>(valuesUserDto);
+                    return CreateActionResult(CustomResponseDto<BelongingFeatureUserDto>.Success(200, productDto));
+                }
             }
 
 
 
-            return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
+            var userproductValDto = _mapper.Map<UserProductDto>(userproduct);
+
+
+
+            return CreateActionResult(CustomResponseDto<UserProductDto>.Success(200, userproductValDto));
+
+
         }
+
+
+
+
+
+        //[HttpGet("[action]/{productId}")]
+        //public async Task<IActionResult> GetByIdWithAnimal(int productId)
+        //{
+        //    var product = await _userProductService.geta(productId);
+        //    var productDto = _mapper.Map<GetByIdWithAnimalDto>(product);
+
+        //    return CreateActionResult(CustomResponseDto<GetByIdWithAnimalDto>.Success(200, productDto));
+        //}
+
+        //[HttpPut("[action]")]
+        //public async Task<IActionResult> UpdateAnimalProperty(UpdateAnimalDto dto)
+        //{
+        //    var product = await _productService.GetByIdAsycn(dto.ProductId);
+        //    product.Condition = true;
+        //    await _productService.UpdateAsycn(product);
+
+        //    var animal = await _animalService.GetByIdAsycn(Convert.ToInt32(dto.Id));
+
+        //    //animal.Name = dto.Name;
+        //    //animal.Age = dto.Age;
+        //    //animal.Color = dto.Color;
+        //    //animal.UpdatedDate = DateTime.Now;
+        //    //animal.Condition = true;
+        //    //animal.Birthday = dto.Birthday;
+        //    //animal.DiseaseInformation = dto.DiseaseInformation;
+        //    //animal.DrugInformation = dto.DrugInformation;
+        //    //animal.PassportNumber = dto.PassportNumber;
+        //    //animal.Race = dto.Race;
+        //    //animal.Type = dto.Type;
+        //    //animal.Address1 = dto.Address1;
+        //    //animal.Address2 = dto.Address2;
+        //    //animal.UpdatedDate = DateTime.Now;
+        //    //animal.VaccineInformation = dto.VaccineInformation;
+        //    await _animalService.UpdateAsycn(animal);
+
+
+        //    var userProductValues = new UserProductDto()
+        //    {
+        //        UserId = dto.UserId,
+        //        ProductId = dto.ProductId,
+        //    };
+
+        //    //daha önce bir ilişki oluşturlmuşmu
+        //    var userproductsin = await _userProductService.GetByIdsAsycn(dto.UserId, dto.ProductId);
+
+        //    if (userproductsin==null)
+        //    {
+        //        await _userProductService.AddAsycn(_mapper.Map<UserProduct>(userProductValues));
+        //    }
+
+
+
+        //    return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
+        //}
 
         [HttpGet("[action]/{id}")]
         public async Task<IActionResult> ViewProduct(int id)
@@ -182,7 +285,7 @@ namespace NLayer.API.Controllers
         //    return CreateActionResult(CustomResponseDto<GetAnimalWithProductId>.Success(200, valuesDto));
         //}
 
-        
+
 
 
 
@@ -191,10 +294,10 @@ namespace NLayer.API.Controllers
         [HttpGet("[action]/{userId}")]
         public async Task<IActionResult> GetUserProducts(int userId)
         {
-            var products = await _productService.GetProductWithUserId(userId);
-            var filteredProducts = products.Where(p => p.UserProducts.Any(up => up.UserId == userId)).ToList();
-            var productDtos = _mapper.Map<List<ProductDto>>(filteredProducts);
-            return CreateActionResult(CustomResponseDto<List<ProductDto>>.Success(200, productDtos));
+            var products = await _qrCodeService.GetUserProduct(userId);
+            var filteredProducts = products.Where(p => p.Product.UserProduct.Any(x => x.UserId == userId));
+            var productDtos = _mapper.Map<List<QRCodeDto>>(filteredProducts);
+            return CreateActionResult(CustomResponseDto<List<QRCodeDto>>.Success(200, productDtos));
         }
 
 

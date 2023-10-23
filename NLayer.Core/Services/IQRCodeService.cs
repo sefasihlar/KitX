@@ -1,7 +1,10 @@
-﻿namespace NLayer.Core.Services
+﻿using NLayer.Core.Concreate;
+
+namespace NLayer.Core.Services
 {
-    public interface IQRCodeService
+    public interface IQRCodeService : IService<QrCode>
     {
-        byte[] GenerateQrCode(string text);
+        Task<List<QrCode>> GetUserProduct(int userId);
+        Task<QrCode> GetByQrCodeWithProductId(int productId);
     }
 }

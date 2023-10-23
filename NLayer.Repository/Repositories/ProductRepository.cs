@@ -11,31 +11,32 @@ namespace NLayer.Repository.Repositories
         {
         }
 
-        public async Task<Product> GetAnimalWithProductId(int id)
+        public Task<Product> GetAnimalWithProductId(int id)
         {
-            return await _context.Products
-                 .Include(x => x.Animal)
-                 .FirstOrDefaultAsync(x => x.Id == id);
-
-
+            throw new NotImplementedException();
         }
 
         public async Task<Product> GetByUserProduct(int productId)
         {
 
             return await _context.Products
-                .Include(x => x.UserProducts)
+                .Include(x => x.UserProduct)
                 .ThenInclude(x => x.User)
-                .Include(x => x.Animal).FirstOrDefaultAsync(x => x.Id == productId);
+                .Include(x => x.UserProduct).FirstOrDefaultAsync(x => x.Id == productId);
         }
 
         public async Task<List<Product>> GetProductWithUserId(int id)
         {
             return await _context.Products
-                .Include(x => x.UserProducts)
+                .Include(x => x.UserProduct)
                 .ThenInclude(x => x.User)
                 .ToListAsync();
 
+        }
+
+        public Task<byte[]> QrCodeToProductAsync(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

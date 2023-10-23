@@ -20,10 +20,15 @@ namespace NLayer.Repository.Concreate
         }
 
         public DbSet<Owner> Owners { get; set; }
-        public DbSet<Product> Products { get; set; }
+        public DbSet<QrCode> QrCodes { get; set; }
         public DbSet<IPAddress> IPAddresses { get; set; }
-        public DbSet<Animal> Animals { get; set; }
-        public DbSet<AnimalPhoto> AnimalPhotos { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductPhoto> ProductPhotos { get; set; }
+        public DbSet<AnimalProductFeature> AnimalProductFeature { get; set; }
+        public DbSet<BelongingProductFeature> BelongingProductFeature { get; set; }
+        public DbSet<PersonProductFeature> PersonProductFeature { get; set; }
+        public DbSet<SpecialProductFeature> SpecialProductFeature { get; set; }
+        public DbSet<Location> Locations { get; set; }
 
 
     }

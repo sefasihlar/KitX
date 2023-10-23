@@ -1,14 +1,9 @@
 ﻿using Microsoft.AspNetCore.SignalR;
 using NLayer.Core.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NLayer.Service.Services
 {
-    public  class IPHubService :Hub,IIHubService
+    public class IPHubService : Hub, IIHubService
     {
         public override async Task OnConnectedAsync()
         {

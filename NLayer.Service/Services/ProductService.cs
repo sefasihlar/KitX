@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using NLayer.Core.Concreate;
+﻿using NLayer.Core.Concreate;
 using NLayer.Core.Repositories;
 using NLayer.Core.Services;
 using NLayer.Core.UnitOfWorks;
@@ -11,13 +10,16 @@ namespace NLayer.Service.Services
     public class ProductService : Service<Product>, IProductService
     {
         private readonly IProductRepository _productRepository;
-        readonly IQRCodeService _qrCodeService;
-        private readonly IMapper _mapper;
-        public ProductService(GenericRepository<Product> repository, IUnitOfWork unitOfWork, IProductRepository productRepository, IQRCodeService qrCodeService, IMapper mapper) : base(repository, unitOfWork)
+        private readonly IQRCodeRepository _qrCodeRepository;
+        private readonly IQRGeneratorService _qrGeneratorService;
+
+
+
+        public ProductService(GenericRepository<Product> repository, IUnitOfWork unitOfWork, IProductRepository productRepository, IQRCodeRepository qrCodeRepository, IQRGeneratorService qrGeneratorService) : base(repository, unitOfWork)
         {
             _productRepository=productRepository;
-            _qrCodeService=qrCodeService;
-            _mapper=mapper;
+            _qrCodeRepository=qrCodeRepository;
+            _qrGeneratorService=qrGeneratorService;
         }
 
         public async Task<Product> GetAnimalWithProductId(int id)
@@ -44,11 +46,11 @@ namespace NLayer.Service.Services
         {
             var product = await _productRepository.GetByIdAsycn(id);
 
-            var plainObject = "https://yonetim.metaakdeniz.com/Product/Detail/"+id;
+            var plainObject = "https://kitxapp.com/Detail/"+id;
 
             string planText = JsonSerializer.Serialize(plainObject);
 
-            return _qrCodeService.GenerateQrCode(planText);
+            return _qrGeneratorService.GenerateQrCode(planText);
 
 
         }

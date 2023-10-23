@@ -131,7 +131,7 @@ namespace NLayer.Repository.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("NLayer.Core.Concreate.Animal", b =>
+            modelBuilder.Entity("NLayer.Core.Concreate.AnimalProductFeature", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -166,13 +166,31 @@ namespace NLayer.Repository.Migrations
                     b.Property<string>("DrugInformation")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Facebook")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Instegram")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PassportNumber")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Race")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Text1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Text2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Twitter")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Type")
@@ -186,37 +204,10 @@ namespace NLayer.Repository.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Animals");
-                });
+                    b.HasIndex("ProductId")
+                        .IsUnique();
 
-            modelBuilder.Entity("NLayer.Core.Concreate.AnimalPhoto", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("AnimalId")
-                        .HasColumnType("int");
-
-                    b.Property<bool?>("Condition")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AnimalId");
-
-                    b.ToTable("AnimalPhotos");
+                    b.ToTable("AnimalProductFeature");
                 });
 
             modelBuilder.Entity("NLayer.Core.Concreate.AppRole", b =>
@@ -347,7 +338,7 @@ namespace NLayer.Repository.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("NLayer.Core.Concreate.IPAddress", b =>
+            modelBuilder.Entity("NLayer.Core.Concreate.BelongingProductFeature", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -361,7 +352,151 @@ namespace NLayer.Repository.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Facebook")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Instegram")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Text1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Text2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Twitter")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId")
+                        .IsUnique();
+
+                    b.ToTable("BelongingProductFeature");
+                });
+
+            modelBuilder.Entity("NLayer.Core.Concreate.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool?>("Condition")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Category");
+                });
+
+            modelBuilder.Entity("NLayer.Core.Concreate.IPAddress", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("As")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Asn")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City_Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("Condition")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Country_Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country_Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("IPAdress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Latitude")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Longitude")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Region_Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Time_Zone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Zip_Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("is_proxy")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("IPAddresses");
+                });
+
+            modelBuilder.Entity("NLayer.Core.Concreate.Location", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool?>("Condition")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Latitude")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Lonqitude")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ProductId")
@@ -374,7 +509,7 @@ namespace NLayer.Repository.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("IPAddresses");
+                    b.ToTable("Locations");
                 });
 
             modelBuilder.Entity("NLayer.Core.Concreate.Owner", b =>
@@ -413,6 +548,73 @@ namespace NLayer.Repository.Migrations
                     b.ToTable("Owners");
                 });
 
+            modelBuilder.Entity("NLayer.Core.Concreate.PersonProductFeature", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("Condition")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EyeColor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Facebook")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HairColor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Instegram")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Property")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SkinColor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Tall")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Text1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Text2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Twitter")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Weight")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId")
+                        .IsUnique();
+
+                    b.ToTable("PersonProductFeature");
+                });
+
             modelBuilder.Entity("NLayer.Core.Concreate.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -421,8 +623,62 @@ namespace NLayer.Repository.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("AnimalId")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
+
+                    b.Property<bool?>("Condition")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("NLayer.Core.Concreate.ProductPhoto", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool?>("Condition")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductPhotos");
+                });
+
+            modelBuilder.Entity("NLayer.Core.Concreate.QrCode", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Code")
                         .HasColumnType("nvarchar(max)");
@@ -436,6 +692,9 @@ namespace NLayer.Repository.Migrations
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("int");
+
                     b.Property<string>("SerialNumber")
                         .HasColumnType("nvarchar(max)");
 
@@ -444,9 +703,52 @@ namespace NLayer.Repository.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AnimalId");
+                    b.HasIndex("ProductId");
 
-                    b.ToTable("Products");
+                    b.ToTable("QrCodes");
+                });
+
+            modelBuilder.Entity("NLayer.Core.Concreate.SpecialProductFeature", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool?>("Condition")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Facebook")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Instegram")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Text1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Text2")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Twitter")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId")
+                        .IsUnique();
+
+                    b.ToTable("SpecialProductFeature");
                 });
 
             modelBuilder.Entity("NLayer.Core.Concreate.UserProduct", b =>
@@ -527,18 +829,40 @@ namespace NLayer.Repository.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("NLayer.Core.Concreate.AnimalPhoto", b =>
+            modelBuilder.Entity("NLayer.Core.Concreate.AnimalProductFeature", b =>
                 {
-                    b.HasOne("NLayer.Core.Concreate.Animal", "Animal")
-                        .WithMany("AnimalPhotos")
-                        .HasForeignKey("AnimalId")
+                    b.HasOne("NLayer.Core.Concreate.Product", "Product")
+                        .WithOne("AnimalProductFeature")
+                        .HasForeignKey("NLayer.Core.Concreate.AnimalProductFeature", "ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Animal");
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("NLayer.Core.Concreate.BelongingProductFeature", b =>
+                {
+                    b.HasOne("NLayer.Core.Concreate.Product", "Product")
+                        .WithOne("BelongingProductFeature")
+                        .HasForeignKey("NLayer.Core.Concreate.BelongingProductFeature", "ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("NLayer.Core.Concreate.IPAddress", b =>
+                {
+                    b.HasOne("NLayer.Core.Concreate.QrCode", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("NLayer.Core.Concreate.Location", b =>
                 {
                     b.HasOne("NLayer.Core.Concreate.Product", "Product")
                         .WithMany()
@@ -551,7 +875,7 @@ namespace NLayer.Repository.Migrations
 
             modelBuilder.Entity("NLayer.Core.Concreate.Owner", b =>
                 {
-                    b.HasOne("NLayer.Core.Concreate.Product", "Product")
+                    b.HasOne("NLayer.Core.Concreate.QrCode", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -560,19 +884,63 @@ namespace NLayer.Repository.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("NLayer.Core.Concreate.PersonProductFeature", b =>
+                {
+                    b.HasOne("NLayer.Core.Concreate.Product", "Product")
+                        .WithOne("PersonProductFeature")
+                        .HasForeignKey("NLayer.Core.Concreate.PersonProductFeature", "ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("NLayer.Core.Concreate.Product", b =>
                 {
-                    b.HasOne("NLayer.Core.Concreate.Animal", "Animal")
-                        .WithMany()
-                        .HasForeignKey("AnimalId");
+                    b.HasOne("NLayer.Core.Concreate.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("Animal");
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("NLayer.Core.Concreate.ProductPhoto", b =>
+                {
+                    b.HasOne("NLayer.Core.Concreate.Product", "Product")
+                        .WithMany("ProductPhotos")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("NLayer.Core.Concreate.QrCode", b =>
+                {
+                    b.HasOne("NLayer.Core.Concreate.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("NLayer.Core.Concreate.SpecialProductFeature", b =>
+                {
+                    b.HasOne("NLayer.Core.Concreate.Product", "Product")
+                        .WithOne("SpecialProductFeature")
+                        .HasForeignKey("NLayer.Core.Concreate.SpecialProductFeature", "ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("NLayer.Core.Concreate.UserProduct", b =>
                 {
                     b.HasOne("NLayer.Core.Concreate.Product", "Product")
-                        .WithMany("UserProducts")
+                        .WithMany("UserProduct")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -595,11 +963,6 @@ namespace NLayer.Repository.Migrations
                         .HasForeignKey("AppRoleId");
                 });
 
-            modelBuilder.Entity("NLayer.Core.Concreate.Animal", b =>
-                {
-                    b.Navigation("AnimalPhotos");
-                });
-
             modelBuilder.Entity("NLayer.Core.Concreate.AppRole", b =>
                 {
                     b.Navigation("Users");
@@ -610,9 +973,24 @@ namespace NLayer.Repository.Migrations
                     b.Navigation("UserProducts");
                 });
 
+            modelBuilder.Entity("NLayer.Core.Concreate.Category", b =>
+                {
+                    b.Navigation("Products");
+                });
+
             modelBuilder.Entity("NLayer.Core.Concreate.Product", b =>
                 {
-                    b.Navigation("UserProducts");
+                    b.Navigation("AnimalProductFeature");
+
+                    b.Navigation("BelongingProductFeature");
+
+                    b.Navigation("PersonProductFeature");
+
+                    b.Navigation("ProductPhotos");
+
+                    b.Navigation("SpecialProductFeature");
+
+                    b.Navigation("UserProduct");
                 });
 #pragma warning restore 612, 618
         }

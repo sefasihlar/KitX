@@ -1,82 +1,74 @@
-﻿using NLayer.Core.Services;
-using QRCoder;
-using System.Drawing;
-using System.Drawing.Imaging;
+﻿using AutoMapper;
+using NLayer.Core.Concreate;
+using NLayer.Core.Repositories;
+using NLayer.Core.Services;
+using NLayer.Core.UnitOfWorks;
+using NLayer.Service.GenericManager;
 
 namespace NLayer.Service.Services
 {
-    public class QRCodeService : IQRCodeService
+    public class QRCodeService : Service<QrCode>, IQRCodeService
     {
+        private readonly IQRCodeRepository _productRepository;
+        readonly IQRGeneratorService _qrCodeService;
 
-        public byte[] GenerateQrCode(string text)
+        private readonly IQRCodeRepository _qRCodeRepository;
+        private readonly IMapper _mapper;
+
+
+        public QRCodeService(GenericRepository<QrCode> repository, IUnitOfWork unitOfWork, IQRCodeRepository productRepository, IQRGeneratorService qrCodeService, IMapper mapper, IQRCodeRepository qRCodeRepository) : base(repository, unitOfWork)
         {
-            // QR kod oluşturma
-            // QR kod oluşturma
-            QRCodeGenerator codeGenerator = new QRCodeGenerator();
-            QRCodeData data = codeGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
-            PngByteQRCode qrCode = new PngByteQRCode(data);
-
-            // QR kodunun ana rengini siyah yapın
-            byte[] blackColor = new byte[] { 0, 0, 0 };
-
-            // Arka plan rengini beyaz yapabilirsiniz
-            byte[] whiteColor = new byte[] { 255, 255, 255 };
-
-            // QR kodu alın
-            byte[] qrCodeImage = qrCode.GetGraphic(10, blackColor, whiteColor);
-
-            // Kare şeklinde bir resim oluşturun
-            int size = qrCodeImage.Length / 4;
-            Bitmap squareQrCode = new Bitmap(size, size);
-
-            using (Graphics graphics = Graphics.FromImage(squareQrCode))
-            {
-                // QR kodun etrafını doldurarak süsleyin
-                using (SolidBrush brush = new SolidBrush(Color.FromArgb(255, 255, 0, 0))) // Kırmızı renk
-                {
-                    graphics.FillRectangle(brush, 0, 0, size, size);
-                }
-
-                // QR kodun görüntüsünü çizin
-                using (MemoryStream ms = new MemoryStream(qrCodeImage))
-                {
-                    using (Image qrImage = Image.FromStream(ms))
-                    {
-                        graphics.DrawImage(qrImage, 0, 0, size, size);
-                    }
-                }
-
-                // Orta kısmına "X" yazısı ekleyin
-                using (Font font = new Font("Arial", 24, FontStyle.Bold))
-                using (StringFormat stringFormat = new StringFormat())
-                using (SolidBrush textBrush = new SolidBrush(Color.Black))
-                {
-                    stringFormat.Alignment = StringAlignment.Center;
-                    stringFormat.LineAlignment = StringAlignment.Center;
-                    RectangleF textRect = new RectangleF(0, 0, size, size);
-                    graphics.DrawString("X", font, textBrush, textRect, stringFormat);
-                }
-            }
-
-            // Kare şeklindeki QR kodu baytlara dönüştürün
-            using (MemoryStream squareQrCodeStream = new MemoryStream())
-            {
-                squareQrCode.Save(squareQrCodeStream, ImageFormat.Png);
-                return squareQrCodeStream.ToArray();
-            }
+            _productRepository=productRepository;
+            _qrCodeService=qrCodeService;
+            _mapper=mapper;
+           
+            _qRCodeRepository=qRCodeRepository;
         }
 
+        public async Task<QrCode> GetByQrCodeWithProductId(int productId)
+        {
+            var values = await _qRCodeRepository.GetByQrCodeWithProductId(productId);
+            return values;
+        }
+
+        public async Task<List<QrCode>> GetUserProduct(int userId)
+        {
+            var values = await _productRepository.GetUserProduct(userId);
+            return values.ToList();
+        }
+
+
+        //public async Task<> GetAnimalWithProductId(int id)
+        //{
+        //    var values = await _qr.GetAnimalWithProductId(id);
+        //    return values;
+        //}
+
+
+        //public async Task<Product> GetByUserProduct(int productId)
+        //{
+
+        //    var values = await _productRepository.GetByUserProduct(productId);
+        //    return values;
+        //}
+
+        //public async Task<List<Product>> GetProductWithUserId(int id)
+        //{
+        //    var values = await _productRepository.GetProductWithUserId(id);
+        //    return values;
+        //}
+
+        //public async Task<byte[]> QrCodeToProductAsync(int id)
+        //{
+        //    var product = await _productRepository.GetByIdAsycn(id);
+
+        //    var plainObject = "https://kitxapp.com/Detail/"+id;
+
+        //    string planText = JsonSerializer.Serialize(plainObject);
+
+        //    return _qrCodeService.GenerateQrCode(planText);
+
+
+        //}
     }
-
-
-    //public static void Main(string[] args)
-    //{
-    //    string text = "KitX"; // QR kod olarak oluşturulacak metin
-    //    byte[] circularQrCode = GenerateQrCode(text);
-    //    File.WriteAllBytes("circular_qr_code.png", circularQrCode);
-    //}
-
-
-
 }
-

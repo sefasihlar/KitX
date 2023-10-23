@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.SignalR;
-using System.Threading.Tasks;
 namespace NLayer.API
 {
     public sealed class IPHubb : Hub

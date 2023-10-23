@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,7 @@ using NLayer.Core.DTOs.AccountDtos;
 using NLayer.Core.DTOs.TokenDtos;
 using NLayer.Core.DTOs.UserDtos;
 using NLayer.Core.Token;
+using NLayer.Service.Services;
 
 namespace NLayer.API.Controllers
 {
@@ -20,18 +22,20 @@ namespace NLayer.API.Controllers
     public class AccountController : CustomBaseController
     {
         private readonly UserManager<AppUser> _userManager;
+        private readonly AppUserService _userService;
         private readonly IMapper _mapper;
         private readonly RoleManager<AppRole> _roleManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ITokenHandler _tokenHandler;
 
-        public AccountController(UserManager<AppUser> userManager, RoleManager<AppRole> roleManager, SignInManager<AppUser> signInManager, IMapper mapper = null, ITokenHandler tokenHandler = null)
+        public AccountController(UserManager<AppUser> userManager, RoleManager<AppRole> roleManager, SignInManager<AppUser> signInManager, IMapper mapper = null, ITokenHandler tokenHandler = null, AppUserService userService = null)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _signInManager = signInManager;
             _mapper = mapper;
             _tokenHandler = tokenHandler;
+            _userService=userService;
         }
         //[Authorize(AuthenticationSchemes = "Roles")]
         [HttpGet]
@@ -44,6 +48,18 @@ namespace NLayer.API.Controllers
             return CreateActionResult(CustomResponseDto<List<UserListDto>>.Success(200, usersDtos));
 
         }
+
+
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetFindUser(int userId)
+        {
+            var user = await _userManager.FindByIdAsync(Convert.ToString(userId));
+            var userDto = _mapper.Map<AppUserDto>(user);
+
+            return CreateActionResult(CustomResponseDto<AppUserDto>.Success(200, userDto));
+        }
+
+
         //[Authorize(AuthenticationSchemes = "Roles")]
         [HttpGet("GetUserRole/{id}")]
         public async Task<IActionResult> GetUserRole(int id)
@@ -57,33 +73,99 @@ namespace NLayer.API.Controllers
             return CreateActionResult(CustomResponseDto<List<AppUserRoleDto>>.Success(200, usersDtos));
         }
 
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Savefile(IFormFile file, int userId)
+        {
+            if (file != null && file.Length > 0)
+            {
+                try
+                {
+                    // Dosya adını kullanıcı ID'sini kullanarak oluşturduk.
+                    var fileName = $"{userId}.png";
+
+                    // Dosyayı wwwroot/UserImage klasörüne kaydedin.
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "UserImage", fileName);
+
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+
+                    var user = await _userManager.FindByIdAsync(Convert.ToString(userId));
+
+                    if (user != null)
+                    {
+                        user.ImageUrl = fileName;
+                        await _userManager.UpdateAsync(user);
+                        return CreateActionResult(CustomResponseDto<NoContentDto>.Success(201));
+                    }
+                    else
+                    {
+                        return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(404, "Kullanıcı bulunamadı."));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(500, "Dosya kaydetme hatası: " + ex.Message));
+                }
+            }
+
+            return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Geçersiz dosya veya dosya yok."));
+        }
+
+
+
 
         //[Authorize(AuthenticationSchemes = "Roles")]
         [HttpPost("register")]
-
         public async Task<IActionResult> Register(UserRegisterDto appUserDto)
         {
-            AppUser user = new AppUser()
+            if (ModelState.IsValid)
             {
+                AppUser user = new AppUser()
+                {
+                    Name = appUserDto.Name,
+                    Surname = appUserDto.Surname,
+                    UserName = appUserDto.UserName,
+                };
 
-                Name = appUserDto.Name,
-                Surname = appUserDto.Surname,
-                UserName = appUserDto.UserName,
+                var result = await _userManager.CreateAsync(user, appUserDto.Password);
 
-                PasswordHash = appUserDto.Password,
 
-            };
 
-            var result = await _userManager.CreateAsync(user, appUserDto.Password);
-
-            if (result.Succeeded)
-            {
                 return CreateActionResult(CustomResponseDto<UserRegisterDto>.Success(201, appUserDto));
+
             }
 
-            return CreateActionResult(CustomResponseDto<UserRegisterDto>.Fail(400, "Kayıt oluşturma basarız"));
+            var errors = ModelState.Values
+                .SelectMany(v => v.Errors)
+                .Select(e => e.ErrorMessage)
+                .ToList();
 
+            var turkishErrors = errors.Select(error => TranslateToTurkish(error)).ToList();
+            var errorMessage = "Geçersiz giriş:\n" + string.Join("\n", turkishErrors);
+
+            return CreateActionResult(CustomResponseDto<UserRegisterDto>.Fail(400, errorMessage));
         }
+
+        private string TranslateToTurkish(string englishMessage)
+        {
+            // Hata mesajlarını Türkçeye çevirin
+            // Örnek: "Passwords must match." -> "Şifreler uyuşmalıdır."
+
+            // Bu metodu kullanarak hata mesajlarını çevirebilirsiniz.
+            // Örneğin:
+            if (englishMessage == "Passwords must match.")
+            {
+                return "Şifreler uyuşmalıdır.";
+            }
+            // Diğer hata mesajlarını da benzer şekilde çevirebilirsiniz.
+
+            // Çevirilmemiş hata mesajlarını olduğu gibi döndürün
+            return englishMessage;
+        }
+
+
 
         //[HttpGet]
         //public async Task<IActionResult> Login(LoginDto loginDto)
@@ -108,7 +190,8 @@ namespace NLayer.API.Controllers
                 var user = await _userManager.FindByNameAsync(loginDto.UserName);
                 if (user == null)
                 {
-                    return BadRequest(loginDto.UserName);
+                    // Kullanıcı adı bulunamadı, kullanıcı adı yanlış
+                    return BadRequest("Kullanıcı adı bulunamadı");
                 }
 
                 var userRoles = await _userManager.GetRolesAsync(user);
@@ -125,7 +208,6 @@ namespace NLayer.API.Controllers
                         Name = user.Name,
                         Surname = user.Surname,
                         Role = userRoles.FirstOrDefault()
-
                     };
 
                     TokenDto token = _tokenHandler.CreateAccessToken(TokenInfoDto);
@@ -135,10 +217,16 @@ namespace NLayer.API.Controllers
                     token.UserId = TokenInfoDto.UserId;
                     return CreateActionResult(CustomResponseDto<TokenDto>.Success(200, token));
                 }
+                else
+                {
+                    // Kimlik doğrulama başarısız, şifre yanlış
+                    return BadRequest("Şifre yanlış");
+                }
             }
 
             return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Giriş işlemi başarısız"));
         }
+
 
         [HttpPost("ResetPassword")]
         public async Task<IActionResult> ResetPassword(ResetPasswordDto resetPasswordDto)
@@ -199,6 +287,8 @@ namespace NLayer.API.Controllers
                 return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Kullanıcı güncelleme işlemi başarısız"));
             }
         }
+
+
 
 
 

@@ -6,9 +6,9 @@ using NLayer.Service.GenericManager;
 
 namespace NLayer.Service.Services
 {
-    public class AnimalService : Service<Animal>, IAnimalService
+    public class AnimalService : Service<Product>, IAnimalService
     {
-        public AnimalService(GenericRepository<Animal> repository, IUnitOfWork unitOfWork) : base(repository, unitOfWork)
+        public AnimalService(GenericRepository<Product> repository, IUnitOfWork unitOfWork) : base(repository, unitOfWork)
         {
         }
     }

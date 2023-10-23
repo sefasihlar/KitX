@@ -6,6 +6,6 @@ namespace NLayer.Core.Services
     {
         Task<List<IPAddress>> GetWithProductListAsync();
         Task<List<IPAddress>> GetByIpAddressWithProductId(int productId);
-  
+
     }
 }

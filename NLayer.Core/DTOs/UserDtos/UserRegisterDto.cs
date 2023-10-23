@@ -25,11 +25,11 @@ namespace NLayer.Core.DTOs.UserDtos
         [Compare("Password", ErrorMessage = "Parolalar eşleşmiyor.")]
         public string RePassword { get; set; }
 
-        //[Required(ErrorMessage = "E-posta adresi alanı zorunludur.")]
-        //[EmailAddress(ErrorMessage = "Geçerli bir e-posta adresi giriniz.")]
-        //public string Email { get; set; }
+        [Required(ErrorMessage = "E-posta adresi alanı zorunludur.")]
+        [EmailAddress(ErrorMessage = "Geçerli bir e-posta adresi giriniz.")]
+        public string Email { get; set; }
 
-        //public string? Phone { get; set; }
+        public string? Phone { get; set; }
 
         //public string Surname { get; set; }
         //public string? Title { get; set; }
@@ -37,9 +37,14 @@ namespace NLayer.Core.DTOs.UserDtos
         //public DateTime CreatedDate { get; set; } = DateTime.Now;
         //public DateTime UpdatedDate { get; set; } = DateTime.Now;
 
+        [Required(ErrorMessage = "İsim alanı zorunludur.")]
+        [RegularExpression(@"^[A-Za-zÇçĞğİıÖöŞşÜü\s]+$", ErrorMessage = "Geçerli bir isim giriniz.")]
         public string? Name { get; set; }
+        [Required(ErrorMessage = "Soyadı alanı zorunludur.")]
+        [RegularExpression(@"^[A-Za-zÇçĞğİıÖöŞşÜü\s]+$", ErrorMessage = "Geçerli bir soyadı giriniz.")]
         public string? Surname { get; set; }
-        public string? Title { get; set; }
+
+        public string? ImageUrl { get; set; }
         public DateTime? CreatedDate { get; set; } = DateTime.Now;
         public DateTime? UpdatedDate { get; set; } = DateTime.Now;
         public bool Condition { get; set; }
