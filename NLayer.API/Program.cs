@@ -41,6 +41,8 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddScoped<ITokenHandler, TokenHandler>();
 builder.Services.AddScoped<IIHubService, IPHubService>();
+builder.Services.AddScoped<IEmailSenderService, EmailSenderService>();
+builder.Services.AddTransient<IEmailSenderService, EmailSenderService>();
 
 
 builder.Services.AddAutoMapper(typeof(MapProfile));

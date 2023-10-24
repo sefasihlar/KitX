@@ -45,6 +45,10 @@ namespace NLayer.API.Controllers
         {
             var values = await _animalPhotoService.GetAllAsycn();
             var valuesFilter = values.Where(x => x.ProductId == ProductId);
+            if (valuesFilter==null)
+            {
+                return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(204, "Ürün bulunamadı"));
+            }
             var valuesDto = _mapper.Map<List<ProductPhotoDto>>(valuesFilter);
             return CreateActionResult(CustomResponseDto<List<ProductPhotoDto>>.Success(200, valuesDto));
         }

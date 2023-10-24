@@ -10,6 +10,7 @@ using NLayer.Core.DTOs.FeatureWithUserDtos.BelongingProductFeatureDtos;
 using NLayer.Core.DTOs.FeatureWithUserDtos.PersonProductFeatureDtos;
 using NLayer.Core.DTOs.FeatureWithUserDtos.SpecialProductFeatureDtos;
 using NLayer.Core.DTOs.IPAddressDtos;
+using NLayer.Core.DTOs.LocationDtos;
 using NLayer.Core.DTOs.ProductDtos;
 using NLayer.Core.DTOs.QRCodeDtos;
 using NLayer.Core.DTOs.RoleDtos;
@@ -68,6 +69,8 @@ namespace NLayer.Service.Mapping
             CreateMap<Category, CategoryDto>().ReverseMap();
 
             CreateMap<QrCode, QRCodeDto>().ReverseMap();
+
+            CreateMap<Location,LocationDto>().ReverseMap();
 
 
 

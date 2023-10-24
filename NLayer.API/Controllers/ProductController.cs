@@ -163,6 +163,10 @@ namespace NLayer.API.Controllers
                 if (category.Name == "Person")
                 {
                     var productFeature = await _personelProductFeatureService.FindByProductIdAsync(id);
+                    if (productFeature == null)
+                    {
+                        return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Not Find Product"));
+                    }
                     var productDto = _mapper.Map<PersonFeatureUserDto>(productFeature);
                     productDto.User =_mapper.Map<AppUserDto>(valuesUserDto);
 
@@ -173,6 +177,10 @@ namespace NLayer.API.Controllers
                 else if (category.Name =="Animal")
                 {
                     var productFeature = await _animalProductFeatureService.FindByProductIdAsync(id);
+                    if (productFeature == null)
+                    {
+                        return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Not Find Product"));
+                    }
                     var productDto = _mapper.Map<AnimalFeatureUserDto>(productFeature);
                     productDto.User =_mapper.Map<AppUserDto>(valuesUserDto);
                     return CreateActionResult(CustomResponseDto<AnimalFeatureUserDto>.Success(200, productDto));
@@ -181,6 +189,10 @@ namespace NLayer.API.Controllers
                 else if (category.Name =="Special")
                 {
                     var productFeature = await _specialProductFeatureService.FindByProductIdAsync(id);
+                    if (productFeature == null)
+                    {
+                        return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Not Find Product"));
+                    }
                     var productDto = _mapper.Map<SpecialFeatureUserDto>(productFeature);
                     productDto.User =_mapper.Map<AppUserDto>(valuesUserDto);
                     return CreateActionResult(CustomResponseDto<SpecialFeatureUserDto>.Success(200, productDto));
@@ -189,13 +201,20 @@ namespace NLayer.API.Controllers
                 else
                 {
                     var productFeature = await _belongingProductFeatureService.FindByProductIdAsync(id);
+                    if (productFeature==null)
+                    {
+                        return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Not Find Product"));
+                    }
                     var productDto = _mapper.Map<BelongingFeatureUserDto>(productFeature);
                     productDto.User =_mapper.Map<AppUserDto>(valuesUserDto);
                     return CreateActionResult(CustomResponseDto<BelongingFeatureUserDto>.Success(200, productDto));
                 }
             }
 
-
+            if (userproduct==null)
+            {
+                return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Kullanıcıya ait ürün bulunamadı"));
+            }
 
             var userproductValDto = _mapper.Map<UserProductDto>(userproduct);
 
@@ -296,6 +315,10 @@ namespace NLayer.API.Controllers
         {
             var products = await _qrCodeService.GetUserProduct(userId);
             var filteredProducts = products.Where(p => p.Product.UserProduct.Any(x => x.UserId == userId));
+            if (filteredProducts == null)
+            {
+                return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(204, "Ürün bulunamadı"));
+            }
             var productDtos = _mapper.Map<List<QRCodeDto>>(filteredProducts);
             return CreateActionResult(CustomResponseDto<List<QRCodeDto>>.Success(200, productDtos));
         }

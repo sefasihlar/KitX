@@ -34,6 +34,8 @@ namespace NLayer.API.Controllers
             var values = _mapper.Map<Location>(dto);
             if (dto != null)
             {
+                dto.CreatedDate = DateTime.Now;
+                
                 await _locationservicecs.AddAsycn(values);
 
                 return CreateActionResult(CustomResponseDto<LocationDto>.Success(201, dto));
@@ -48,10 +50,23 @@ namespace NLayer.API.Controllers
         public async Task<IActionResult> GetUserLocations(int productId)
         {
             var values = await _locationservicecs.GetUserLocations(productId);
+            if (values == null) {
+
+
+                return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Kullanıcıya ait location verisi bulunamadı"));
+            }
             var valuesDto = _mapper.Map<List<LocationDto>>(values);
 
             return CreateActionResult(CustomResponseDto<List<LocationDto>>.Success(200, valuesDto));
         }
 
+
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetAll()
+        {
+            var values = await _locationservicecs.GetAllAsycn();
+            var valuesDto = _mapper.Map<List<LocationDto>>(values);
+            return CreateActionResult(CustomResponseDto<List<LocationDto>>.Success(200, valuesDto));
+        }
     }
 }

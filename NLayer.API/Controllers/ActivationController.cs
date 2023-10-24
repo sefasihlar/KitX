@@ -41,6 +41,9 @@ namespace NLayer.API.Controllers
             {
                 var product = await _productService.GetByIdAsycn(dto.ProductId);
 
+                if (product==null)
+                    return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "ürün bulunamadı"));
+
                 if (product!=null && product.Condition==false)
                 {
                     var qrcode = await _qrCodeService.GetAllAsycn();
