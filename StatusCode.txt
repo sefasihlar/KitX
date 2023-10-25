@@ -1,0 +1,3 @@
+108=Eposta onaylandý
+109=Eposta zaten onaylanmýþ
+

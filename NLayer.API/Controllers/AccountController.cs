@@ -11,6 +11,7 @@ using NLayer.Core.DTOs.AccountDtos;
 using NLayer.Core.DTOs.EmailDtos;
 using NLayer.Core.DTOs.TokenDtos;
 using NLayer.Core.DTOs.UserDtos;
+using NLayer.Core.DTOs.Verifacitions;
 using NLayer.Core.Services;
 using NLayer.Core.Token;
 using NLayer.Service.Services;
@@ -49,9 +50,6 @@ namespace NLayer.API.Controllers
             var users = await _userManager.Users.ToListAsync();
 
             var usersDtos = _mapper.Map<List<UserListDto>>(users.ToList());
-
-            await _emailSenderService.SendEmailAsync("sihlarsefa7@gmail.com", "konu açıklaması", "<h1>Test Email</h1>");
-
             return CreateActionResult(CustomResponseDto<List<UserListDto>>.Success(200, usersDtos));
 
         }
@@ -61,7 +59,7 @@ namespace NLayer.API.Controllers
         public async Task<IActionResult> GetFindUser(int userId)
         {
             var user = await _userManager.FindByIdAsync(Convert.ToString(userId));
-            if (user==null)
+            if (user == null)
             {
                 return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Kullanıcı bulunamadı"));
             }
@@ -79,12 +77,12 @@ namespace NLayer.API.Controllers
         {
             var user = await _userManager.FindByIdAsync(Convert.ToString(id));
 
-            if (user==null)
+            if (user == null)
                 return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Kullanıcı bulunamadı"));
 
             var roles = await _userManager.GetRolesAsync(user);
 
-            if (roles==null)
+            if (roles == null)
             {
                 return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Kullanıcıya ait role bulunamadı"));
             }
@@ -194,16 +192,38 @@ namespace NLayer.API.Controllers
 
             var user = await _userManager.FindByIdAsync(userId);
 
+            var verifationsDto = new VerifaticitonsDto()
+            {
+
+            };
+
             if (user != null)
             {
-                var result = await _userManager.ConfirmEmailAsync(user, token);
-                if (result.Succeeded)
+                if (user.EmailConfirmed == false)
                 {
-                    return CreateActionResult(CustomResponseDto<NoContentDto>.Success(200));
+                    var result = await _userManager.ConfirmEmailAsync(user, token);
+                    if (result.Succeeded)
+                    {
+                        verifationsDto.Code = 107;
+                        verifationsDto.Description = "Approved";
+                        verifationsDto.Condition = true;
+                        return Redirect("https://kitxapp.com/verifications/email/Approved");
+                    }
                 }
+
+                else
+                {
+                    verifationsDto.Code = 108;
+                    verifationsDto.Description = "Allready Approved";
+                    verifationsDto.Condition = false;
+                    //hata verebilir
+                    return Redirect("https://kitxapp.com/verifications/email/AllreadyApproved");
+                }
+
+
             }
 
-            return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Eposta onaylama işlemli başarısız"));
+            return Redirect("https://kitxapp.com/verifications/email/NotApproved");
         }
 
 
@@ -260,31 +280,39 @@ namespace NLayer.API.Controllers
 
                 var userRoles = await _userManager.GetRolesAsync(user);
 
-                Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
-
-                if (result.Succeeded)
+                if (user.EmailConfirmed == true)
                 {
-                    var userId = _userManager.GetUserId((System.Security.Claims.ClaimsPrincipal)User);
 
-                    var TokenInfoDto = new TokenInfo()
+                    Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.CheckPasswordSignInAsync(user, loginDto.Password, false);
+
+                    if (result.Succeeded)
                     {
-                        UserId = user.Id,
-                        Name = user.Name,
-                        Surname = user.Surname,
-                        Role = userRoles.FirstOrDefault()
-                    };
+                        var userId = _userManager.GetUserId((System.Security.Claims.ClaimsPrincipal)User);
 
-                    TokenDto token = _tokenHandler.CreateAccessToken(TokenInfoDto);
-                    token.Name = TokenInfoDto.Name;
-                    token.Surname = TokenInfoDto.Surname;
-                    token.Role = TokenInfoDto.Role;
-                    token.UserId = TokenInfoDto.UserId;
-                    return CreateActionResult(CustomResponseDto<TokenDto>.Success(200, token));
+                        var TokenInfoDto = new TokenInfo()
+                        {
+                            UserId = user.Id,
+                            Name = user.Name,
+                            Surname = user.Surname,
+                            Role = userRoles.FirstOrDefault()
+                        };
+
+                        TokenDto token = _tokenHandler.CreateAccessToken(TokenInfoDto);
+                        token.Name = TokenInfoDto.Name;
+                        token.Surname = TokenInfoDto.Surname;
+                        token.Role = TokenInfoDto.Role;
+                        token.UserId = TokenInfoDto.UserId;
+                        return CreateActionResult(CustomResponseDto<TokenDto>.Success(200, token));
+                    }
+                    else
+                    {
+                        // Kimlik doğrulama başarısız, şifre yanlış
+                        return BadRequest("Şifre yanlış");
+                    }
                 }
                 else
                 {
-                    // Kimlik doğrulama başarısız, şifre yanlış
-                    return BadRequest("Şifre yanlış");
+                    return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Eposta adresniz onaylanmamış"));
                 }
             }
 

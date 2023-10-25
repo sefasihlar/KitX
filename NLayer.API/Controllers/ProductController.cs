@@ -39,6 +39,7 @@ namespace NLayer.API.Controllers
         private readonly ISpecialProductFeatureService _specialProductFeatureService;
         private readonly IAnimalProductFeatureService _animalProductFeatureService;
         private readonly IBelongingProductFeatureService _belongingProductFeatureService;
+        private readonly IEmailSenderService _emailSenderService;
         private readonly HttpClient _httpClient;
 
 
@@ -49,25 +50,26 @@ namespace NLayer.API.Controllers
         private readonly IIPAddressService _ipAddressService;
 
 
-        public ProductController(IProductService productService, IMapper mapper, IAnimalService animalService, IAppUserRepository appUserRepository, IUserProductService userProductService, IHttpContextAccessor httpContextAccessor, IIPAddressService ipAddressService, IAnimalPhotoService animalPhotoService, IIHubService hubService, IHubContext<IPHubService> hubContext, HttpClient httpClient, IQRGeneratorService qrGeneratorService, IQRCodeService qrCodeService, ICategoryService categoryService, IPersonelProductFeatureService personelProductFeatureService, ISpecialProductFeatureService specialProductFeatureService, IAnimalProductFeatureService animalProductFeatureService, IBelongingProductFeatureService belongingProductFeatureService)
+        public ProductController(IProductService productService, IMapper mapper, IAnimalService animalService, IAppUserRepository appUserRepository, IUserProductService userProductService, IHttpContextAccessor httpContextAccessor, IIPAddressService ipAddressService, IAnimalPhotoService animalPhotoService, IIHubService hubService, IHubContext<IPHubService> hubContext, HttpClient httpClient, IQRGeneratorService qrGeneratorService, IQRCodeService qrCodeService, ICategoryService categoryService, IPersonelProductFeatureService personelProductFeatureService, ISpecialProductFeatureService specialProductFeatureService, IAnimalProductFeatureService animalProductFeatureService, IBelongingProductFeatureService belongingProductFeatureService, IEmailSenderService emailSenderService)
         {
-            _productService=productService;
-            _mapper=mapper;
-            _animalService=animalService;
-            _appUserRepository=appUserRepository;
-            _userProductService=userProductService;
-            _httpContextAccessor=httpContextAccessor;
-            _ipAddressService=ipAddressService;
-            _animalPhotoService=animalPhotoService;
-            _hubContext=hubContext;
-            _httpClient=httpClient;
-            _qrGeneratorService=qrGeneratorService;
-            _qrCodeService=qrCodeService;
-            _categoryService=categoryService;
-            _personelProductFeatureService=personelProductFeatureService;
-            _specialProductFeatureService=specialProductFeatureService;
-            _animalProductFeatureService=animalProductFeatureService;
-            _belongingProductFeatureService=belongingProductFeatureService;
+            _productService = productService;
+            _mapper = mapper;
+            _animalService = animalService;
+            _appUserRepository = appUserRepository;
+            _userProductService = userProductService;
+            _httpContextAccessor = httpContextAccessor;
+            _ipAddressService = ipAddressService;
+            _animalPhotoService = animalPhotoService;
+            _hubContext = hubContext;
+            _httpClient = httpClient;
+            _qrGeneratorService = qrGeneratorService;
+            _qrCodeService = qrCodeService;
+            _categoryService = categoryService;
+            _personelProductFeatureService = personelProductFeatureService;
+            _specialProductFeatureService = specialProductFeatureService;
+            _animalProductFeatureService = animalProductFeatureService;
+            _belongingProductFeatureService = belongingProductFeatureService;
+            _emailSenderService = emailSenderService;
         }
 
         [HttpGet]
@@ -153,6 +155,12 @@ namespace NLayer.API.Controllers
 
             };
 
+            if (valuesUserDto.Email !=null)
+            {
+                await _emailSenderService.SendEmailAsync(valuesUserDto.Email, "Kitiniz Bulundu", "<h1>Test Email</h1>");
+            }
+
+            
             await _ipAddressService.AddAsycn(_mapper.Map<IPAddress>(ipAdressValues));
 
             var category = await _categoryService.GetByIdAsycn(product.CategoryId);
