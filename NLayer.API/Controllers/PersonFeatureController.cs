@@ -12,7 +12,7 @@ namespace NLayer.API.Controllers
   
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+
     public class PersonFeatureController : CustomBaseController
     {
         private readonly IPersonelProductFeatureService _personelProductFeatureService;
