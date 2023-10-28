@@ -83,7 +83,7 @@ namespace NLayer.API.Controllers
 
                 // Mevcut resmin adı ve yolu
                 var currentFileName = animalphoto.ImageUrl;
-                var currentFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Animal-Photo", currentFileName);
+                var currentFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Product-Photo", currentFileName);
 
                 // Mevcut resmi siliyoruz
                 if (System.IO.File.Exists(currentFilePath))
@@ -93,7 +93,7 @@ namespace NLayer.API.Controllers
 
                 // Yeni dosyayı kaydetmek için benzersiz bir isim oluşturuyoruz
                 var newFileName = Guid.NewGuid().ToString() + "_" + newFile.FileName;
-                var newFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Animal-Photo", newFileName);
+                var newFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Product-Photo", newFileName);
 
                 // Yeni dosyayı kaydediyoruz
                 using (var stream = new FileStream(newFilePath, FileMode.Create))
@@ -130,7 +130,7 @@ namespace NLayer.API.Controllers
                 }
 
                 // Dosyanın kaydedileceği yolun belirlenmesi
-                var webUIPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Animal-Photo");
+                var webUIPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Product-Photo");
 
                 // Klasör yoksa oluşturulması
                 if (!Directory.Exists(webUIPath))

@@ -11,7 +11,7 @@ using NLayer.Core.Services;
 namespace NLayer.API.Controllers
 {
 
-    [EnableCors("AllowMyOrigin")]
+
     [Route("api/[controller]")]
     [ApiController]
 
