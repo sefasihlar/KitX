@@ -45,6 +45,7 @@ namespace NLayer.API.Controllers
 
             animal.Name = dto.Name;
             animal.Age = dto.Age;
+            //age deperi decimal olacak hata alıyoruz
             animal.Color = dto.Color;
             animal.UpdatedDate = DateTime.Now;
             animal.Condition = true;
@@ -57,6 +58,11 @@ namespace NLayer.API.Controllers
             animal.Address1 = dto.Address1;
             animal.Address2 = dto.Address2;
             animal.UpdatedDate = DateTime.Now;
+            animal.Instegram = dto.Instegram;
+            animal.Twitter = dto.Twitter;
+            animal.Facebook = dto.Facebook;
+            animal.Text1 = dto.Text1;
+            animal.Text2 = dto.Text2;
             animal.VaccineInformation = dto.VaccineInformation;
             await _productFeatureService.UpdateAsycn(animal);
 
@@ -72,9 +78,9 @@ namespace NLayer.API.Controllers
             //if (userproductsin==null)
             //{
             //    await _userProductService.AddAsycn(_mapper.Map<UserProduct>(userProductValues));
-            //}
+            ////}
 
-            return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
+            return CreateActionResult(CustomResponseDto<AnimalProductFeatureDto>.Success(200,dto));
         }
         [HttpGet("[action]")]
         public async Task<IActionResult> GetAll()

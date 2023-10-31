@@ -54,27 +54,34 @@ namespace NLayer.API.Controllers
         }
 
         [HttpDelete("[action]")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(int productId)
         {
-            var values = await _animalPhotoService.GetByIdAsycn(id);
+            var values = await _animalPhotoService.GetAllAsycn();
+            var valuesFilter  = values.Where(x => x.ProductId == productId);
             if (values != null)
             {
-                await _animalPhotoService.RemoveAsycn(values);
+
+                foreach (var item in valuesFilter)
+                {
+                    await _animalPhotoService.RemoveAsycn(item);
+                }
+
+             
                 return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
             }
 
 
-            return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(204, "Silme işlemi başarısız bilgileri gözden geçiriniz"));
+            return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Silme işlemi başarısız bilgileri gözden geçiriniz"));
         }
 
 
         [HttpPut("[action]")]
-        public async Task<IActionResult> UpdateProductPhoto(int animalId, IFormFile newFile)
+        public async Task<IActionResult> UpdateProductPhoto(int productId ,IFormFile newFile)
         {
             try
             {
                 var values = await _animalPhotoService.GetAllAsycn();
-                var animalphoto = values.FirstOrDefault(x => x.ProductId == animalId);
+                var animalphoto = values.FirstOrDefault(x => x.ProductId == productId);
 
                 if (animalphoto == null)
                 {
