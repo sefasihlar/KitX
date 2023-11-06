@@ -13,6 +13,7 @@ namespace NLayer.API.Controllers
 {
     
     [EnableCors("AllowMyOrigin")]
+    [Authorize(AuthenticationSchemes = "Roles")]
     [Route("api/[controller]")]
     [ApiController]
 
@@ -61,6 +62,7 @@ namespace NLayer.API.Controllers
             animal.Instegram = dto.Instegram;
             animal.Twitter = dto.Twitter;
             animal.Facebook = dto.Facebook;
+            animal.Kg  = dto.Kg;
             animal.Text1 = dto.Text1;
             animal.Text2 = dto.Text2;
             animal.VaccineInformation = dto.VaccineInformation;

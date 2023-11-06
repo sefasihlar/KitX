@@ -13,6 +13,7 @@ namespace NLayer.API.Controllers
 {
   
     [EnableCors("AllowMyOrigin")]
+    [Authorize(AuthenticationSchemes = "Roles")]
     [Route("api/[controller]")]
     [ApiController]
 

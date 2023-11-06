@@ -9,8 +9,8 @@ using NLayer.Core.Services;
 
 namespace NLayer.API.Controllers
 {
-    [Authorize(AuthenticationSchemes = "Roles")]
     [EnableCors("AllowMyOrigin")]
+    [Authorize(AuthenticationSchemes = "Roles")]
     [Route("api/[controller]")]
     [ApiController]
 

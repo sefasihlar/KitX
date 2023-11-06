@@ -15,9 +15,9 @@ namespace NLayer.Core.Concreate
         public string? Address1 { get; set; }
         public string? Address2 { get; set; }
         public string? Name { get; set; }
-        public int Age { get; set; }
+        public double? Age { get; set; }
         public string? Color { get; set; }
-
+        public double? Kg { get; set; }
         public string? Instegram { get; set; }
         public string? Twitter { get; set; }
         public string? Facebook { get; set; }

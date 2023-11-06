@@ -1,4 +1,5 @@
 ﻿using NLayer.Core.Abstract;
+using System.Runtime.CompilerServices;
 
 namespace NLayer.Core.Concreate
 {
@@ -7,6 +8,8 @@ namespace NLayer.Core.Concreate
 
         public int CategoryId { get; set; }
         public Category? Category { get; set; }
+
+        public bool Status { get; set; }
 
         public List<UserProduct> UserProduct { get; set; }
 

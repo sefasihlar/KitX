@@ -22,6 +22,7 @@ namespace NLayer.API.Controllers
 {
  
     [EnableCors("AllowMyOrigin")]
+
     [Route("api/[controller]")]
     [ApiController]
     public class ProductController : CustomBaseController

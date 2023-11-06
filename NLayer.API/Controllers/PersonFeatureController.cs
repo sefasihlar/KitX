@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using NLayer.API.Controllers.BaseController;
 using NLayer.Core.DTOs;
@@ -9,7 +10,8 @@ using NLayer.Core.Services;
 
 namespace NLayer.API.Controllers
 {
-  
+    [EnableCors("AllowMyOrigin")]
+    [Authorize(AuthenticationSchemes = "Roles")]
     [Route("api/[controller]")]
     [ApiController]
 

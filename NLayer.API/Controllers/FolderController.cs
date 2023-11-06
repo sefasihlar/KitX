@@ -5,8 +5,8 @@ using System.IO.Compression;
 
 namespace NLayer.API.Controllers
 {
-    [Authorize(AuthenticationSchemes = "Roles")]
     [EnableCors("AllowMyOrigin")]
+    [Authorize(AuthenticationSchemes = "Roles")]
     [Route("api/[controller]")]
     [ApiController]
     public class FolderController : ControllerBase

@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.SignalR;
 using NLayer.Core.Services;
 using NLayer.Service.Services;
 
-[Authorize(AuthenticationSchemes = "Roles")]
 [EnableCors("AllowMyOrigin")]
+[Authorize(AuthenticationSchemes = "Roles")]
 [Route("api/[controller]")]
 [ApiController]
 public class IPHubController : ControllerBase

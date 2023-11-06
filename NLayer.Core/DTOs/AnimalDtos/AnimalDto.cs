@@ -15,6 +15,7 @@ namespace NLayer.Core.DTOs.AnimalDtos
         public string? Address2 { get; set; }
         public string? Name { get; set; }
         public int Age { get; set; }
+        public double kg { get; set; }
         public string? Color { get; set; }
     }
 }

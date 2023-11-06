@@ -12,7 +12,7 @@ using NLayer.Repository.Concreate;
 namespace NLayer.Repository.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231018172447_mig-master")]
+    [Migration("20231101095816_mig-master")]
     partial class migmaster
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -147,8 +147,8 @@ namespace NLayer.Repository.Migrations
                     b.Property<string>("Address2")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Age")
-                        .HasColumnType("int");
+                    b.Property<double?>("Age")
+                        .HasColumnType("float");
 
                     b.Property<DateTime?>("Birthday")
                         .HasColumnType("datetime2");
@@ -173,6 +173,9 @@ namespace NLayer.Repository.Migrations
 
                     b.Property<string>("Instegram")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<double?>("Kg")
+                        .HasColumnType("float");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -633,6 +636,9 @@ namespace NLayer.Repository.Migrations
 
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
