@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using NLayer.Core.Concreate;
+using NLayer.Core.DTOs.AdminDtos.AdminAccountDtos;
 using NLayer.Core.DTOs.AnimalDtos;
 using NLayer.Core.DTOs.AnimalPhotoDtos;
 using NLayer.Core.DTOs.CategoryDtos;
@@ -45,6 +46,8 @@ namespace NLayer.Service.Mapping
             CreateMap<AppRole, UpdateRoleDto>().ReverseMap();
             CreateMap<AppRole, RoleAssingDto>().ReverseMap();
             CreateMap<AppRole, AppUserRoleDto>();
+            CreateMap<AppUser,AdminAccountDto>().ReverseMap();
+
             CreateMap<string, AppUserRoleDto>()
                 .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src));
 
