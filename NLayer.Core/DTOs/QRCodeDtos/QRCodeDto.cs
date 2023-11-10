@@ -10,6 +10,7 @@ namespace NLayer.Core.DTOs.QRCodeDtos
         public string? Code { get; set; }
         public int? ProductId { get; set; }
         public ProductDto Product { get; set; }
+        public bool Condition { get; set; }
 
     }
 }

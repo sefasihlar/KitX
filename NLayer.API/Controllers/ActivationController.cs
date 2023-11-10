@@ -36,60 +36,74 @@ namespace NLayer.API.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> ActivationProduct(ActivationPoroductDto dto)
         {
-
-            if (dto!=null)
+            // Check if the incoming DTO is not null
+            if (dto != null)
             {
+                // Retrieve the product by its ID
                 var product = await _productService.GetByIdAsycn(dto.ProductId);
 
-                if (product==null)
-                    return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "ürün bulunamadı"));
+                // If the product is not found, return an error response
+                if (product == null)
+                    return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Product not found"));
 
-                if (product!=null && product.Condition==false)
+                // If the product exists and its condition is false, proceed
+                if (product != null && product.Condition == false)
                 {
+                    // Get all QR codes
                     var qrcode = await _qrCodeService.GetAllAsycn();
+
+                    // Find the QR code with the given activation code and false condition
                     var istrue = qrcode.FirstOrDefault(x => x.Code == dto.ActivationCode && x.Condition == false);
 
-                    if (istrue!=null)
+                    // If a valid QR code is found
+                    if (istrue != null)
                     {
+                        // Prepare user product data
                         var userProductValues = new UserProductDto()
                         {
                             UserId = dto.UserId,
                             ProductId = dto.ProductId,
                         };
 
-                        //daha önce bir ilişki oluşturlmuşmu
+                        // Check if a relationship already exists
                         var userproductsin = await _userProductService.GetByIdsAsycn(dto.UserId, dto.ProductId);
 
-                        if (userproductsin==null)
+                        // If no relationship exists
+                        if (userproductsin == null)
                         {
+                            // Add a new user product relationship
                             var result = await _userProductService.AddAsycn(_mapper.Map<UserProduct>(userProductValues));
 
+                            // Update product condition to true
                             product.Condition = true;
                             await _productService.UpdateAsycn(product);
 
+                            // Prepare category data for the response
                             var catagory = new ActivationCodeDto()
                             {
                                 CategoryId = result.Product.CategoryId,
                             };
 
+                            // Update the QR code condition to true
                             istrue.Condition = true;
-
                             _qrCodeService.UpdateAsycn(istrue);
 
+                            // Return a success response with category information
                             return CreateActionResult(CustomResponseDto<ActivationCodeDto>.Success(200, catagory));
                         }
                     }
-
                 }
-
                 else
                 {
-                    return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Bu ürün daha önce aktifleştirilmiş"));
+                    // Return an error response if the product has been activated before
+                    return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "This product has been activated before"));
                 }
             }
 
-            return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Activation işlemi başarısız"));
+            // Return an error response for unsuccessful activation
+            return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Activation process failed"));
         }
+
 
     }
 }
