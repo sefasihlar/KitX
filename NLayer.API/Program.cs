@@ -18,7 +18,12 @@ using NLayer.Repository.UnitOfWorks;
 
 using NLayer.Service.Mapping;
 using NLayer.Service.Services;
+using Serilog;
+using Serilog.Core;
+using Serilog.Sinks.MSSqlServer;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using System.Collections.ObjectModel;
+using System.Data;
 using System.Reflection;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -49,8 +54,8 @@ builder.Services.AddAutoMapper(typeof(MapProfile));
 
 builder.Services.AddIdentity<AppUser, AppRole>()
     .AddDefaultTokenProviders() // Ekle
-    .AddEntityFrameworkStores<AppDbContext>() // YourDbContext'e kendi veritabaný baðlamýnýzý ekleyin
-    .AddDefaultTokenProviders();// YourDbContext'e kendi veritabaný baðlamýnýzý ekleyin
+    .AddEntityFrameworkStores<AppDbContext>() // YourDbContext'e kendi veritabanï¿½ baï¿½lamï¿½nï¿½zï¿½ ekleyin
+    .AddDefaultTokenProviders();// YourDbContext'e kendi veritabanï¿½ baï¿½lamï¿½nï¿½zï¿½ ekleyin
 
 builder.Services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, UserClaimsPrincipalFactory<AppUser, AppRole>>();
 
@@ -73,8 +78,8 @@ builder.Services.AddSignalR();
 //    options.SlidingExpiration = true;
 //    options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
 
-//    options.LoginPath = "/Account/Login"; // Giriþ yapma URL'nizi belirtin
-//    options.LogoutPath = "/Account/Logout"; // Çýkýþ yapma URL'nizi belirtin
+//    options.LoginPath = "/Account/Login"; // Giriï¿½ yapma URL'nizi belirtin
+//    options.LogoutPath = "/Account/Logout"; // ï¿½ï¿½kï¿½ï¿½ yapma URL'nizi belirtin
 
 //    options.Cookie = new CookieBuilder()
 //    {
@@ -113,12 +118,29 @@ builder.Services.AddCors(options =>
     });
 });
 
+
+Logger log = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File("logs/log.text")
+    .WriteTo.MSSqlServer(
+        connectionString: builder.Configuration.GetConnectionString("StudentManagmentDb"),
+        "logs",
+        
+        autoCreateSqlTable: true
+    )
+    .CreateLogger();
+
+
+
+
+builder.Host.UseSerilog(log);
+
 builder.Services.AddControllers()
 
     .AddJsonOptions(options =>
     {
         options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
-        options.JsonSerializerOptions.MaxDepth = 64; // isteðe baðlý olarak derinlik sýnýrýný artýrabilirsiniz
+        options.JsonSerializerOptions.MaxDepth = 64; // isteï¿½e baï¿½lï¿½ olarak derinlik sï¿½nï¿½rï¿½nï¿½ artï¿½rabilirsiniz
     });
 
 builder.Services.AddDbContext<AppDbContext>(x =>
@@ -132,7 +154,7 @@ builder.Services.AddDbContext<AppDbContext>(x =>
 
 builder.Services.AddSwaggerGen(c =>
 {
-    // Swagger belgelerine güvenlik þemasýný ekleyin
+    // Swagger belgelerine gï¿½venlik ï¿½emasï¿½nï¿½ ekleyin
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Description = "JWT Authorization header using the Bearer scheme. Example: \"Bearer {token}\"",
@@ -142,7 +164,7 @@ builder.Services.AddSwaggerGen(c =>
         Scheme = "Bearer"
     });
 
-    // Swagger belgelerini korumak için yetkilendirme gereksinimini ekleyin
+    // Swagger belgelerini korumak iï¿½in yetkilendirme gereksinimini ekleyin
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
@@ -158,7 +180,7 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 
-    // JWT yetkilendirme gereksinimini uygulayýn
+    // JWT yetkilendirme gereksinimini uygulayï¿½n
     c.OperationFilter<AuthorizeCheckOperationFilter>();
 });
 
@@ -183,10 +205,10 @@ builder.Host.UseServiceProviderFactory(
 //Module start
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 {
-    // Diðer kayýtlarý ekleyin
+    // Diï¿½er kayï¿½tlarï¿½ ekleyin
     containerBuilder.RegisterModule(new RepoServiceModule());
 
-    // WindowNavigatorGeolocation sýnýfýný kaydedin
+    // WindowNavigatorGeolocation sï¿½nï¿½fï¿½nï¿½ kaydedin
 
 });
 
@@ -198,9 +220,9 @@ app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Kurs Defteri");
-    c.RoutePrefix = "api"; // Swagger UI'yi kök dizinde görüntülemek için
-    c.DisplayRequestDuration(); // Ýsteðin süresini görüntülemek için
-    c.InjectStylesheet("/path/to/custom.css"); // Özel CSS dosyasýný enjekte etmek için
+    c.RoutePrefix = "api"; // Swagger UI'yi kï¿½k dizinde gï¿½rï¿½ntï¿½lemek iï¿½in
+    c.DisplayRequestDuration(); // ï¿½steï¿½in sï¿½resini gï¿½rï¿½ntï¿½lemek iï¿½in
+    c.InjectStylesheet("/path/to/custom.css"); // ï¿½zel CSS dosyasï¿½nï¿½ enjekte etmek iï¿½in
 });
 if (!app.Environment.IsDevelopment())
 {
