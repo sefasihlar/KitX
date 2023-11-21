@@ -99,23 +99,34 @@ namespace NLayer.API.Controllers
             {
                 try
                 {
-                    // Dosya adını kullanıcı ID'sini kullanarak oluşturduk.
-                    var fileName = $"{userId}.png";
-
-                    // Dosyayı wwwroot/UserImage klasörüne kaydedin.
-                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "UserImage", fileName);
-
-                    using (var stream = new FileStream(filePath, FileMode.Create))
-                    {
-                        await file.CopyToAsync(stream);
-                    }
-
                     var user = await _userManager.FindByIdAsync(Convert.ToString(userId));
 
                     if (user != null)
                     {
+                        // Eğer kullanıcının daha önce bir fotoğrafı varsa, onu sil.
+                        if (!string.IsNullOrEmpty(user.ImageUrl))
+                        {
+                            var existingFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "UserImage", user.ImageUrl);
+
+                            if (System.IO.File.Exists(existingFilePath))
+                            {
+                                System.IO.File.Delete(existingFilePath);
+                            }
+                        }
+
+                        // Yeni dosyayı kaydet.
+                        var fileName = $"{userId}.png";
+                        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "UserImage", fileName);
+
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await file.CopyToAsync(stream);
+                        }
+
+                        // Kullanıcının ImageUrl'ini güncelle.
                         user.ImageUrl = fileName;
                         await _userManager.UpdateAsync(user);
+
                         return CreateActionResult(CustomResponseDto<NoContentDto>.Success(201));
                     }
                     else
@@ -131,6 +142,7 @@ namespace NLayer.API.Controllers
 
             return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Geçersiz dosya veya dosya yok."));
         }
+
 
 
 
