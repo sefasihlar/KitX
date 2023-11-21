@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using System.Security.Claims;
+using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Identity;
@@ -16,6 +18,7 @@ using NLayer.Core.Services;
 using NLayer.Core.Token;
 using NLayer.Service.Services;
 using Org.BouncyCastle.Ocsp;
+using Serilog.Context;
 
 namespace NLayer.API.Controllers
 {
@@ -32,28 +35,51 @@ namespace NLayer.API.Controllers
         private readonly RoleManager<AppRole> _roleManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ITokenHandler _tokenHandler;
+        private readonly ILogger<AccountController> _logger;
 
-        public AccountController(UserManager<AppUser> userManager, RoleManager<AppRole> roleManager, SignInManager<AppUser> signInManager, IMapper mapper = null, ITokenHandler tokenHandler = null, AppUserService userService = null, IEmailSenderService emailSenderService = null)
+
+        public AccountController(UserManager<AppUser> userManager, ILogger<AccountController> logger, RoleManager<AppRole> roleManager, SignInManager<AppUser> signInManager, IMapper mapper = null, ITokenHandler tokenHandler = null, AppUserService userService = null, IEmailSenderService emailSenderService = null)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _signInManager = signInManager;
+            _logger = logger;
             _mapper = mapper;
             _tokenHandler = tokenHandler;
             _userService = userService;
             _emailSenderService = emailSenderService;
         }
-        //[Authorize(AuthenticationSchemes = "Roles")]
+        [Authorize(AuthenticationSchemes = "Roles")]
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+            // Kullanıcı bilgisini al
+            var currentUser = HttpContext.User;
+
+
+            var username = User.FindFirst("Username")?.Value;
+            var surname = User.FindFirst("Surname")?.Value;
+
+
+
+            var infouser = username + surname;
+            
+
+            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
+
+            // Loglama işlemi
+            LogContext.PushProperty("UserName", infouser);
+
+            _logger.LogInformation("{infouser} Kullanıcı listesi alındı", infouser);
+
+            // Kullanıcı bilgisini SQL Server tablosuna ekleyerek loglama işlemi
             var users = await _userManager.Users.ToListAsync();
-
             var usersDtos = _mapper.Map<List<UserListDto>>(users.ToList());
-            return CreateActionResult(CustomResponseDto<List<UserListDto>>.Success(200, usersDtos));
 
+            return CreateActionResult(CustomResponseDto<List<UserListDto>>.Success(200, usersDtos));
         }
 
+        //push
 
         [HttpGet("[action]")]
         public async Task<IActionResult> GetFindUser(int userId)
@@ -95,6 +121,7 @@ namespace NLayer.API.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> Savefile(IFormFile file, int userId)
         {
+            _logger.LogInformation("Kullancı Resim işlemleri başlatıldı");
             if (file != null && file.Length > 0)
             {
                 try
@@ -139,6 +166,7 @@ namespace NLayer.API.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserRegisterDto appUserDto)
         {
+            _logger.LogInformation("Kullanıcı kayıt işlemleri başlatıldı");
             if (ModelState.IsValid)
             {
                 AppUser user = new AppUser()
@@ -228,6 +256,7 @@ namespace NLayer.API.Controllers
         [HttpGet("[action]")]
         public async Task<IActionResult> ConfirmEmail(string userId, string token)
         {
+            _logger.LogInformation("Eposta onaylama işlemi başlatıldı");
             if (userId == null || token == null)
             {
                 return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Eposta onaylama işlemli başarısız"));
@@ -256,6 +285,7 @@ namespace NLayer.API.Controllers
 
                 else
                 {
+                    _logger.LogInformation("Eposta onay sisteminden  hata alıdı hesapp zatan onaylanmış");
                     verifationsDto.Code = 108;
                     verifationsDto.Description = "Allready Approved";
                     verifationsDto.Condition = false;

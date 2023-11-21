@@ -19,6 +19,7 @@ using NLayer.Repository.UnitOfWorks;
 using NLayer.Service.Mapping;
 using NLayer.Service.Services;
 using Serilog;
+using Serilog.Context;
 using Serilog.Core;
 using Serilog.Sinks.MSSqlServer;
 using Swashbuckle.AspNetCore.SwaggerGen;
@@ -125,9 +126,24 @@ Logger log = new LoggerConfiguration()
     .WriteTo.MSSqlServer(
         connectionString: builder.Configuration.GetConnectionString("StudentManagmentDb"),
         "logs",
-        
+
+        columnOptions: new ColumnOptions
+        {
+            AdditionalColumns = new Collection<SqlColumn>
+            {
+                new SqlColumn
+                {
+                    ColumnName = "UserName",
+                    DataType = SqlDbType.NVarChar, // Özel sütunun veri tipini belirtin
+                    DataLength = 100 // Özel sütunun uzunluğunu belirtin (isteğe bağlı)
+                }
+            }
+        },
+
+
         autoCreateSqlTable: true
     )
+    .Enrich.FromLogContext()
     .CreateLogger();
 
 
@@ -233,6 +249,17 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.Use(async (context, next) =>
+{
+    var username = context.User?.Identity?.IsAuthenticated == true ? context.User.Identity.Name : null;
+
+    LogContext.PushProperty("UserName", username);
+
+    await next();
+});
+
+app.UseSerilogRequestLogging();
 
 app.UseCors("AllowMyOrigin");
 
