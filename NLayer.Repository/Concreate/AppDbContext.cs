@@ -29,6 +29,7 @@ namespace NLayer.Repository.Concreate
         public DbSet<PersonProductFeature> PersonProductFeature { get; set; }
         public DbSet<SpecialProductFeature> SpecialProductFeature { get; set; }
         public DbSet<Location> Locations { get; set; }
+        public DbSet<Log> Logs { get; set; }
 
 
     }
