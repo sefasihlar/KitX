@@ -1,441 +1,669 @@
-2023-11-13 01:53:59.702 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
-2023-11-13 01:53:59.888 -08:00 [INF] Now listening on: https://localhost:7290
-2023-11-13 01:53:59.889 -08:00 [INF] Now listening on: http://localhost:5091
-2023-11-13 01:53:59.890 -08:00 [INF] Application started. Press Ctrl+C to shut down.
-2023-11-13 01:53:59.890 -08:00 [INF] Hosting environment: Development
-2023-11-13 01:53:59.891 -08:00 [INF] Content root path: /Users/mobile/Desktop/KitX/NLayer.API
-2023-11-13 01:54:01.038 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
-2023-11-13 01:54:01.091 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 53.4720ms
-2023-11-13 01:54:01.105 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
-2023-11-13 01:54:01.135 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 30.0915ms
-2023-11-13 01:54:01.171 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
-2023-11-13 01:54:01.215 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 44.0717ms
-2023-11-13 03:27:17.544 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
-2023-11-13 03:27:17.737 -08:00 [INF] Now listening on: https://localhost:7290
-2023-11-13 03:27:17.738 -08:00 [INF] Now listening on: http://localhost:5091
-2023-11-13 03:27:17.739 -08:00 [INF] Application started. Press Ctrl+C to shut down.
-2023-11-13 03:27:17.739 -08:00 [INF] Hosting environment: Development
-2023-11-13 03:27:17.739 -08:00 [INF] Content root path: /Users/mobile/Desktop/KitX/NLayer.API
-2023-11-13 03:27:18.954 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
-2023-11-13 03:27:19.005 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 50.8271ms
-2023-11-13 03:27:19.018 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
-2023-11-13 03:27:19.048 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 30.2840ms
-2023-11-13 03:27:19.083 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
-2023-11-13 03:27:19.132 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 48.9990ms
-2023-11-13 03:30:03.194 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
-2023-11-13 03:30:03.401 -08:00 [INF] Now listening on: https://localhost:7290
-2023-11-13 03:30:03.403 -08:00 [INF] Now listening on: http://localhost:5091
-2023-11-13 03:30:03.404 -08:00 [INF] Application started. Press Ctrl+C to shut down.
-2023-11-13 03:30:03.404 -08:00 [INF] Hosting environment: Development
-2023-11-13 03:30:03.404 -08:00 [INF] Content root path: /Users/mobile/Desktop/KitX/NLayer.API
-2023-11-13 03:30:04.552 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
-2023-11-13 03:30:04.602 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 50.5067ms
-2023-11-13 03:30:04.790 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/swagger-ui.css - -
-2023-11-13 03:30:04.817 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
-2023-11-13 03:30:04.821 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/swagger-ui-bundle.js - -
-2023-11-13 03:30:04.826 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/swagger-ui-standalone-preset.js - -
-2023-11-13 03:30:04.836 -08:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
-2023-11-13 03:30:04.836 -08:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
-2023-11-13 03:30:04.837 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/swagger-ui.css - - - 200 143632 text/css 47.0901ms
-2023-11-13 03:30:04.837 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/swagger-ui-standalone-preset.js - - - 200 337162 text/javascript 9.8825ms
-2023-11-13 03:30:04.846 -08:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
-2023-11-13 03:30:04.847 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/swagger-ui-bundle.js - - - 200 1092889 text/javascript 25.8943ms
-2023-11-13 03:30:04.862 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 44.5015ms
-2023-11-13 03:30:04.921 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
-2023-11-13 03:30:04.969 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 47.8957ms
-2023-11-13 03:30:09.378 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
-2023-11-13 03:30:09.389 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
-2023-11-13 03:30:09.402 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
-2023-11-13 03:30:09.795 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
-2023-11-13 03:30:10.036 -08:00 [ERR] An error occurred using the connection to database 'u1129028_KitX' on server '94.73.170.49'.
-2023-11-13 03:30:10.049 -08:00 [ERR] An exception occurred while iterating over the results of a query for context type 'NLayer.Repository.Concreate.AppDbContext'.
-Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: TCP Provider, error: 35 - An internal exception was caught)
- ---> System.Security.Authentication.AuthenticationException: The remote certificate was rejected by the provided RemoteCertificateValidationCallback.
-   at System.Net.Security.SslStream.SendAuthResetSignal(ProtocolToken message, ExceptionDispatchInfo exception)
-   at System.Net.Security.SslStream.CompleteHandshake(SslAuthenticationOptions sslAuthenticationOptions)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
-   at System.Net.Security.SslStream.AuthenticateAsClient(SslClientAuthenticationOptions sslClientAuthenticationOptions)
-   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.EnableSsl(UInt32 options)
-   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at Microsoft.Data.SqlClient.TdsParser.EnableSsl(UInt32 info, SqlConnectionEncryptOption encrypt, Boolean integratedSecurity)
-   at Microsoft.Data.SqlClient.TdsParser.ConsumePreLoginHandshake(SqlConnectionEncryptOption encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean& marsCapable, Boolean& fedAuthRequired, Boolean tlsFirst)
-   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
-   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
---- End of stack trace from previous location ---
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
-ClientConnectionId:49ef0d04-e211-4785-a087-297f79c594b8
-Error Number:-2146893019,State:0,Class:20
-Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: TCP Provider, error: 35 - An internal exception was caught)
- ---> System.Security.Authentication.AuthenticationException: The remote certificate was rejected by the provided RemoteCertificateValidationCallback.
-   at System.Net.Security.SslStream.SendAuthResetSignal(ProtocolToken message, ExceptionDispatchInfo exception)
-   at System.Net.Security.SslStream.CompleteHandshake(SslAuthenticationOptions sslAuthenticationOptions)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
-   at System.Net.Security.SslStream.AuthenticateAsClient(SslClientAuthenticationOptions sslClientAuthenticationOptions)
-   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.EnableSsl(UInt32 options)
-   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at Microsoft.Data.SqlClient.TdsParser.EnableSsl(UInt32 info, SqlConnectionEncryptOption encrypt, Boolean integratedSecurity)
-   at Microsoft.Data.SqlClient.TdsParser.ConsumePreLoginHandshake(SqlConnectionEncryptOption encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean& marsCapable, Boolean& fedAuthRequired, Boolean tlsFirst)
-   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
-   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
---- End of stack trace from previous location ---
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
-ClientConnectionId:49ef0d04-e211-4785-a087-297f79c594b8
-Error Number:-2146893019,State:0,Class:20
-2023-11-13 03:30:10.096 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 692.4192ms
-2023-11-13 03:30:10.098 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
-2023-11-13 03:30:10.099 -08:00 [ERR] An unhandled exception has occurred while executing the request.
-Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: TCP Provider, error: 35 - An internal exception was caught)
- ---> System.Security.Authentication.AuthenticationException: The remote certificate was rejected by the provided RemoteCertificateValidationCallback.
-   at System.Net.Security.SslStream.SendAuthResetSignal(ProtocolToken message, ExceptionDispatchInfo exception)
-   at System.Net.Security.SslStream.CompleteHandshake(SslAuthenticationOptions sslAuthenticationOptions)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
-   at System.Net.Security.SslStream.AuthenticateAsClient(SslClientAuthenticationOptions sslClientAuthenticationOptions)
-   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.EnableSsl(UInt32 options)
-   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at Microsoft.Data.SqlClient.TdsParser.EnableSsl(UInt32 info, SqlConnectionEncryptOption encrypt, Boolean integratedSecurity)
-   at Microsoft.Data.SqlClient.TdsParser.ConsumePreLoginHandshake(SqlConnectionEncryptOption encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean& marsCapable, Boolean& fedAuthRequired, Boolean tlsFirst)
-   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
-   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
---- End of stack trace from previous location ---
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
-   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
-   at NLayer.API.Controllers.AccountController.Index() in /Users/mobile/Desktop/KitX/NLayer.API/Controllers/AccountController.cs:line 50
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
-   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+2023-11-17 01:38:18.765 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-11-17 01:38:18.987 -08:00 [INF] Now listening on: https://localhost:7290
+2023-11-17 01:38:18.987 -08:00 [INF] Now listening on: http://localhost:5091
+2023-11-17 01:38:18.989 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 01:38:18.989 -08:00 [INF] Hosting environment: Development
+2023-11-17 01:38:18.989 -08:00 [INF] Content root path: /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API
+2023-11-17 01:38:20.098 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 01:38:20.147 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 49.3192ms
+2023-11-17 01:38:20.154 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-17 01:38:20.184 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 29.7290ms
+2023-11-17 01:38:20.217 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-17 01:38:20.265 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 48.0711ms
+2023-11-17 01:38:38.170 -08:00 [INF] Request starting HTTP/1.1 POST https://localhost:7290/api/Account/login application/json 57
+2023-11-17 01:38:38.181 -08:00 [INF] CORS policy execution successful.
+2023-11-17 01:38:38.185 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Login (NLayer.API)'
+2023-11-17 01:38:38.196 -08:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(NLayer.Core.DTOs.AccountDtos.LoginDto) on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 01:38:38.606 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 01:38:38.973 -08:00 [INF] Executed DbCommand (58ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-11-17 01:38:39.084 -08:00 [INF] Executed DbCommand (33ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-11-17 01:38:39.206 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[NLayer.Core.DTOs.TokenDtos.TokenDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-17 01:38:39.214 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Login (NLayer.API) in 1016.8077ms
+2023-11-17 01:38:39.214 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Login (NLayer.API)'
+2023-11-17 01:38:39.217 -08:00 [INF] Request finished HTTP/1.1 POST https://localhost:7290/api/Account/login application/json 57 - 200 - application/json;+charset=utf-8 1047.0710ms
+2023-11-17 01:38:45.073 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 01:38:45.082 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 01:38:45.088 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 01:38:45.107 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 01:38:45.144 -08:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2023-11-17 01:38:45.147 -08:00 [INF] Kullancı listesi alındı
+2023-11-17 01:38:45.155 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.UserDtos.UserListDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-17 01:38:45.161 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 73.3019ms
+2023-11-17 01:38:45.161 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 01:38:45.162 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 200 - application/json;+charset=utf-8 88.6499ms
+2023-11-17 01:39:26.667 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 01:39:26.669 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 01:39:26.669 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 01:39:26.688 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 01:39:26.724 -08:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2023-11-17 01:39:26.728 -08:00 [INF] Kullancı listesi alındı
+2023-11-17 01:39:26.731 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.UserDtos.UserListDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-17 01:39:26.732 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 62.0027ms
+2023-11-17 01:39:26.732 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 01:39:26.732 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 200 - application/json;+charset=utf-8 65.3289ms
+2023-11-17 01:42:12.282 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-11-17 01:42:12.534 -08:00 [INF] Now listening on: https://localhost:7290
+2023-11-17 01:42:12.535 -08:00 [INF] Now listening on: http://localhost:5091
+2023-11-17 01:42:12.537 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 01:42:12.537 -08:00 [INF] Hosting environment: Development
+2023-11-17 01:42:12.537 -08:00 [INF] Content root path: /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API
+2023-11-17 01:42:13.605 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 01:42:13.655 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 50.5581ms
+2023-11-17 01:42:13.665 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-17 01:42:13.695 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 30.1115ms
+2023-11-17 01:42:13.730 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-17 01:42:13.779 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 48.9646ms
+2023-11-17 01:42:41.444 -08:00 [INF] Request starting HTTP/1.1 POST https://localhost:7290/api/Account/login application/json 57
+2023-11-17 01:42:41.453 -08:00 [INF] CORS policy execution successful.
+2023-11-17 01:42:41.458 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Login (NLayer.API)'
+2023-11-17 01:42:41.467 -08:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(NLayer.Core.DTOs.AccountDtos.LoginDto) on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 01:42:41.893 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 01:42:42.246 -08:00 [INF] Executed DbCommand (52ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-11-17 01:42:42.351 -08:00 [INF] Executed DbCommand (30ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-11-17 01:42:42.463 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[NLayer.Core.DTOs.TokenDtos.TokenDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-17 01:42:42.470 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Login (NLayer.API) in 1001.0445ms
+2023-11-17 01:42:42.470 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Login (NLayer.API)'
+2023-11-17 01:42:42.473 -08:00 [INF] Request finished HTTP/1.1 POST https://localhost:7290/api/Account/login application/json 57 - 200 - application/json;+charset=utf-8 1029.2662ms
+2023-11-17 01:42:57.406 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 01:42:57.412 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 01:42:57.418 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 01:42:57.449 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 01:42:57.487 -08:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2023-11-17 01:42:57.490 -08:00 [INF] Kullancı listesi alındı
+2023-11-17 01:42:57.499 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.UserDtos.UserListDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-17 01:42:57.506 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 87.1681ms
+2023-11-17 01:42:57.506 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 01:42:57.506 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 200 - application/json;+charset=utf-8 100.1353ms
+2023-11-17 01:47:17.821 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-11-17 01:47:18.045 -08:00 [INF] Now listening on: https://localhost:7290
+2023-11-17 01:47:18.046 -08:00 [INF] Now listening on: http://localhost:5091
+2023-11-17 01:47:18.047 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 01:47:18.047 -08:00 [INF] Hosting environment: Development
+2023-11-17 01:47:18.047 -08:00 [INF] Content root path: /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API
+2023-11-17 01:47:19.209 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 01:47:19.259 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 50.8005ms
+2023-11-17 01:47:19.267 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-17 01:47:19.295 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 27.4924ms
+2023-11-17 01:47:19.330 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-17 01:47:19.376 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 46.0712ms
+2023-11-17 01:47:42.350 -08:00 [INF] Request starting HTTP/1.1 POST https://localhost:7290/api/Account/login application/json 57
+2023-11-17 01:47:42.364 -08:00 [INF] CORS policy execution successful.
+2023-11-17 01:47:42.369 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Login (NLayer.API)'
+2023-11-17 01:47:42.379 -08:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(NLayer.Core.DTOs.AccountDtos.LoginDto) on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 01:47:42.792 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 01:47:43.149 -08:00 [INF] Executed DbCommand (50ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-11-17 01:47:43.243 -08:00 [INF] Executed DbCommand (31ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-11-17 01:47:43.369 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[NLayer.Core.DTOs.TokenDtos.TokenDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-17 01:47:43.376 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Login (NLayer.API) in 995.7097ms
+2023-11-17 01:47:43.376 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Login (NLayer.API)'
+2023-11-17 01:47:43.378 -08:00 [INF] Request finished HTTP/1.1 POST https://localhost:7290/api/Account/login application/json 57 - 200 - application/json;+charset=utf-8 1028.0466ms
+2023-11-17 01:48:25.480 -08:00 [INF] Request starting HTTP/1.1 POST https://localhost:7290/api/Account/login application/json 57
+2023-11-17 01:48:25.491 -08:00 [INF] CORS policy execution successful.
+2023-11-17 01:48:25.491 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Login (NLayer.API)'
+2023-11-17 01:48:25.491 -08:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(NLayer.Core.DTOs.AccountDtos.LoginDto) on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 01:48:25.516 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 01:48:25.552 -08:00 [INF] Executed DbCommand (34ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-11-17 01:48:25.584 -08:00 [INF] Executed DbCommand (31ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-11-17 01:48:25.659 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[NLayer.Core.DTOs.TokenDtos.TokenDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-17 01:48:25.659 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Login (NLayer.API) in 167.8505ms
+2023-11-17 01:48:25.659 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Login (NLayer.API)'
+2023-11-17 01:48:25.660 -08:00 [INF] Request finished HTTP/1.1 POST https://localhost:7290/api/Account/login application/json 57 - 200 - application/json;+charset=utf-8 179.8807ms
+2023-11-17 01:49:44.499 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-11-17 01:49:44.690 -08:00 [INF] Now listening on: https://localhost:7290
+2023-11-17 01:49:44.690 -08:00 [INF] Now listening on: http://localhost:5091
+2023-11-17 01:49:44.691 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 01:49:44.691 -08:00 [INF] Hosting environment: Development
+2023-11-17 01:49:44.691 -08:00 [INF] Content root path: /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API
+2023-11-17 01:49:45.815 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 01:49:45.867 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 52.0340ms
+2023-11-17 01:49:45.876 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-17 01:49:45.905 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 29.3181ms
+2023-11-17 01:49:45.938 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-17 01:49:45.984 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 45.2515ms
+2023-11-17 01:49:50.704 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 01:49:50.731 -08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-11-17 01:49:50.732 -08:00 [INF] AuthenticationScheme: Roles was challenged.
+2023-11-17 01:49:50.733 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 401 0 - 29.0995ms
+2023-11-17 01:50:09.020 -08:00 [INF] Request starting HTTP/1.1 POST https://localhost:7290/api/Account/login application/json 57
+2023-11-17 01:50:09.033 -08:00 [INF] CORS policy execution successful.
+2023-11-17 01:50:09.036 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Login (NLayer.API)'
+2023-11-17 01:50:09.049 -08:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(NLayer.Core.DTOs.AccountDtos.LoginDto) on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 01:50:09.474 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 01:50:09.817 -08:00 [INF] Executed DbCommand (48ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-11-17 01:50:10.096 -08:00 [INF] Executed DbCommand (207ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-11-17 01:50:10.236 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[NLayer.Core.DTOs.TokenDtos.TokenDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-17 01:50:10.243 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Login (NLayer.API) in 1191.9952ms
+2023-11-17 01:50:10.243 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Login (NLayer.API)'
+2023-11-17 01:50:10.246 -08:00 [INF] Request finished HTTP/1.1 POST https://localhost:7290/api/Account/login application/json 57 - 200 - application/json;+charset=utf-8 1225.8021ms
+2023-11-17 01:50:23.520 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 01:50:23.563 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 01:50:23.565 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 01:50:23.588 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 01:50:23.623 -08:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2023-11-17 01:50:23.627 -08:00 [INF] Kullanıcı listesi alındı
+2023-11-17 01:50:23.636 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.UserDtos.UserListDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-17 01:50:23.642 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 76.3245ms
+2023-11-17 01:50:23.642 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 01:50:23.642 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 200 - application/json;+charset=utf-8 121.7531ms
+2023-11-17 01:52:20.159 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-11-17 01:52:20.383 -08:00 [INF] Now listening on: https://localhost:7290
+2023-11-17 01:52:20.383 -08:00 [INF] Now listening on: http://localhost:5091
+2023-11-17 01:52:20.385 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 01:52:20.385 -08:00 [INF] Hosting environment: Development
+2023-11-17 01:52:20.385 -08:00 [INF] Content root path: /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API
+2023-11-17 01:52:21.479 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 01:52:21.523 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 45.4523ms
+2023-11-17 01:52:21.532 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-17 01:52:21.560 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 28.3400ms
+2023-11-17 01:52:21.595 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-17 01:52:21.644 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 49.2911ms
+2023-11-17 01:52:48.280 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 01:52:48.383 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 01:52:48.389 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 01:52:48.782 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 01:52:49.078 -08:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2023-11-17 01:52:49.121 -08:00 [INF] Kullanıcı listesi alındı
+2023-11-17 01:52:49.129 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.UserDtos.UserListDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-17 01:52:49.137 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 746.9335ms
+2023-11-17 01:52:49.138 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 01:52:49.140 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 200 - application/json;+charset=utf-8 859.6685ms
+2023-11-17 01:55:13.085 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-11-17 01:55:13.320 -08:00 [INF] Now listening on: https://localhost:7290
+2023-11-17 01:55:13.320 -08:00 [INF] Now listening on: http://localhost:5091
+2023-11-17 01:55:13.321 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 01:55:13.321 -08:00 [INF] Hosting environment: Development
+2023-11-17 01:55:13.321 -08:00 [INF] Content root path: /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API
+2023-11-17 01:55:14.372 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 01:55:14.417 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 46.3333ms
+2023-11-17 01:55:14.426 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-17 01:55:14.456 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 29.1690ms
+2023-11-17 01:55:14.491 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-17 01:55:14.536 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 45.2682ms
+2023-11-17 01:55:37.319 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 01:55:37.419 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 01:55:37.425 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 01:55:37.811 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 01:55:38.112 -08:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2023-11-17 01:55:38.158 -08:00 [INF] null Kullanıcı listesi alındı
+2023-11-17 01:55:38.166 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.UserDtos.UserListDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-17 01:55:38.174 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 747.7774ms
+2023-11-17 01:55:38.174 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 01:55:38.176 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 200 - application/json;+charset=utf-8 857.1610ms
+2023-11-17 01:56:41.723 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 01:56:41.736 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 01:56:41.736 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 01:56:46.120 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 01:56:46.160 -08:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2023-11-17 01:57:35.093 -08:00 [INF] null Kullanıcı listesi alındı
+2023-11-17 01:57:36.826 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.UserDtos.UserListDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-17 01:57:59.729 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 77985.0444ms
+2023-11-17 01:57:59.729 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 01:57:59.995 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 200 - application/json;+charset=utf-8 78265.0532ms
+2023-11-17 02:01:43.732 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-11-17 02:01:43.962 -08:00 [INF] Now listening on: https://localhost:7290
+2023-11-17 02:01:43.963 -08:00 [INF] Now listening on: http://localhost:5091
+2023-11-17 02:01:43.964 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 02:01:43.964 -08:00 [INF] Hosting environment: Development
+2023-11-17 02:01:43.964 -08:00 [INF] Content root path: /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API
+2023-11-17 02:01:45.018 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 02:01:45.069 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 52.5626ms
+2023-11-17 02:01:45.077 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-17 02:01:45.107 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 29.9862ms
+2023-11-17 02:01:45.141 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-17 02:01:45.189 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 48.1060ms
+2023-11-17 02:02:00.117 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 02:02:00.219 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 02:02:00.225 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 02:02:04.246 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 02:02:04.539 -08:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2023-11-17 02:18:51.587 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-11-17 02:18:51.859 -08:00 [INF] Now listening on: https://localhost:7290
+2023-11-17 02:18:51.859 -08:00 [INF] Now listening on: http://localhost:5091
+2023-11-17 02:18:51.860 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 02:18:51.860 -08:00 [INF] Hosting environment: Development
+2023-11-17 02:18:51.860 -08:00 [INF] Content root path: /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API
+2023-11-17 02:18:52.990 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 02:18:53.039 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 49.6075ms
+2023-11-17 02:18:53.049 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-17 02:18:53.079 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 29.3568ms
+2023-11-17 02:18:53.112 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-17 02:18:53.161 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 49.1675ms
+2023-11-17 02:19:41.531 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 02:19:41.640 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 02:19:41.647 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 02:19:59.319 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 02:19:59.623 -08:00 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2023-11-17 02:20:01.857 -08:00 [INF] sefasihlar Kullanıcı listesi alındı
+2023-11-17 02:20:02.417 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.UserDtos.UserListDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-17 02:20:10.352 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 02:20:10.581 -08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-11-17 02:20:11.570 -08:00 [INF] AuthenticationScheme: Roles was challenged.
+2023-11-17 02:20:11.578 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 401 0 - 1225.7230ms
+2023-11-17 02:20:20.529 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 38880.0094ms
+2023-11-17 02:20:20.529 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 02:20:20.738 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 200 - application/json;+charset=utf-8 39206.9586ms
+2023-11-17 02:20:40.601 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 02:20:40.607 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 02:20:40.608 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 02:20:40.629 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 02:20:40.665 -08:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2023-11-17 02:20:48.317 -08:00 [INF] sefasihlar Kullanıcı listesi alındı
+2023-11-17 02:20:48.759 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.UserDtos.UserListDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-17 02:21:03.398 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 22789.9342ms
+2023-11-17 02:21:03.399 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 02:21:03.585 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 200 - application/json;+charset=utf-8 22983.7588ms
+2023-11-17 02:24:22.792 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-11-17 02:24:23.044 -08:00 [INF] Now listening on: https://localhost:7290
+2023-11-17 02:24:23.045 -08:00 [INF] Now listening on: http://localhost:5091
+2023-11-17 02:24:23.045 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 02:24:23.045 -08:00 [INF] Hosting environment: Development
+2023-11-17 02:24:23.045 -08:00 [INF] Content root path: /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API
+2023-11-17 02:24:25.803 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 02:24:25.851 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 48.7280ms
+2023-11-17 02:24:25.859 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-17 02:24:25.889 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 29.3215ms
+2023-11-17 02:24:25.923 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-17 02:24:25.971 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 47.4551ms
+2023-11-17 02:24:55.110 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 02:24:55.220 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 02:24:55.226 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 02:24:55.613 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 02:24:55.912 -08:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2023-11-17 02:24:55.955 -08:00 [INF] null Kullanıcı listesi alındı
+2023-11-17 02:24:55.965 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.UserDtos.UserListDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-17 02:24:55.973 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 746.0457ms
+2023-11-17 02:24:55.974 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 02:24:55.976 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 200 - application/json;+charset=utf-8 866.8524ms
+2023-11-17 02:25:19.672 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 02:25:19.679 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 02:25:19.680 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 02:25:19.706 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 02:25:19.748 -08:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2023-11-17 02:25:19.750 -08:00 [INF] null Kullanıcı listesi alındı
+2023-11-17 02:25:19.751 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.UserDtos.UserListDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-17 02:25:19.751 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 71.227ms
+2023-11-17 02:25:19.751 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 02:25:19.751 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 200 - application/json;+charset=utf-8 79.0101ms
+2023-11-17 02:27:05.062 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-11-17 02:27:05.289 -08:00 [INF] Now listening on: https://localhost:7290
+2023-11-17 02:27:05.290 -08:00 [INF] Now listening on: http://localhost:5091
+2023-11-17 02:27:05.292 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 02:27:05.292 -08:00 [INF] Hosting environment: Development
+2023-11-17 02:27:05.292 -08:00 [INF] Content root path: /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API
+2023-11-17 02:27:06.375 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 02:27:06.425 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 50.1162ms
+2023-11-17 02:27:06.435 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-17 02:27:06.464 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 29.5159ms
+2023-11-17 02:27:06.499 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-17 02:27:06.548 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 48.1559ms
+2023-11-17 02:27:22.431 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 02:27:22.487 -08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authentication handler is registered for the scheme 'Bearer'. The registered schemes are: Identity.Application, Identity.External, Identity.TwoFactorRememberMe, Identity.TwoFactorUserId, Roles. Did you forget to call AddAuthentication().Add[SomeAuthHandler]("Bearer",...)?
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authorization.Policy.PolicyEvaluator.AuthenticateAsync(AuthorizationPolicy policy, HttpContext context)
    at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_10>d.MoveNext() in /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API/Program.cs:line 259
+--- End of stack trace from previous location ---
    at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
-ClientConnectionId:49ef0d04-e211-4785-a087-297f79c594b8
-Error Number:-2146893019,State:0,Class:20
-2023-11-13 03:30:10.110 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 500 - text/plain;+charset=utf-8 732.0811ms
-2023-11-13 03:32:47.391 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
-2023-11-13 03:32:47.611 -08:00 [INF] Now listening on: https://localhost:7290
-2023-11-13 03:32:47.612 -08:00 [INF] Now listening on: http://localhost:5091
-2023-11-13 03:32:47.613 -08:00 [INF] Application started. Press Ctrl+C to shut down.
-2023-11-13 03:32:47.613 -08:00 [INF] Hosting environment: Development
-2023-11-13 03:32:47.613 -08:00 [INF] Content root path: /Users/mobile/Desktop/KitX/NLayer.API
-2023-11-13 03:32:48.828 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
-2023-11-13 03:32:48.882 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 55.4754ms
-2023-11-13 03:32:48.890 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
-2023-11-13 03:32:48.918 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 27.6097ms
-2023-11-13 03:32:48.983 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
-2023-11-13 03:32:49.033 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 49.6635ms
-2023-11-13 03:32:53.162 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
-2023-11-13 03:32:53.170 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
-2023-11-13 03:32:53.186 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
-2023-11-13 03:32:53.565 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
-2023-11-13 03:32:53.792 -08:00 [ERR] An error occurred using the connection to database 'u1129028_KitX' on server '94.73.170.49'.
-2023-11-13 03:32:53.812 -08:00 [ERR] An exception occurred while iterating over the results of a query for context type 'NLayer.Repository.Concreate.AppDbContext'.
-Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: TCP Provider, error: 35 - An internal exception was caught)
- ---> System.Security.Authentication.AuthenticationException: The remote certificate was rejected by the provided RemoteCertificateValidationCallback.
-   at System.Net.Security.SslStream.SendAuthResetSignal(ProtocolToken message, ExceptionDispatchInfo exception)
-   at System.Net.Security.SslStream.CompleteHandshake(SslAuthenticationOptions sslAuthenticationOptions)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
-   at System.Net.Security.SslStream.AuthenticateAsClient(SslClientAuthenticationOptions sslClientAuthenticationOptions)
-   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.EnableSsl(UInt32 options)
-   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at Microsoft.Data.SqlClient.TdsParser.EnableSsl(UInt32 info, SqlConnectionEncryptOption encrypt, Boolean integratedSecurity)
-   at Microsoft.Data.SqlClient.TdsParser.ConsumePreLoginHandshake(SqlConnectionEncryptOption encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean& marsCapable, Boolean& fedAuthRequired, Boolean tlsFirst)
-   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
-   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
---- End of stack trace from previous location ---
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
-ClientConnectionId:b1568a4e-cdf1-412d-83e3-246499c061a3
-Error Number:-2146893019,State:0,Class:20
-Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: TCP Provider, error: 35 - An internal exception was caught)
- ---> System.Security.Authentication.AuthenticationException: The remote certificate was rejected by the provided RemoteCertificateValidationCallback.
-   at System.Net.Security.SslStream.SendAuthResetSignal(ProtocolToken message, ExceptionDispatchInfo exception)
-   at System.Net.Security.SslStream.CompleteHandshake(SslAuthenticationOptions sslAuthenticationOptions)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
-   at System.Net.Security.SslStream.AuthenticateAsClient(SslClientAuthenticationOptions sslClientAuthenticationOptions)
-   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.EnableSsl(UInt32 options)
-   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at Microsoft.Data.SqlClient.TdsParser.EnableSsl(UInt32 info, SqlConnectionEncryptOption encrypt, Boolean integratedSecurity)
-   at Microsoft.Data.SqlClient.TdsParser.ConsumePreLoginHandshake(SqlConnectionEncryptOption encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean& marsCapable, Boolean& fedAuthRequired, Boolean tlsFirst)
-   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
-   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
---- End of stack trace from previous location ---
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
-ClientConnectionId:b1568a4e-cdf1-412d-83e3-246499c061a3
-Error Number:-2146893019,State:0,Class:20
-2023-11-13 03:32:53.862 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 674.6666ms
-2023-11-13 03:32:53.863 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
-2023-11-13 03:32:53.865 -08:00 [ERR] An unhandled exception has occurred while executing the request.
-Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: TCP Provider, error: 35 - An internal exception was caught)
- ---> System.Security.Authentication.AuthenticationException: The remote certificate was rejected by the provided RemoteCertificateValidationCallback.
-   at System.Net.Security.SslStream.SendAuthResetSignal(ProtocolToken message, ExceptionDispatchInfo exception)
-   at System.Net.Security.SslStream.CompleteHandshake(SslAuthenticationOptions sslAuthenticationOptions)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
-   at System.Net.Security.SslStream.AuthenticateAsClient(SslClientAuthenticationOptions sslClientAuthenticationOptions)
-   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.EnableSsl(UInt32 options)
-   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at Microsoft.Data.SqlClient.TdsParser.EnableSsl(UInt32 info, SqlConnectionEncryptOption encrypt, Boolean integratedSecurity)
-   at Microsoft.Data.SqlClient.TdsParser.ConsumePreLoginHandshake(SqlConnectionEncryptOption encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean& marsCapable, Boolean& fedAuthRequired, Boolean tlsFirst)
-   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
-   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
---- End of stack trace from previous location ---
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
-   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
-   at NLayer.API.Controllers.AccountController.Index() in /Users/mobile/Desktop/KitX/NLayer.API/Controllers/AccountController.cs:line 50
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
-   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+2023-11-17 02:27:22.505 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 500 - text/plain;+charset=utf-8 75.0117ms
+2023-11-17 02:27:44.592 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 02:27:44.615 -08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authentication handler is registered for the scheme 'Bearer'. The registered schemes are: Identity.Application, Identity.External, Identity.TwoFactorRememberMe, Identity.TwoFactorUserId, Roles. Did you forget to call AddAuthentication().Add[SomeAuthHandler]("Bearer",...)?
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authorization.Policy.PolicyEvaluator.AuthenticateAsync(AuthorizationPolicy policy, HttpContext context)
    at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_10>d.MoveNext() in /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API/Program.cs:line 259
+--- End of stack trace from previous location ---
    at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
-ClientConnectionId:b1568a4e-cdf1-412d-83e3-246499c061a3
-Error Number:-2146893019,State:0,Class:20
-2023-11-13 03:32:53.876 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 500 - text/plain;+charset=utf-8 714.4354ms
-2023-11-13 03:34:37.182 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
-2023-11-13 03:34:37.347 -08:00 [INF] Now listening on: https://localhost:7290
-2023-11-13 03:34:37.348 -08:00 [INF] Now listening on: http://localhost:5091
-2023-11-13 03:34:37.349 -08:00 [INF] Application started. Press Ctrl+C to shut down.
-2023-11-13 03:34:37.349 -08:00 [INF] Hosting environment: Development
-2023-11-13 03:34:37.349 -08:00 [INF] Content root path: /Users/mobile/Desktop/KitX/NLayer.API
-2023-11-13 03:34:39.454 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
-2023-11-13 03:34:39.502 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 49.5594ms
-2023-11-13 03:34:39.525 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
-2023-11-13 03:34:39.551 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 26.8972ms
-2023-11-13 03:34:39.676 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
-2023-11-13 03:34:39.723 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 46.8963ms
-2023-11-13 03:34:43.760 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
-2023-11-13 03:34:43.767 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
-2023-11-13 03:34:43.787 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
-2023-11-13 03:34:44.161 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
-2023-11-13 03:34:44.402 -08:00 [ERR] An error occurred using the connection to database 'u1129028_KitX' on server '94.73.170.49'.
-2023-11-13 03:34:44.422 -08:00 [ERR] An exception occurred while iterating over the results of a query for context type 'NLayer.Repository.Concreate.AppDbContext'.
-Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: TCP Provider, error: 35 - An internal exception was caught)
- ---> System.Security.Authentication.AuthenticationException: The remote certificate was rejected by the provided RemoteCertificateValidationCallback.
-   at System.Net.Security.SslStream.SendAuthResetSignal(ProtocolToken message, ExceptionDispatchInfo exception)
-   at System.Net.Security.SslStream.CompleteHandshake(SslAuthenticationOptions sslAuthenticationOptions)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
-   at System.Net.Security.SslStream.AuthenticateAsClient(SslClientAuthenticationOptions sslClientAuthenticationOptions)
-   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.EnableSsl(UInt32 options)
-   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at Microsoft.Data.SqlClient.TdsParser.EnableSsl(UInt32 info, SqlConnectionEncryptOption encrypt, Boolean integratedSecurity)
-   at Microsoft.Data.SqlClient.TdsParser.ConsumePreLoginHandshake(SqlConnectionEncryptOption encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean& marsCapable, Boolean& fedAuthRequired, Boolean tlsFirst)
-   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
-   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
---- End of stack trace from previous location ---
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
-ClientConnectionId:2e08c998-4219-4779-a50b-5a30496defdb
-Error Number:-2146893019,State:0,Class:20
-Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: TCP Provider, error: 35 - An internal exception was caught)
- ---> System.Security.Authentication.AuthenticationException: The remote certificate was rejected by the provided RemoteCertificateValidationCallback.
-   at System.Net.Security.SslStream.SendAuthResetSignal(ProtocolToken message, ExceptionDispatchInfo exception)
-   at System.Net.Security.SslStream.CompleteHandshake(SslAuthenticationOptions sslAuthenticationOptions)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
-   at System.Net.Security.SslStream.AuthenticateAsClient(SslClientAuthenticationOptions sslClientAuthenticationOptions)
-   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.EnableSsl(UInt32 options)
-   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at Microsoft.Data.SqlClient.TdsParser.EnableSsl(UInt32 info, SqlConnectionEncryptOption encrypt, Boolean integratedSecurity)
-   at Microsoft.Data.SqlClient.TdsParser.ConsumePreLoginHandshake(SqlConnectionEncryptOption encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean& marsCapable, Boolean& fedAuthRequired, Boolean tlsFirst)
-   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
-   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
---- End of stack trace from previous location ---
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
-ClientConnectionId:2e08c998-4219-4779-a50b-5a30496defdb
-Error Number:-2146893019,State:0,Class:20
-2023-11-13 03:34:44.473 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 684.0998ms
-2023-11-13 03:34:44.475 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
-2023-11-13 03:34:44.477 -08:00 [ERR] An unhandled exception has occurred while executing the request.
-Microsoft.Data.SqlClient.SqlException (0x80131904): A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: TCP Provider, error: 35 - An internal exception was caught)
- ---> System.Security.Authentication.AuthenticationException: The remote certificate was rejected by the provided RemoteCertificateValidationCallback.
-   at System.Net.Security.SslStream.SendAuthResetSignal(ProtocolToken message, ExceptionDispatchInfo exception)
-   at System.Net.Security.SslStream.CompleteHandshake(SslAuthenticationOptions sslAuthenticationOptions)
-   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
-   at System.Net.Security.SslStream.AuthenticateAsClient(SslClientAuthenticationOptions sslClientAuthenticationOptions)
-   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.EnableSsl(UInt32 options)
-   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   at Microsoft.Data.SqlClient.TdsParser.EnableSsl(UInt32 info, SqlConnectionEncryptOption encrypt, Boolean integratedSecurity)
-   at Microsoft.Data.SqlClient.TdsParser.ConsumePreLoginHandshake(SqlConnectionEncryptOption encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean& marsCapable, Boolean& fedAuthRequired, Boolean tlsFirst)
-   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
-   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
-   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
-   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
---- End of stack trace from previous location ---
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
-   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
-   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
-   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
-   at NLayer.API.Controllers.AccountController.Index() in /Users/mobile/Desktop/KitX/NLayer.API/Controllers/AccountController.cs:line 50
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
-   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
-   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+2023-11-17 02:27:44.617 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 500 - text/plain;+charset=utf-8 25.8461ms
+2023-11-17 02:27:54.823 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-11-17 02:27:55.103 -08:00 [INF] Now listening on: https://localhost:7290
+2023-11-17 02:27:55.104 -08:00 [INF] Now listening on: http://localhost:5091
+2023-11-17 02:27:55.104 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 02:27:55.105 -08:00 [INF] Hosting environment: Development
+2023-11-17 02:27:55.105 -08:00 [INF] Content root path: /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API
+2023-11-17 02:27:56.145 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 02:27:56.195 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 49.9218ms
+2023-11-17 02:27:56.203 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-17 02:27:56.234 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 31.0649ms
+2023-11-17 02:27:56.269 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-17 02:27:56.318 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 48.9142ms
+2023-11-17 02:28:05.883 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 02:28:05.993 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 02:28:06.000 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 02:28:06.113 -08:00 [INF] null Kullanıcı listesi alındı
+2023-11-17 02:28:06.402 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 02:28:06.696 -08:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2023-11-17 02:28:06.743 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.UserDtos.UserListDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-17 02:28:06.754 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 752.6238ms
+2023-11-17 02:28:06.754 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 02:28:06.756 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 200 - application/json;+charset=utf-8 873.8827ms
+2023-11-17 02:28:51.119 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 02:28:51.128 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 02:28:51.128 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 02:42:54.132 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-11-17 02:42:54.415 -08:00 [INF] Now listening on: https://localhost:7290
+2023-11-17 02:42:54.416 -08:00 [INF] Now listening on: http://localhost:5091
+2023-11-17 02:42:54.417 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 02:42:54.417 -08:00 [INF] Hosting environment: Development
+2023-11-17 02:42:54.417 -08:00 [INF] Content root path: /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API
+2023-11-17 02:42:55.507 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 02:42:55.559 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 53.1770ms
+2023-11-17 02:42:55.569 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-17 02:42:55.601 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 32.1835ms
+2023-11-17 02:42:55.636 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-17 02:42:55.685 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 48.9098ms
+2023-11-17 02:43:15.885 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 02:43:15.940 -08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authentication handler is registered for the scheme 'Bearer'. The registered schemes are: Identity.Application, Identity.External, Identity.TwoFactorRememberMe, Identity.TwoFactorUserId, Roles. Did you forget to call AddAuthentication().Add[SomeAuthHandler]("Bearer",...)?
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authorization.Policy.PolicyEvaluator.AuthenticateAsync(AuthorizationPolicy policy, HttpContext context)
    at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_10>d.MoveNext() in /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API/Program.cs:line 259
+--- End of stack trace from previous location ---
    at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+<<<<<<< HEAD
+2023-11-17 02:43:15.957 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 500 - text/plain;+charset=utf-8 72.3410ms
+2023-11-17 02:43:47.036 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-11-17 02:43:47.254 -08:00 [INF] Now listening on: https://localhost:7290
+2023-11-17 02:43:47.254 -08:00 [INF] Now listening on: http://localhost:5091
+2023-11-17 02:43:47.256 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 02:43:47.256 -08:00 [INF] Hosting environment: Development
+2023-11-17 02:43:47.256 -08:00 [INF] Content root path: /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API
+2023-11-17 02:43:48.381 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 02:43:48.430 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 49.2183ms
+2023-11-17 02:43:48.441 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-17 02:43:48.469 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 27.9247ms
+2023-11-17 02:43:48.502 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-17 02:43:48.549 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 46.3188ms
+2023-11-17 02:43:51.956 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 02:43:51.959 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 02:43:51.965 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 02:43:52.078 -08:00 [INF] null Kullanıcı listesi alındı
+2023-11-17 02:43:52.361 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 02:43:52.675 -08:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2023-11-17 02:43:52.725 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.UserDtos.UserListDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-17 02:43:52.733 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 766.3393ms
+2023-11-17 02:43:52.734 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 02:43:52.736 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 200 - application/json;+charset=utf-8 780.0115ms
+2023-11-17 02:48:08.994 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-11-17 02:48:09.216 -08:00 [INF] Now listening on: https://localhost:7290
+2023-11-17 02:48:09.217 -08:00 [INF] Now listening on: http://localhost:5091
+2023-11-17 02:48:09.218 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 02:48:09.218 -08:00 [INF] Hosting environment: Development
+2023-11-17 02:48:09.218 -08:00 [INF] Content root path: /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API
+2023-11-17 02:48:10.342 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 02:48:10.394 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 51.6049ms
+2023-11-17 02:48:10.402 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-17 02:48:10.438 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 35.8697ms
+2023-11-17 02:48:10.473 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-17 02:48:10.521 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 47.5957ms
+2023-11-17 02:48:36.127 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 02:48:36.235 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 02:48:36.241 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 02:52:15.849 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-11-17 02:52:16.146 -08:00 [INF] Now listening on: https://localhost:7290
+2023-11-17 02:52:16.147 -08:00 [INF] Now listening on: http://localhost:5091
+2023-11-17 02:52:16.148 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 02:52:16.148 -08:00 [INF] Hosting environment: Development
+2023-11-17 02:52:16.148 -08:00 [INF] Content root path: /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API
+2023-11-17 02:52:17.269 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 02:52:17.317 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 47.7840ms
+2023-11-17 02:52:17.326 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-17 02:52:17.355 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 29.2478ms
+2023-11-17 02:52:17.389 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-17 02:52:17.437 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 47.2442ms
+2023-11-17 02:52:41.735 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 02:52:41.842 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 02:52:41.848 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 04:04:12.878 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-11-17 04:04:13.078 -08:00 [INF] Now listening on: https://localhost:7290
+2023-11-17 04:04:13.079 -08:00 [INF] Now listening on: http://localhost:5091
+2023-11-17 04:04:13.079 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 04:04:13.079 -08:00 [INF] Hosting environment: Development
+2023-11-17 04:04:13.079 -08:00 [INF] Content root path: /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API
+2023-11-17 04:04:14.216 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 04:04:14.266 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 50.6610ms
+2023-11-17 04:04:14.275 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-17 04:04:14.306 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 30.6388ms
+2023-11-17 04:04:14.341 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-17 04:04:14.389 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 48.7182ms
+2023-11-17 04:07:22.759 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-11-17 04:07:23.031 -08:00 [INF] Now listening on: https://localhost:7290
+2023-11-17 04:07:23.031 -08:00 [INF] Now listening on: http://localhost:5091
+2023-11-17 04:07:23.033 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 04:07:23.033 -08:00 [INF] Hosting environment: Development
+2023-11-17 04:07:23.033 -08:00 [INF] Content root path: /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API
+2023-11-17 04:07:26.942 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 04:07:26.991 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 49.9298ms
+2023-11-17 04:07:26.999 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-17 04:07:27.027 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 28.0229ms
+2023-11-17 04:07:27.063 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-17 04:07:27.113 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 50.4610ms
+2023-11-17 04:07:47.129 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 04:07:47.237 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 04:07:47.243 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 04:07:54.702 -08:00 [INF] SefaSihlar Kullanıcı listesi alındı
+2023-11-17 04:08:01.700 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 04:08:01.999 -08:00 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2023-11-17 04:08:03.633 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.UserDtos.UserListDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-17 04:08:19.620 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 32374.8433ms
+2023-11-17 04:08:19.620 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 04:08:19.840 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 200 - application/json;+charset=utf-8 32712.4084ms
+2023-11-17 04:11:00.774 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-11-17 04:11:01.019 -08:00 [INF] Now listening on: https://localhost:7290
+2023-11-17 04:11:01.020 -08:00 [INF] Now listening on: http://localhost:5091
+2023-11-17 04:11:01.020 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 04:11:01.020 -08:00 [INF] Hosting environment: Development
+2023-11-17 04:11:01.020 -08:00 [INF] Content root path: /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API
+2023-11-17 04:11:04.862 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 04:11:04.914 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 51.9664ms
+2023-11-17 04:11:04.924 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-17 04:11:04.955 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 30.9394ms
+2023-11-17 04:11:04.990 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-17 04:11:05.040 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 49.5312ms
+2023-11-17 04:11:10.288 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 04:11:10.369 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 04:11:10.375 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 04:11:24.555 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-11-17 04:11:24.762 -08:00 [INF] Now listening on: https://localhost:7290
+2023-11-17 04:11:24.763 -08:00 [INF] Now listening on: http://localhost:5091
+2023-11-17 04:11:24.764 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 04:11:24.764 -08:00 [INF] Hosting environment: Development
+2023-11-17 04:11:24.764 -08:00 [INF] Content root path: /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API
+2023-11-17 04:11:25.892 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 04:11:25.940 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 47.9056ms
+2023-11-17 04:11:25.949 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-17 04:11:25.981 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 31.8973ms
+2023-11-17 04:11:26.016 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-17 04:11:26.065 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 49.1292ms
+2023-11-17 04:11:32.155 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 04:11:32.183 -08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-11-17 04:11:32.185 -08:00 [INF] AuthenticationScheme: Roles was challenged.
+2023-11-17 04:11:32.185 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 401 0 - 30.2480ms
+2023-11-17 04:11:35.325 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 04:11:35.390 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 04:11:35.396 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 04:11:35.508 -08:00 [INF] SefaSihlar Kullanıcı listesi alındı
+2023-11-17 04:11:35.793 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 04:11:36.085 -08:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2023-11-17 04:11:36.140 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.UserDtos.UserListDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-17 04:11:36.148 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 750.2522ms
+2023-11-17 04:11:36.149 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 04:11:36.151 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 200 - application/json;+charset=utf-8 825.5720ms
+2023-11-17 04:12:09.038 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 04:12:09.044 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 04:12:09.045 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 04:12:09.047 -08:00 [INF] SefaSihlar Kullanıcı listesi alındı
+2023-11-17 04:12:09.076 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 04:12:09.113 -08:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2023-11-17 04:12:09.114 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.UserDtos.UserListDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-17 04:12:09.115 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 69.9562ms
+2023-11-17 04:12:09.115 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 04:12:09.115 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 200 - application/json;+charset=utf-8 77.8996ms
+2023-11-17 04:12:18.319 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Account - -
+2023-11-17 04:12:18.321 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 04:12:18.321 -08:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-17 04:12:18.322 -08:00 [INF] SefaSihlar Kullanıcı listesi alındı
+2023-11-17 04:12:18.338 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-17 04:12:18.374 -08:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2023-11-17 04:12:18.377 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.UserDtos.UserListDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-17 04:12:18.377 -08:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 56.3902ms
+2023-11-17 04:12:18.378 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-17 04:12:18.378 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 200 - application/json;+charset=utf-8 58.7918ms
+2023-11-17 04:13:56.550 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 04:13:56.552 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 1.9938ms
+2023-11-17 04:13:56.674 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/apple-touch-icon-precomposed.png - -
+2023-11-17 04:13:56.703 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/apple-touch-icon-precomposed.png - - - 404 0 - 28.4950ms
+2023-11-17 04:13:56.708 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/apple-touch-icon.png - -
+2023-11-17 04:13:56.710 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/apple-touch-icon.png - - - 404 0 - 1.9311ms
+2023-11-17 04:13:56.713 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/favicon-32x32.png - -
+2023-11-17 04:13:56.720 -08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-11-17 04:13:56.720 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/favicon-32x32.png - - - 200 628 image/png 7.1059ms
+2023-11-17 04:13:56.725 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-17 04:13:56.725 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 0.5148ms
+2023-11-17 04:13:56.731 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/apple-touch-icon-precomposed.png - -
+2023-11-17 04:13:56.731 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/apple-touch-icon-precomposed.png - - - 404 0 - 0.4228ms
+2023-11-17 04:13:56.732 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/apple-touch-icon.png - -
+2023-11-17 04:13:56.732 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/apple-touch-icon.png - - - 404 0 - 0.1766ms
+2023-11-20 01:56:26.221 -08:00 [INF] User profile is available. Using '/Users/mobile/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-11-20 01:56:26.538 -08:00 [INF] Now listening on: https://localhost:7290
+2023-11-20 01:56:26.538 -08:00 [INF] Now listening on: http://localhost:5091
+2023-11-20 01:56:26.539 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-20 01:56:26.539 -08:00 [INF] Hosting environment: Development
+2023-11-20 01:56:26.539 -08:00 [INF] Content root path: /Users/mobile/Desktop/DevelopmetKitX/KitX/NLayer.API
+2023-11-20 01:56:29.033 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api - -
+2023-11-20 01:56:29.050 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api - - - 301 0 - 17.5879ms
+2023-11-20 01:56:29.053 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-20 01:56:29.084 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 31.6336ms
+2023-11-20 01:56:29.122 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/swagger-ui.css - -
+2023-11-20 01:56:29.122 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-20 01:56:29.231 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/swagger-ui-standalone-preset.js - -
+2023-11-20 01:56:29.231 -08:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-11-20 01:56:29.231 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/swagger-ui.css - - - 200 143632 text/css 109.6742ms
+2023-11-20 01:56:29.231 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/swagger-ui-bundle.js - -
+2023-11-20 01:56:29.397 -08:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-11-20 01:56:29.397 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/swagger-ui-standalone-preset.js - - - 200 337162 text/javascript 166.9436ms
+2023-11-20 01:56:29.447 -08:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-11-20 01:56:29.447 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/swagger-ui-bundle.js - - - 200 1092889 text/javascript 215.1841ms
+2023-11-20 01:56:29.462 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 340.6662ms
+2023-11-20 01:56:29.522 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-20 01:56:29.572 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 50.2687ms
+2023-11-20 01:57:56.596 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Location/GetAll - -
+2023-11-20 01:57:56.638 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.LocationController.GetAll (NLayer.API)'
+2023-11-20 01:57:56.651 -08:00 [INF] Route matched with {action = "GetAll", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller NLayer.API.Controllers.LocationController (NLayer.API).
+2023-11-20 01:57:57.017 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-20 01:57:57.374 -08:00 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Condition], [l].[CreatedDate], [l].[Latitude], [l].[Lonqitude], [l].[ProductId], [l].[UpdatedDate]
+FROM [Locations] AS [l]
+2023-11-20 01:57:57.401 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.LocationDtos.LocationDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-20 01:57:57.410 -08:00 [INF] Executed action NLayer.API.Controllers.LocationController.GetAll (NLayer.API) in 757.6077ms
+2023-11-20 01:57:57.410 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.LocationController.GetAll (NLayer.API)'
+2023-11-20 01:57:57.412 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Location/GetAll - - - 200 - application/json;+charset=utf-8 816.3888ms
+2023-11-20 02:00:53.757 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/index.html - -
+2023-11-20 02:00:53.763 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/index.html - - - 200 - text/html;charset=utf-8 5.5890ms
+2023-11-20 02:00:53.797 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/path/to/custom.css - -
+2023-11-20 02:00:53.800 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/path/to/custom.css - - - 404 0 - 3.0211ms
+2023-11-20 02:00:53.889 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - -
+2023-11-20 02:00:53.893 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/favicon-32x32.png - -
+2023-11-20 02:00:53.893 -08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-11-20 02:00:53.894 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/favicon-32x32.png - - - 200 628 image/png 1.1197ms
+2023-11-20 02:00:53.916 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 26.6783ms
+2023-11-20 02:01:00.531 -08:00 [INF] Request starting HTTP/1.1 GET https://localhost:7290/api/Location/GetAll - -
+2023-11-20 02:01:00.539 -08:00 [INF] Executing endpoint 'NLayer.API.Controllers.LocationController.GetAll (NLayer.API)'
+2023-11-20 02:01:00.539 -08:00 [INF] Route matched with {action = "GetAll", controller = "Location"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller NLayer.API.Controllers.LocationController (NLayer.API).
+2023-11-20 02:01:00.569 -08:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-20 02:01:00.604 -08:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Condition], [l].[CreatedDate], [l].[Latitude], [l].[Lonqitude], [l].[ProductId], [l].[UpdatedDate]
+FROM [Locations] AS [l]
+2023-11-20 02:01:00.605 -08:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.LocationDtos.LocationDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-20 02:01:00.605 -08:00 [INF] Executed action NLayer.API.Controllers.LocationController.GetAll (NLayer.API) in 66.0928ms
+2023-11-20 02:01:00.605 -08:00 [INF] Executed endpoint 'NLayer.API.Controllers.LocationController.GetAll (NLayer.API)'
+2023-11-20 02:01:00.606 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Location/GetAll - - - 200 - application/json;+charset=utf-8 74.3308ms
+=======
 ClientConnectionId:2e08c998-4219-4779-a50b-5a30496defdb
 Error Number:-2146893019,State:0,Class:20
 2023-11-13 03:34:44.488 -08:00 [INF] Request finished HTTP/1.1 GET https://localhost:7290/api/Account - - - 500 - text/plain;+charset=utf-8 728.6718ms
@@ -7221,6 +7449,7 @@ FROM [Logs] AS [l]
 2023-11-21 12:12:30.539 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44360/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 13.6482ms
 2023-11-21 12:12:30.621 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44360/swagger/v1/swagger.json - -
 2023-11-21 12:12:30.635 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44360/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 14.1801ms
+<<<<<<< HEAD
 2023-11-21 12:37:23.274 +03:00 [INF] User profile is available. Using 'C:\Users\metaa\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
 2023-11-21 12:37:23.371 +03:00 [INF] Application started. Press Ctrl+C to shut down.
 2023-11-21 12:37:23.371 +03:00 [INF] Hosting environment: Development
@@ -10838,3 +11067,6 @@ FROM [Logs] AS [l]
 2023-11-21 12:45:35.911 +03:00 [INF] Executed action NLayer.API.Controllers.LogsController.GetAll (NLayer.API) in 167.4836ms
 2023-11-21 12:45:35.911 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.LogsController.GetAll (NLayer.API)'
 2023-11-21 12:45:35.912 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44360/api/Logs - - - 200 - application/json;+charset=utf-8 172.4294ms
+=======
+>>>>>>> 6d8a24127412f9c75d7f871660a807428b3edb87
+>>>>>>> 6749b1094a33545c130602cc3d227cb02f66c319
