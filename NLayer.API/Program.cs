@@ -19,11 +19,14 @@ using NLayer.Repository.UnitOfWorks;
 using NLayer.Service.Mapping;
 using NLayer.Service.Services;
 using Serilog;
+using Serilog.Context;
 using Serilog.Core;
+using Serilog.Events;
 using Serilog.Sinks.MSSqlServer;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Collections.ObjectModel;
 using System.Data;
+using System.Globalization;
 using System.Reflection;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -118,22 +121,45 @@ builder.Services.AddCors(options =>
     });
 });
 
-
 Logger log = new LoggerConfiguration()
     .WriteTo.Console()
     .WriteTo.File("logs/log.text")
+    
     .WriteTo.MSSqlServer(
         connectionString: builder.Configuration.GetConnectionString("StudentManagmentDb"),
         "logs",
-        
-        autoCreateSqlTable: true
+        columnOptions: new ColumnOptions
+        {
+            AdditionalColumns = new Collection<SqlColumn>
+            {
+                new SqlColumn
+                {
+                    ColumnName = "UserName",
+                    DataType = SqlDbType.NVarChar,
+                    DataLength = 100
+                }
+            }
+        },
+        autoCreateSqlTable: true,
+        formatProvider: new CultureInfo("en-US"), // formatProvider belirtmek, tarih/saat sütunlarının doğru biçimlenmesine yardımcı olabilir
+        restrictedToMinimumLevel: LogEventLevel.Verbose, // minimum log seviyesini belirtmek
+      
     )
+    .Enrich.FromLogContext()
     .CreateLogger();
 
 
 
-
 builder.Host.UseSerilog(log);
+
+
+
+
+
+
+
+
+
 
 builder.Services.AddControllers()
 
@@ -234,6 +260,17 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+//app.Use(async (context, next) =>
+//{
+//    var username = context.User?.Identity?.IsAuthenticated == true ? context.User.Identity.Name : null;
+
+//    LogContext.PushProperty("UserName", username);
+
+//    await next();
+//});
+
+app.UseSerilogRequestLogging();
+
 app.UseCors("AllowMyOrigin");
 
 app.UseAuthentication();
@@ -282,6 +319,17 @@ public class AuthorizeCheckOperationFilter : IOperationFilter
         }
     }
 }
+
+public class UserNameFilter : ILogEventFilter
+{
+    public bool IsEnabled(LogEvent logEvent)
+    {
+        // Kullanıcı adı alanını kontrol et, boşsa logu atla
+        var userName = logEvent.Properties["UserName"]?.ToString();
+        return !string.IsNullOrEmpty(userName);
+    }
+}
+
 
 //var builder = WebApplication.CreateBuilder(args);
 

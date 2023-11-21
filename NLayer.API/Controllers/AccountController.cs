@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using System.Security.Claims;
+using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Identity;
@@ -16,6 +18,7 @@ using NLayer.Core.Services;
 using NLayer.Core.Token;
 using NLayer.Service.Services;
 using Org.BouncyCastle.Ocsp;
+using Serilog.Context;
 
 namespace NLayer.API.Controllers
 {
@@ -32,28 +35,51 @@ namespace NLayer.API.Controllers
         private readonly RoleManager<AppRole> _roleManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ITokenHandler _tokenHandler;
+        private readonly ILogger<AccountController> _logger;
 
-        public AccountController(UserManager<AppUser> userManager, RoleManager<AppRole> roleManager, SignInManager<AppUser> signInManager, IMapper mapper = null, ITokenHandler tokenHandler = null, AppUserService userService = null, IEmailSenderService emailSenderService = null)
+
+        public AccountController(UserManager<AppUser> userManager, ILogger<AccountController> logger, RoleManager<AppRole> roleManager, SignInManager<AppUser> signInManager, IMapper mapper = null, ITokenHandler tokenHandler = null, AppUserService userService = null, IEmailSenderService emailSenderService = null)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _signInManager = signInManager;
+            _logger = logger;
             _mapper = mapper;
             _tokenHandler = tokenHandler;
             _userService = userService;
             _emailSenderService = emailSenderService;
         }
-        //[Authorize(AuthenticationSchemes = "Roles")]
+        [Authorize(AuthenticationSchemes = "Roles")]
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+            // Kullanıcı bilgisini al
+            var currentUser = HttpContext.User;
+
+
+            var username = User.FindFirst("Username")?.Value;
+            var surname = User.FindFirst("Surname")?.Value;
+
+
+
+            var infouser = username + surname;
+
+
+            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
+
+            // Loglama işlemi
+            LogContext.PushProperty("UserName", infouser);
+
+            _logger.LogInformation("{infouser} Kullanıcı listesi alındı", infouser);
+
+            // Kullanıcı bilgisini SQL Server tablosuna ekleyerek loglama işlemi
             var users = await _userManager.Users.ToListAsync();
-
             var usersDtos = _mapper.Map<List<UserListDto>>(users.ToList());
-            return CreateActionResult(CustomResponseDto<List<UserListDto>>.Success(200, usersDtos));
 
+            return CreateActionResult(CustomResponseDto<List<UserListDto>>.Success(200, usersDtos));
         }
 
+        //push
 
         [HttpGet("[action]")]
         public async Task<IActionResult> GetFindUser(int userId)
@@ -63,7 +89,23 @@ namespace NLayer.API.Controllers
             {
                 return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Kullanıcı bulunamadı"));
             }
+            var currentUser = HttpContext.User;
 
+
+            var username = User.FindFirst("Username")?.Value;
+            var surname = User.FindFirst("Surname")?.Value;
+
+
+
+            var infouser = username + surname;
+
+
+            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
+
+            // Loglama işlemi
+            LogContext.PushProperty("UserName", infouser);
+
+            _logger.LogInformation("{infouser} Kullanıcı  arandı", infouser);
 
             var userDto = _mapper.Map<AppUserDto>(user);
 
@@ -75,6 +117,23 @@ namespace NLayer.API.Controllers
         [HttpGet("GetUserRole/{id}")]
         public async Task<IActionResult> GetUserRole(int id)
         {
+            var currentUser = HttpContext.User;
+
+
+            var username = User.FindFirst("Username")?.Value;
+            var surname = User.FindFirst("Surname")?.Value;
+
+
+
+            var infouser = username + surname;
+
+
+            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
+
+            // Loglama işlemi
+            LogContext.PushProperty("UserName", infouser);
+
+            _logger.LogInformation("{infouser} Kullanıcı rolü arandı", infouser);
             var user = await _userManager.FindByIdAsync(Convert.ToString(id));
 
             if (user == null)
@@ -94,6 +153,24 @@ namespace NLayer.API.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> Savefile(IFormFile file, int userId)
         {
+
+            var currentUser = HttpContext.User;
+
+
+            var username = User.FindFirst("Username")?.Value;
+            var surname = User.FindFirst("Surname")?.Value;
+
+
+
+            var infouser = username + surname;
+
+
+            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
+
+            // Loglama işlemi
+            LogContext.PushProperty("UserName", infouser);
+
+            _logger.LogInformation("{infouser} Kullanıcı resmi güncellendi", infouser);
             if (file != null && file.Length > 0)
             {
                 try
@@ -148,6 +225,23 @@ namespace NLayer.API.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserRegisterDto appUserDto)
         {
+            var currentUser = HttpContext.User;
+
+
+            var username = User.FindFirst("Username")?.Value;
+            var surname = User.FindFirst("Surname")?.Value;
+
+
+
+            var infouser = username + surname;
+
+
+            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
+
+            // Loglama işlemi
+            LogContext.PushProperty("UserName", infouser);
+
+            _logger.LogInformation("{infouser} Kullanıcı kayıt işlemi gerçekleşti", infouser);
             if (ModelState.IsValid)
             {
                 AppUser user = new AppUser()
@@ -237,6 +331,23 @@ namespace NLayer.API.Controllers
         [HttpGet("[action]")]
         public async Task<IActionResult> ConfirmEmail(string userId, string token)
         {
+            var currentUser = HttpContext.User;
+
+
+            var username = User.FindFirst("Username")?.Value;
+            var surname = User.FindFirst("Surname")?.Value;
+
+
+
+            var infouser = username + surname;
+
+
+            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
+
+            // Loglama işlemi
+            LogContext.PushProperty("UserName", infouser);
+
+            _logger.LogInformation("{infouser} Kullanıcı kayıt işleminden sonra e posta onay işlemi gerçekleşti", infouser);
             if (userId == null || token == null)
             {
                 return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Eposta onaylama işlemli başarısız"));
@@ -265,6 +376,7 @@ namespace NLayer.API.Controllers
 
                 else
                 {
+                    _logger.LogInformation("Eposta onay sisteminden  hata alıdı hesapp zatan onaylanmış");
                     verifationsDto.Code = 108;
                     verifationsDto.Description = "Allready Approved";
                     verifationsDto.Condition = false;
@@ -321,6 +433,23 @@ namespace NLayer.API.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginDto loginDto)
         {
+            var currentUser = HttpContext.User;
+
+
+            var username = User.FindFirst("Username")?.Value;
+            var surname = User.FindFirst("Surname")?.Value;
+
+
+
+            var infouser = username + surname;
+
+
+            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
+
+            // Loglama işlemi
+            LogContext.PushProperty("UserName", infouser);
+
+            _logger.LogInformation("{infouser} Login işlemi gerçekleştirildi", infouser);
             if (ModelState.IsValid)
             {
                 var user = await _userManager.FindByNameAsync(loginDto.UserName);
@@ -401,6 +530,23 @@ namespace NLayer.API.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> ForgotPassword(string Email)
         {
+            var currentUser = HttpContext.User;
+
+
+            var username = User.FindFirst("Username")?.Value;
+            var surname = User.FindFirst("Surname")?.Value;
+
+
+
+            var infouser = username + surname;
+
+
+            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
+
+            // Loglama işlemi
+            LogContext.PushProperty("UserName", infouser);
+
+            _logger.LogInformation("{infouser} Şifre yenilenmesi için kullanıcı başvuru yaptı ve mail gönerildi", infouser);
             if (string.IsNullOrEmpty(Email))
             {
 
@@ -437,6 +583,23 @@ namespace NLayer.API.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> ResetPassword(ResetPasswordDto model)
         {
+            var currentUser = HttpContext.User;
+
+
+            var username = User.FindFirst("Username")?.Value;
+            var surname = User.FindFirst("Surname")?.Value;
+
+
+
+            var infouser = username + surname;
+
+
+            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
+
+            // Loglama işlemi
+            LogContext.PushProperty("UserName", infouser);
+
+            _logger.LogInformation("{infouser} Kulanıcı şifre yenileme işlemi gerçekleşti", infouser);
 
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null)
@@ -458,6 +621,23 @@ namespace NLayer.API.Controllers
         [HttpPut("Update")]
         public async Task<IActionResult> Update(UserUpdateDto userUpdateDto)
         {
+            var currentUser = HttpContext.User;
+
+
+            var username = User.FindFirst("Username")?.Value;
+            var surname = User.FindFirst("Surname")?.Value;
+
+
+
+            var infouser = username + surname;
+
+
+            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
+
+            // Loglama işlemi
+            LogContext.PushProperty("UserName", infouser);
+
+            _logger.LogInformation("{infouser} Kullanıcı bilgileri güncellendi", infouser);
             var user = await _userManager.FindByIdAsync(Convert.ToString(userUpdateDto.Id));
 
             if (user == null)

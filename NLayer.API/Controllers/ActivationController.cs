@@ -9,6 +9,7 @@ using NLayer.Core.DTOs.ActivationDtos;
 using NLayer.Core.DTOs.UserProduct;
 using NLayer.Core.Repositories;
 using NLayer.Core.Services;
+using Serilog.Context;
 
 namespace NLayer.API.Controllers
 {
@@ -23,86 +24,132 @@ namespace NLayer.API.Controllers
         private readonly IMapper _mapper;
         private readonly IQRCodeService _qrCodeService;
         private readonly IAppUserRepository _appUserRepository;
+        private readonly ILogger<AccountController> _logger;
         private readonly IUserProductService _userProductService;
 
-        public ActivationController(IProductService productService, IMapper mapper, IQRCodeService qrCodeService, IAppUserRepository appUserRepository, IUserProductService userProductService)
+        public ActivationController(IProductService productService, IMapper mapper, IQRCodeService qrCodeService, IAppUserRepository appUserRepository, IUserProductService userProductService, ILogger<AccountController> logger)
         {
-            _productService=productService;
-            _mapper=mapper;
-            _qrCodeService=qrCodeService;
-            _appUserRepository=appUserRepository;
-            _userProductService=userProductService;
+            _productService = productService;
+            _mapper = mapper;
+            _qrCodeService = qrCodeService;
+            _appUserRepository = appUserRepository;
+            _userProductService = userProductService;
+            _logger = logger;
         }
         [HttpPost("[action]")]
         public async Task<IActionResult> ActivationProduct(ActivationPoroductDto dto)
         {
-            // Check if the incoming DTO is not null
-            if (dto != null)
+            var currentUser = HttpContext.User;
+
+            var username = User.FindFirst("Username")?.Value;
+            var surname = User.FindFirst("Surname")?.Value;
+
+            var infouser = username + surname;
+            try
             {
-                // Retrieve the product by its ID
-                var product = await _productService.GetByIdAsycn(dto.ProductId);
+          
 
-                // If the product is not found, return an error response
-                if (product == null)
-                    return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Product not found"));
+                // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
 
-                // If the product exists and its condition is false, proceed
-                if (product != null && product.Condition == false)
+                // Loglama işlemi
+                LogContext.PushProperty("UserName", infouser);
+
+                _logger.LogInformation("{infouser} Ürün aktifleştirildi", infouser);
+
+                // Check if the incoming DTO is not null
+                if (dto != null)
                 {
-                    // Get all QR codes
-                    var qrcode = await _qrCodeService.GetAllAsycn();
+                    // Retrieve the product by its ID
+                    var product = await _productService.GetByIdAsycn(dto.ProductId);
 
-                    // Find the QR code with the given activation code and false condition
-                    var istrue = qrcode.FirstOrDefault(x => x.Code == dto.ActivationCode && x.Condition == false);
-
-                    // If a valid QR code is found
-                    if (istrue != null)
+                    // If the product is not found, return an error response
+                    if (product == null)
                     {
-                        // Prepare user product data
-                        var userProductValues = new UserProductDto()
+                        _logger.LogError("{infouser} Ürün bulunamadı. ProductId: {productId}", infouser, dto.ProductId);
+                        return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Product not found"));
+                    }
+
+                    // If the product exists and its condition is false, proceed
+                    if (product.Condition == false)
+                    {
+                        // Get all QR codes
+                        var qrcode = await _qrCodeService.GetAllAsycn();
+
+                        // Find the QR code with the given activation code and false condition
+                        var istrue = qrcode.FirstOrDefault(x => x.Code == dto.ActivationCode && x.Condition == false);
+
+                        // If a valid QR code is found
+                        if (istrue != null)
                         {
-                            UserId = dto.UserId,
-                            ProductId = dto.ProductId,
-                        };
-
-                        // Check if a relationship already exists
-                        var userproductsin = await _userProductService.GetByIdsAsycn(dto.UserId, dto.ProductId);
-
-                        // If no relationship exists
-                        if (userproductsin == null)
-                        {
-                            // Add a new user product relationship
-                            var result = await _userProductService.AddAsycn(_mapper.Map<UserProduct>(userProductValues));
-
-                            // Update product condition to true
-                            product.Condition = true;
-                            await _productService.UpdateAsycn(product);
-
-                            // Prepare category data for the response
-                            var catagory = new ActivationCodeDto()
+                            // Prepare user product data
+                            var userProductValues = new UserProductDto()
                             {
-                                CategoryId = result.Product.CategoryId,
+                                UserId = dto.UserId,
+                                ProductId = dto.ProductId,
                             };
 
-                            // Update the QR code condition to true
-                            istrue.Condition = true;
-                            _qrCodeService.UpdateAsycn(istrue);
+                            // Check if a relationship already exists
+                            var userproductsin = await _userProductService.GetByIdsAsycn(dto.UserId, dto.ProductId);
 
-                            // Return a success response with category information
-                            return CreateActionResult(CustomResponseDto<ActivationCodeDto>.Success(200, catagory));
+                            // If no relationship exists
+                            if (userproductsin == null)
+                            {
+                                // Add a new user product relationship
+                                var result = await _userProductService.AddAsycn(_mapper.Map<UserProduct>(userProductValues));
+
+                                // Update product condition to true
+                                product.Condition = true;
+                                await _productService.UpdateAsycn(product);
+
+                                // Prepare category data for the response
+                                var catagory = new ActivationCodeDto()
+                                {
+                                    CategoryId = result.Product.CategoryId,
+                                };
+
+                                // Update the QR code condition to true
+                                istrue.Condition = true;
+                                _qrCodeService.UpdateAsycn(istrue);
+
+                                // Return a success response with category information
+                                return CreateActionResult(CustomResponseDto<ActivationCodeDto>.Success(200, catagory));
+                            }
+                            else
+                            {
+                                // Return an error response if the relationship already exists
+                                _logger.LogError("{infouser} Bu ürün zaten aktifleştirilmiş. UserId: {userId}, ProductId: {productId}", infouser, dto.UserId, dto.ProductId);
+                                return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "This product has been activated before"));
+                            }
                         }
+                        else
+                        {
+                            // Return an error response if the QR code is not valid
+                            _logger.LogError("{infouser} Geçersiz QR kodu. ActivationCode: {activationCode}", infouser, dto.ActivationCode);
+                            return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Invalid QR code"));
+                        }
+                    }
+                    else
+                    {
+                        // Return an error response if the product has been activated before
+                        _logger.LogError("{infouser} Bu ürün zaten aktifleştirilmiş. ProductId: {productId}", infouser, dto.ProductId);
+                        return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "This product has been activated before"));
                     }
                 }
                 else
                 {
-                    // Return an error response if the product has been activated before
-                    return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "This product has been activated before"));
+                    // Return an error response for unsuccessful activation
+                    _logger.LogError("{infouser} Aktivasyon işlemi başarısız. Alınan DTO null.", infouser);
+                    return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Activation process failed"));
                 }
             }
-
-            // Return an error response for unsuccessful activation
-            return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Activation process failed"));
+            catch (Exception ex)
+            {
+                // Log any unexpected exceptions
+                _logger.LogError(ex, "{infouser} Beklenmeyen bir hata oluştu.", infouser);
+                return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(500, "An unexpected error occurred"));
+            }
         }
+
 
 
     }

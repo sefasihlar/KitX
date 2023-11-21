@@ -41,6 +41,7 @@ namespace NLayer.API.Controllers
         private readonly IAnimalProductFeatureService _animalProductFeatureService;
         private readonly IBelongingProductFeatureService _belongingProductFeatureService;
         private readonly IEmailSenderService _emailSenderService;
+        private readonly ILogger<ProductController> _logger;
         private readonly HttpClient _httpClient;
 
 
@@ -51,7 +52,7 @@ namespace NLayer.API.Controllers
         private readonly IIPAddressService _ipAddressService;
 
 
-        public ProductController(IProductService productService, IMapper mapper, IAnimalService animalService, IAppUserRepository appUserRepository, IUserProductService userProductService, IHttpContextAccessor httpContextAccessor, IIPAddressService ipAddressService, IAnimalPhotoService animalPhotoService, IIHubService hubService, IHubContext<IPHubService> hubContext, HttpClient httpClient, IQRGeneratorService qrGeneratorService, IQRCodeService qrCodeService, ICategoryService categoryService, IPersonelProductFeatureService personelProductFeatureService, ISpecialProductFeatureService specialProductFeatureService, IAnimalProductFeatureService animalProductFeatureService, IBelongingProductFeatureService belongingProductFeatureService, IEmailSenderService emailSenderService)
+        public ProductController(IProductService productService, ILogger<ProductController> logger, IMapper mapper, IAnimalService animalService, IAppUserRepository appUserRepository, IUserProductService userProductService, IHttpContextAccessor httpContextAccessor, IIPAddressService ipAddressService, IAnimalPhotoService animalPhotoService, IIHubService hubService, IHubContext<IPHubService> hubContext, HttpClient httpClient, IQRGeneratorService qrGeneratorService, IQRCodeService qrCodeService, ICategoryService categoryService, IPersonelProductFeatureService personelProductFeatureService, ISpecialProductFeatureService specialProductFeatureService, IAnimalProductFeatureService animalProductFeatureService, IBelongingProductFeatureService belongingProductFeatureService, IEmailSenderService emailSenderService)
         {
             _productService = productService;
             _mapper = mapper;
@@ -62,6 +63,7 @@ namespace NLayer.API.Controllers
             _ipAddressService = ipAddressService;
             _animalPhotoService = animalPhotoService;
             _hubContext = hubContext;
+            _logger = logger;
             _httpClient = httpClient;
             _qrGeneratorService = qrGeneratorService;
             _qrCodeService = qrCodeService;
@@ -74,8 +76,10 @@ namespace NLayer.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
-        {
+        public async Task<IActionResult> GetAll() { 
+
+            _logger.LogInformation("Ürün listeleme işlemleri başlatıldı");
+
             var classes = await _productService.GetAllAsycn();
             var classDtos = _mapper.Map<List<ProductDto>>(classes);
             //return Ok( CustomResponseDto<List<ClassDto>>.Success(200, classDtos));
@@ -359,6 +363,8 @@ namespace NLayer.API.Controllers
         //    await _userProductService.AddAsycn(_mapper.Map<UserProduct>(userProductValues));
         //    return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
         //}
+
+       
 
 
     }
