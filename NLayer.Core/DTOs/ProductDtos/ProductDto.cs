@@ -9,6 +9,8 @@ namespace NLayer.Core.DTOs.ProductDtos
         public int CategoryId { get; set; }
         public CategoryDto Category { get; set; }
 
+        public bool Condition { get; set; }
+
 
     }
 }

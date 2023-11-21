@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'WebUI' " />
   <ItemGroup>
     <None Remove="uploads\30658825-9952-4530-ad7d-64490f722db8_KitX-553.png" />
     <None Remove="uploads\47b62108-36b1-4752-be50-040b30213d83_KitX-462.png" />

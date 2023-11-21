@@ -234,10 +234,6 @@ namespace NLayer.API.Controllers
 
         }
 
-
-
-
-
         public class UserRegisterByMonthDto
         {
             public int Month { get; set; }
