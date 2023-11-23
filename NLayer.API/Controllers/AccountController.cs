@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-﻿using System.Security.Claims;
-=======
-﻿using System.Security.Claims;
->>>>>>> 6749b1094a33545c130602cc3d227cb02f66c319
+
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -67,15 +63,7 @@ namespace NLayer.API.Controllers
 
 
             var infouser = username + surname;
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> 6749b1094a33545c130602cc3d227cb02f66c319
-
-            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
-
-            // Loglama işlemi
             LogContext.PushProperty("UserName", infouser);
 
             _logger.LogInformation("{infouser} Kullanıcı listesi alındı", infouser);
@@ -161,7 +149,7 @@ namespace NLayer.API.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> Savefile(IFormFile file, int userId)
         {
-<<<<<<< HEAD
+
 
             var currentUser = HttpContext.User;
 
@@ -179,10 +167,9 @@ namespace NLayer.API.Controllers
             // Loglama işlemi
             LogContext.PushProperty("UserName", infouser);
 
-            _logger.LogInformation("{infouser} Kullanıcı resmi güncellendi", infouser);
-=======
+            _logger.LogInformation("{infouser} Kullanıcı resmi güncellendi");
             _logger.LogInformation("Kullancı Resim işlemleri başlatıldı");
->>>>>>> 6749b1094a33545c130602cc3d227cb02f66c319
+
             if (file != null && file.Length > 0)
             {
                 try
@@ -237,7 +224,7 @@ namespace NLayer.API.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserRegisterDto appUserDto)
         {
-<<<<<<< HEAD
+
             var currentUser = HttpContext.User;
 
 
@@ -255,9 +242,9 @@ namespace NLayer.API.Controllers
             LogContext.PushProperty("UserName", infouser);
 
             _logger.LogInformation("{infouser} Kullanıcı kayıt işlemi gerçekleşti", infouser);
-=======
+
             _logger.LogInformation("Kullanıcı kayıt işlemleri başlatıldı");
->>>>>>> 6749b1094a33545c130602cc3d227cb02f66c319
+
             if (ModelState.IsValid)
             {
                 AppUser user = new AppUser()
@@ -347,7 +334,7 @@ namespace NLayer.API.Controllers
         [HttpGet("[action]")]
         public async Task<IActionResult> ConfirmEmail(string userId, string token)
         {
-<<<<<<< HEAD
+
             var currentUser = HttpContext.User;
 
 
@@ -365,9 +352,9 @@ namespace NLayer.API.Controllers
             LogContext.PushProperty("UserName", infouser);
 
             _logger.LogInformation("{infouser} Kullanıcı kayıt işleminden sonra e posta onay işlemi gerçekleşti", infouser);
-=======
+
             _logger.LogInformation("Eposta onaylama işlemi başlatıldı");
->>>>>>> 6749b1094a33545c130602cc3d227cb02f66c319
+
             if (userId == null || token == null)
             {
                 return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Eposta onaylama işlemli başarısız"));

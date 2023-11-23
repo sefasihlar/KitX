@@ -17,6 +17,7 @@ using NLayer.Core.DTOs.QRCodeDtos;
 using NLayer.Core.DTOs.RoleDtos;
 using NLayer.Core.DTOs.UserDtos;
 using NLayer.Core.DTOs.UserProduct;
+using NLayer.Core.Repositories;
 
 namespace NLayer.Service.Mapping
 {
@@ -56,6 +57,7 @@ namespace NLayer.Service.Mapping
             CreateMap<BelongingProductFeature, BelongingProductFeatureDto>().ReverseMap();
             CreateMap<PersonProductFeature, PersonProductFeatureDto>().ReverseMap();
             CreateMap<SpecialProductFeature, SpecialProductFeatureDto>().ReverseMap();
+            CreateMap<BelongingProductFeature, BelongingFeatureUserDto>().ReverseMap();
 
 
 
@@ -63,8 +65,8 @@ namespace NLayer.Service.Mapping
 
             CreateMap<AnimalProductFeature, AnimalFeatureProductUserDto>().ReverseMap();
             CreateMap<AnimalProductFeature, AnimalFeatureUserDto>().ReverseMap();
-            CreateMap<BelongingProductFeature, BelongingProductFeatureDto>().ReverseMap();
-            CreateMap<BelongingProductFeature, BelongingFeatureUserDto>().ReverseMap();
+   
+            
             CreateMap<PersonProductFeature, PersonFeatureUserDto>().ReverseMap();
             CreateMap<SpecialProductFeature, SpecialFeatureUserDto>().ReverseMap();
 

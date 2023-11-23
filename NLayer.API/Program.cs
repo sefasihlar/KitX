@@ -120,18 +120,13 @@ builder.Services.AddCors(options =>
             .AllowAnyMethod();
     });
 });
-
 Logger log = new LoggerConfiguration()
     .WriteTo.Console()
     .WriteTo.File("logs/log.text")
-    
     .WriteTo.MSSqlServer(
         connectionString: builder.Configuration.GetConnectionString("StudentManagmentDb"),
         "logs",
-<<<<<<< HEAD
-=======
-
->>>>>>> 6749b1094a33545c130602cc3d227cb02f66c319
+        
         columnOptions: new ColumnOptions
         {
             AdditionalColumns = new Collection<SqlColumn>
@@ -139,17 +134,6 @@ Logger log = new LoggerConfiguration()
                 new SqlColumn
                 {
                     ColumnName = "UserName",
-<<<<<<< HEAD
-                    DataType = SqlDbType.NVarChar,
-                    DataLength = 100
-                }
-            }
-        },
-        autoCreateSqlTable: true,
-        formatProvider: new CultureInfo("en-US"), // formatProvider belirtmek, tarih/saat sütunlarının doğru biçimlenmesine yardımcı olabilir
-        restrictedToMinimumLevel: LogEventLevel.Verbose, // minimum log seviyesini belirtmek
-      
-=======
                     DataType = SqlDbType.NVarChar, // Özel sütunun veri tipini belirtin
                     DataLength = 100 // Özel sütunun uzunluğunu belirtin (isteğe bağlı)
                 }
@@ -158,11 +142,9 @@ Logger log = new LoggerConfiguration()
 
 
         autoCreateSqlTable: true
->>>>>>> 6749b1094a33545c130602cc3d227cb02f66c319
     )
     .Enrich.FromLogContext()
     .CreateLogger();
-
 
 
 builder.Host.UseSerilog(log);
@@ -275,7 +257,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-<<<<<<< HEAD
+
 //app.Use(async (context, next) =>
 //{
 //    var username = context.User?.Identity?.IsAuthenticated == true ? context.User.Identity.Name : null;
@@ -284,7 +266,7 @@ app.UseRouting();
 
 //    await next();
 //});
-=======
+
 app.Use(async (context, next) =>
 {
     var username = context.User?.Identity?.IsAuthenticated == true ? context.User.Identity.Name : null;
@@ -293,7 +275,7 @@ app.Use(async (context, next) =>
 
     await next();
 });
->>>>>>> 6749b1094a33545c130602cc3d227cb02f66c319
+
 
 app.UseSerilogRequestLogging();
 
