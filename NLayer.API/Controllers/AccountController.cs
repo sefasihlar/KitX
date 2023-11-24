@@ -448,7 +448,7 @@ namespace NLayer.API.Controllers
 
 
 
-            var infouser = username + surname;
+            var infouser = loginDto.UserName;
 
 
             // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.

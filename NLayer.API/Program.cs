@@ -52,6 +52,10 @@ builder.Services.AddScoped<IIHubService, IPHubService>();
 builder.Services.AddScoped<IEmailSenderService, EmailSenderService>();
 builder.Services.AddTransient<IEmailSenderService, EmailSenderService>();
 
+builder.Services.AddHostedService<DataCleanupService>();
+
+
+
 
 builder.Services.AddAutoMapper(typeof(MapProfile));
 
@@ -122,7 +126,12 @@ builder.Services.AddCors(options =>
 });
 Logger log = new LoggerConfiguration()
     .WriteTo.Console()
+    
     .WriteTo.File("logs/log.text")
+    .Filter.ByIncludingOnly(evt =>
+            evt.Properties.ContainsKey("UserName") &&
+            evt.Properties["UserName"].ToString() != null
+        )
     .WriteTo.MSSqlServer(
         connectionString: builder.Configuration.GetConnectionString("StudentManagmentDb"),
         "logs",
@@ -139,6 +148,7 @@ Logger log = new LoggerConfiguration()
                 }
             }
         },
+
 
 
         autoCreateSqlTable: true
@@ -277,7 +287,7 @@ app.Use(async (context, next) =>
 });
 
 
-app.UseSerilogRequestLogging();
+
 
 app.UseCors("AllowMyOrigin");
 
@@ -293,7 +303,7 @@ app.UseHttpsRedirection();
 
 app.UserCustomException();
 
-
+app.UseSerilogRequestLogging();
 app.MapControllers();
 app.MapHub<IPHubService>("ip-hub");
 app.Run();

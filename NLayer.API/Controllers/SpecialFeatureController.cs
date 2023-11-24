@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using NLayer.API.Controllers.BaseController;
 using NLayer.Core.DTOs;
+using NLayer.Core.DTOs.FeatureProductUserDtos;
 using NLayer.Core.DTOs.FeatureWithUserDtos.PersonProductFeatureDtos;
 using NLayer.Core.DTOs.FeatureWithUserDtos.SpecialProductFeatureDtos;
 using NLayer.Core.Services;
@@ -32,8 +33,8 @@ namespace NLayer.API.Controllers
         public async Task<IActionResult> GetByIdWithProduct(int productId)
         {
             var values = await _specialProductFeatureService.FindByProductIdAsync(productId);
-            var valesDto = _mapper.Map<SpecialFeatureProductUser>(values);
-            return CreateActionResult(CustomResponseDto<SpecialFeatureProductUser>.Success(200, (valesDto)));
+            var valesDto = _mapper.Map<SpecialFeatureUserDto>(values);
+            return CreateActionResult(CustomResponseDto<SpecialFeatureUserDto>.Success(200, (valesDto)));
         }
 
         [HttpPut("[action]")]

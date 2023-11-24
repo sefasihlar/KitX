@@ -13,12 +13,16 @@ namespace NLayer.API.Controllers
     public class LogsController : CustomBaseController
     {
         private readonly ILogService _logService;
+        private Timer _timer;
         private readonly IMapper _mapper;
+       
+        private bool _isRunning;
 
         public LogsController(ILogService logService, IMapper mapper)
         {
             _logService = logService;
             _mapper = mapper;
+            
         }
 
         [HttpGet]
@@ -32,13 +36,28 @@ namespace NLayer.API.Controllers
         [HttpDelete]
         public async Task<IActionResult> DeleteAllLogs()
         {
-            var values =await _logService.GetAllAsycn();
+            var values = await _logService.GetAllAsycn();
 
 
             await _logService.RemoveRangeAsycn(values);
-          
+
             return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
         }
-    }
 
+
+        [HttpDelete("[action]")]
+        public async Task<IActionResult> DeleteEmptyUserNameProperty()
+        {
+            var values = await _logService.GetAllAsycn();
+            var valuesFilter = values.Where(x => x.UserName == null);
+            if (valuesFilter !=null)
+            {
+                await _logService.RemoveRangeAsycn(valuesFilter);
+            }
+
+            return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
+        }
+        
+
+    }
 }
