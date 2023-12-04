@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using NLayer.Core.Concreate;
 using System.Reflection;
+using Version = NLayer.Core.Concreate.Version;
 
 namespace NLayer.Repository.Concreate
 {
@@ -30,6 +31,7 @@ namespace NLayer.Repository.Concreate
         public DbSet<SpecialProductFeature> SpecialProductFeature { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<Log> Logs { get; set; }
+        public DbSet<Version> Versions { get; set; }
 
 
     }

@@ -126,7 +126,6 @@ builder.Services.AddCors(options =>
 });
 Logger log = new LoggerConfiguration()
     .WriteTo.Console()
-    
     .WriteTo.File("logs/log.text")
     .Filter.ByIncludingOnly(evt =>
             evt.Properties.ContainsKey("UserName") &&
@@ -149,8 +148,6 @@ Logger log = new LoggerConfiguration()
             }
         },
 
-
-
         autoCreateSqlTable: true
     )
     .Enrich.FromLogContext()
@@ -158,15 +155,6 @@ Logger log = new LoggerConfiguration()
 
 
 builder.Host.UseSerilog(log);
-
-
-
-
-
-
-
-
-
 
 builder.Services.AddControllers()
 
@@ -265,7 +253,10 @@ if (!app.Environment.IsDevelopment())
 
 app.UseStaticFiles();
 
+app.UseSerilogRequestLogging();
+
 app.UseRouting();
+
 
 
 //app.Use(async (context, next) =>
@@ -303,7 +294,7 @@ app.UseHttpsRedirection();
 
 app.UserCustomException();
 
-app.UseSerilogRequestLogging();
+
 app.MapControllers();
 app.MapHub<IPHubService>("ip-hub");
 app.Run();

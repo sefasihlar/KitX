@@ -12,8 +12,8 @@ using NLayer.Repository.Concreate;
 namespace NLayer.Repository.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231121085905_mig-update")]
-    partial class migupdate
+    [Migration("20231203152404_mig-master")]
+    partial class migmaster
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -806,6 +806,37 @@ namespace NLayer.Repository.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("UserProduct");
+                });
+
+            modelBuilder.Entity("NLayer.Core.Concreate.Version", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool?>("Condition")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("VersionCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("version")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Versions");
                 });
 
             modelBuilder.Entity("NLayer.Core.Concreate.UserRole", b =>

@@ -1,0 +1,234 @@
+2023-11-24 17:44:21.668 +03:00 [INF] CORS policy execution successful.
+2023-11-24 17:44:21.712 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Login (NLayer.API)'
+2023-11-24 17:44:21.755 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(NLayer.Core.DTOs.AccountDtos.LoginDto) on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-24 17:44:22.015 +03:00 [INF] mitofelduct Login işlemi gerçekleştirildi
+2023-11-24 17:44:22.076 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-24 17:44:22.330 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-11-24 17:44:22.528 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-11-24 17:44:22.846 +03:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[NLayer.Core.DTOs.TokenDtos.TokenDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-24 17:44:22.861 +03:00 [INF] Executed action NLayer.API.Controllers.AccountController.Login (NLayer.API) in 1100.5216ms
+2023-11-24 17:44:22.863 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Login (NLayer.API)'
+2023-11-25 16:39:47.483 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-11-25 16:39:47.539 +03:00 [INF] AuthenticationScheme: Roles was challenged.
+2023-11-25 16:39:47.586 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-11-25 16:39:47.587 +03:00 [INF] AuthenticationScheme: Roles was challenged.
+2023-11-25 16:40:07.876 +03:00 [INF] CORS policy execution successful.
+2023-11-25 16:40:07.878 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Login (NLayer.API)'
+2023-11-25 16:40:07.913 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(NLayer.Core.DTOs.AccountDtos.LoginDto) on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-25 16:40:08.170 +03:00 [INF] mitofelduct Login işlemi gerçekleştirildi
+2023-11-25 16:40:08.218 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-25 16:40:08.615 +03:00 [INF] Executed DbCommand (76ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-11-25 16:40:08.884 +03:00 [INF] Executed DbCommand (51ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-11-25 16:40:09.244 +03:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[NLayer.Core.DTOs.TokenDtos.TokenDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-25 16:40:09.262 +03:00 [INF] Executed action NLayer.API.Controllers.AccountController.Login (NLayer.API) in 1341.7346ms
+2023-11-25 16:40:09.267 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Login (NLayer.API)'
+2023-11-25 16:40:21.993 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-25 16:40:21.997 +03:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-25 16:40:22.001 +03:00 [INF] SefaSihlar Kullanıcı listesi alındı
+2023-11-25 16:40:22.011 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-25 16:40:22.044 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2023-11-25 16:40:22.067 +03:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.UserDtos.UserListDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-25 16:40:22.073 +03:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 75.9838ms
+2023-11-25 16:40:22.073 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-25 16:40:30.420 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.GetFindUser (NLayer.API)'
+2023-11-25 16:40:30.425 +03:00 [INF] Route matched with {action = "GetFindUser", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFindUser(Int32) on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-25 16:40:30.443 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-25 16:40:30.514 +03:00 [INF] Executed DbCommand (59ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-11-25 16:40:30.515 +03:00 [INF]  Kullanıcı  arandı
+2023-11-25 16:40:30.518 +03:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[NLayer.Core.DTOs.UserDtos.AppUserDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-25 16:40:30.520 +03:00 [INF] Executed action NLayer.API.Controllers.AccountController.GetFindUser (NLayer.API) in 94.9323ms
+2023-11-25 16:40:30.520 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.GetFindUser (NLayer.API)'
+2023-11-25 16:43:06.437 +03:00 [INF] CORS policy execution successful.
+2023-11-25 16:43:06.478 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Login (NLayer.API)'
+2023-11-25 16:43:06.523 +03:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(NLayer.Core.DTOs.AccountDtos.LoginDto) on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-25 16:43:06.779 +03:00 [INF] mitofelduct Login işlemi gerçekleştirildi
+2023-11-25 16:43:06.842 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-25 16:43:07.087 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-11-25 16:43:07.276 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-11-25 16:43:07.603 +03:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[NLayer.Core.DTOs.TokenDtos.TokenDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-25 16:43:07.620 +03:00 [INF] Executed action NLayer.API.Controllers.AccountController.Login (NLayer.API) in 1090.2109ms
+2023-11-25 16:43:07.625 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Login (NLayer.API)'
+2023-11-25 16:43:22.517 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-25 16:43:22.519 +03:00 [INF] Route matched with {action = "Index", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-25 16:43:22.521 +03:00 [INF] SefaSihlar Kullanıcı listesi alındı
+2023-11-25 16:43:22.533 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-25 16:43:22.583 +03:00 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2023-11-25 16:43:22.616 +03:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.UserDtos.UserListDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-25 16:43:22.627 +03:00 [INF] Executed action NLayer.API.Controllers.AccountController.Index (NLayer.API) in 107.9287ms
+2023-11-25 16:43:22.627 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Index (NLayer.API)'
+2023-11-25 16:43:28.656 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.GetFindUser (NLayer.API)'
+2023-11-25 16:43:28.661 +03:00 [INF] Route matched with {action = "GetFindUser", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetFindUser(Int32) on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-25 16:43:28.682 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-25 16:43:28.731 +03:00 [INF] Executed DbCommand (27ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-11-25 16:43:28.735 +03:00 [INF]  Kullanıcı  arandı
+2023-11-25 16:43:28.742 +03:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[NLayer.Core.DTOs.UserDtos.AppUserDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-25 16:43:28.747 +03:00 [INF] Executed action NLayer.API.Controllers.AccountController.GetFindUser (NLayer.API) in 85.4292ms
+2023-11-25 16:43:28.747 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.GetFindUser (NLayer.API)'
+2023-11-25 16:43:39.277 +03:00 [INF] CORS policy execution successful.
+2023-11-25 16:43:39.278 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.AccountController.Savefile (NLayer.API)'
+2023-11-25 16:43:39.281 +03:00 [INF] Route matched with {action = "Savefile", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Savefile(Microsoft.AspNetCore.Http.IFormFile, Int32) on controller NLayer.API.Controllers.AccountController (NLayer.API).
+2023-11-25 16:43:39.312 +03:00 [INF] {infouser} Kullanıcı resmi güncellendi
+2023-11-25 16:43:39.312 +03:00 [INF] Kullancı Resim işlemleri başlatıldı
+2023-11-25 16:43:39.312 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-25 16:43:39.339 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2023-11-25 16:43:39.392 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Condition], [a].[CreatedDate], [a].[Email], [a].[EmailConfirmed], [a].[ImageUrl], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Surname], [a].[Title], [a].[TwoFactorEnabled], [a].[UpdatedDate], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-11-25 16:43:39.500 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[@p21='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p22='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (DbType = DateTime2), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 4000), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (DbType = DateTime2), @p20='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Condition] = @p2, [CreatedDate] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [ImageUrl] = @p6, [LockoutEnabled] = @p7, [LockoutEnd] = @p8, [Name] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PasswordHash] = @p12, [PhoneNumber] = @p13, [PhoneNumberConfirmed] = @p14, [SecurityStamp] = @p15, [Surname] = @p16, [Title] = @p17, [TwoFactorEnabled] = @p18, [UpdatedDate] = @p19, [UserName] = @p20
+WHERE [Id] = @p21 AND [ConcurrencyStamp] = @p22;
+SELECT @@ROWCOUNT;
+2023-11-25 16:43:39.526 +03:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[NLayer.Core.DTOs.NoContentDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-25 16:43:39.527 +03:00 [INF] Executed action NLayer.API.Controllers.AccountController.Savefile (NLayer.API) in 246.5031ms
+2023-11-25 16:43:39.527 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.AccountController.Savefile (NLayer.API)'
+2023-11-25 16:43:48.589 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.AnimalFeatureController.GetAll (NLayer.API)'
+2023-11-25 16:43:48.593 +03:00 [INF] Route matched with {action = "GetAll", controller = "AnimalFeature"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller NLayer.API.Controllers.AnimalFeatureController (NLayer.API).
+2023-11-25 16:43:48.595 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-25 16:43:48.637 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Address1], [a].[Address2], [a].[Age], [a].[Birthday], [a].[Color], [a].[Condition], [a].[CreatedDate], [a].[DiseaseInformation], [a].[DrugInformation], [a].[Facebook], [a].[Instegram], [a].[Kg], [a].[Name], [a].[PassportNumber], [a].[ProductId], [a].[Race], [a].[Text1], [a].[Text2], [a].[Twitter], [a].[Type], [a].[UpdatedDate], [a].[VaccineInformation]
+FROM [AnimalProductFeature] AS [a]
+2023-11-25 16:43:48.652 +03:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.FeatureDtos.AnimalProductFeatureDtos.AnimalProductFeatureDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-25 16:43:48.679 +03:00 [INF] Executed action NLayer.API.Controllers.AnimalFeatureController.GetAll (NLayer.API) in 85.8998ms
+2023-11-25 16:43:48.680 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.AnimalFeatureController.GetAll (NLayer.API)'
+2023-11-25 16:43:53.417 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.CategoryController.GetAll (NLayer.API)'
+2023-11-25 16:43:53.419 +03:00 [INF] Route matched with {action = "GetAll", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller NLayer.API.Controllers.CategoryController (NLayer.API).
+2023-11-25 16:43:53.421 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-25 16:43:53.454 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Condition], [c].[CreatedDate], [c].[Name], [c].[UpdatedDate]
+FROM [Category] AS [c]
+2023-11-25 16:43:53.457 +03:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.CategoryDtos.CategoryDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-25 16:43:53.458 +03:00 [INF] Executed action NLayer.API.Controllers.CategoryController.GetAll (NLayer.API) in 38.7904ms
+2023-11-25 16:43:53.458 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.CategoryController.GetAll (NLayer.API)'
+2023-11-25 16:43:57.729 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.IPAddressController.GetAll (NLayer.API)'
+2023-11-25 16:43:57.731 +03:00 [INF] Route matched with {action = "GetAll", controller = "IPAddress"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller NLayer.API.Controllers.IPAddressController (NLayer.API).
+2023-11-25 16:43:57.733 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-11-25 16:43:57.814 +03:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [i].[Id], [i].[As], [i].[Asn], [i].[City_Name], [i].[Condition], [i].[Country_Code], [i].[Country_Name], [i].[CreatedDate], [i].[IPAdress], [i].[Latitude], [i].[Longitude], [i].[ProductId], [i].[Region_Name], [i].[Time_Zone], [i].[UpdatedDate], [i].[Zip_Code], [i].[is_proxy], [q].[Id], [q].[Code], [q].[Condition], [q].[CreatedDate], [q].[ImageUrl], [q].[ProductId], [q].[SerialNumber], [q].[UpdatedDate]
+FROM [IPAddresses] AS [i]
+INNER JOIN [QrCodes] AS [q] ON [i].[ProductId] = [q].[Id]
+2023-11-25 16:43:57.908 +03:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.IPAddressDtos.IPAddressDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-25 16:43:57.917 +03:00 [INF] Executed action NLayer.API.Controllers.IPAddressController.GetAll (NLayer.API) in 185.9955ms
+2023-11-25 16:43:57.917 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.IPAddressController.GetAll (NLayer.API)'
+2023-12-03 18:16:16.565 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.VersionController.GetAll (NLayer.API)'
+2023-12-03 18:16:16.613 +03:00 [INF] Route matched with {action = "GetAll", controller = "Version"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller NLayer.API.Controllers.VersionController (NLayer.API).
+2023-12-03 18:16:16.649 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-12-03 18:16:16.961 +03:00 [INF] Executed action NLayer.API.Controllers.VersionController.GetAll (NLayer.API) in 342.1241ms
+2023-12-03 18:16:16.998 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.VersionController.GetAll (NLayer.API)'
+2023-12-03 18:31:50.868 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.VersionController.GetAll (NLayer.API)'
+2023-12-03 18:31:50.896 +03:00 [INF] Route matched with {action = "GetAll", controller = "Version"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller NLayer.API.Controllers.VersionController (NLayer.API).
+2023-12-03 18:31:50.926 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-12-03 18:31:51.232 +03:00 [INF] Executed action NLayer.API.Controllers.VersionController.GetAll (NLayer.API) in 330.8042ms
+2023-12-03 18:31:51.265 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.VersionController.GetAll (NLayer.API)'
+2023-12-03 18:32:41.792 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.VersionController.GetAll (NLayer.API)'
+2023-12-03 18:32:41.826 +03:00 [INF] Route matched with {action = "GetAll", controller = "Version"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller NLayer.API.Controllers.VersionController (NLayer.API).
+2023-12-03 18:32:41.862 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-12-03 18:32:42.118 +03:00 [INF] Executed action NLayer.API.Controllers.VersionController.GetAll (NLayer.API) in 287.2307ms
+2023-12-03 18:32:42.148 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.VersionController.GetAll (NLayer.API)'
+2023-12-03 18:33:36.392 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.VersionController.GetAll (NLayer.API)'
+2023-12-03 18:33:36.421 +03:00 [INF] Route matched with {action = "GetAll", controller = "Version"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller NLayer.API.Controllers.VersionController (NLayer.API).
+2023-12-03 18:33:36.457 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-12-03 18:33:36.755 +03:00 [INF] Executed action NLayer.API.Controllers.VersionController.GetAll (NLayer.API) in 327.8724ms
+2023-12-03 18:33:36.786 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.VersionController.GetAll (NLayer.API)'
+2023-12-03 18:35:23.111 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.VersionController.GetAll (NLayer.API)'
+2023-12-03 18:35:23.138 +03:00 [INF] Route matched with {action = "GetAll", controller = "Version"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller NLayer.API.Controllers.VersionController (NLayer.API).
+2023-12-03 18:35:23.169 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-12-03 18:35:23.467 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Condition], [v].[CreatedDate], [v].[Description], [v].[UpdatedDate], [v].[VersionCode], [v].[version]
+FROM [Versions] AS [v]
+2023-12-03 18:35:23.669 +03:00 [INF] Executed action NLayer.API.Controllers.VersionController.GetAll (NLayer.API) in 526.4979ms
+2023-12-03 18:35:23.720 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.VersionController.GetAll (NLayer.API)'
+2023-12-03 18:35:49.657 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.VersionController.GetAll (NLayer.API)'
+2023-12-03 18:35:49.684 +03:00 [INF] Route matched with {action = "GetAll", controller = "Version"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller NLayer.API.Controllers.VersionController (NLayer.API).
+2023-12-03 18:35:49.715 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-12-03 18:35:49.957 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Condition], [v].[CreatedDate], [v].[Description], [v].[UpdatedDate], [v].[VersionCode], [v].[version]
+FROM [Versions] AS [v]
+2023-12-03 18:35:50.132 +03:00 [INF] Executed action NLayer.API.Controllers.VersionController.GetAll (NLayer.API) in 442.8789ms
+2023-12-03 18:35:50.174 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.VersionController.GetAll (NLayer.API)'
+2023-12-03 18:36:52.302 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.VersionController.GetAll (NLayer.API)'
+2023-12-03 18:36:52.338 +03:00 [INF] Route matched with {action = "GetAll", controller = "Version"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller NLayer.API.Controllers.VersionController (NLayer.API).
+2023-12-03 18:36:52.376 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-12-03 18:36:52.698 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Condition], [v].[CreatedDate], [v].[Description], [v].[UpdatedDate], [v].[VersionCode], [v].[version]
+FROM [Versions] AS [v]
+2023-12-03 18:36:52.884 +03:00 [INF] Executed action NLayer.API.Controllers.VersionController.GetAll (NLayer.API) in 541.3916ms
+2023-12-03 18:36:52.930 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.VersionController.GetAll (NLayer.API)'
+2023-12-03 18:37:39.524 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.VersionController.GetAll (NLayer.API)'
+2023-12-03 18:37:39.563 +03:00 [INF] Route matched with {action = "GetAll", controller = "Version"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller NLayer.API.Controllers.VersionController (NLayer.API).
+2023-12-03 18:37:39.603 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-12-03 18:37:39.897 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Condition], [v].[CreatedDate], [v].[Description], [v].[UpdatedDate], [v].[VersionCode], [v].[version]
+FROM [Versions] AS [v]
+2023-12-03 18:37:39.950 +03:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.VersionDtos.VersionDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-12-03 18:37:39.960 +03:00 [INF] Executed action NLayer.API.Controllers.VersionController.GetAll (NLayer.API) in 392.6698ms
+2023-12-03 18:37:39.962 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.VersionController.GetAll (NLayer.API)'
+2023-12-03 18:38:15.577 +03:00 [INF] CORS policy execution successful.
+2023-12-03 18:38:15.580 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.VersionController.AddVersion (NLayer.API)'
+2023-12-03 18:38:15.600 +03:00 [INF] Route matched with {action = "AddVersion", controller = "Version"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddVersion(NLayer.Core.DTOs.VersionDtos.VersionDto) on controller NLayer.API.Controllers.VersionController (NLayer.API).
+2023-12-03 18:38:15.609 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-12-03 18:38:15.785 +03:00 [INF] Executed DbCommand (33ms) [Parameters=[@p0='?' (DbType = Boolean), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Versions] ([Condition], [CreatedDate], [Description], [UpdatedDate], [VersionCode], [version])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [Versions]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-12-03 18:38:15.861 +03:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[NLayer.Core.DTOs.VersionDtos.VersionDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-12-03 18:38:15.865 +03:00 [INF] Executed action NLayer.API.Controllers.VersionController.AddVersion (NLayer.API) in 264.1604ms
+2023-12-03 18:38:15.865 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.VersionController.AddVersion (NLayer.API)'
+2023-12-03 18:38:21.312 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.VersionController.GetAll (NLayer.API)'
+2023-12-03 18:38:21.313 +03:00 [INF] Route matched with {action = "GetAll", controller = "Version"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller NLayer.API.Controllers.VersionController (NLayer.API).
+2023-12-03 18:38:21.313 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-12-03 18:38:21.349 +03:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Condition], [v].[CreatedDate], [v].[Description], [v].[UpdatedDate], [v].[VersionCode], [v].[version]
+FROM [Versions] AS [v]
+2023-12-03 18:38:21.349 +03:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.VersionDtos.VersionDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-12-03 18:38:21.350 +03:00 [INF] Executed action NLayer.API.Controllers.VersionController.GetAll (NLayer.API) in 37.0395ms
+2023-12-03 18:38:21.350 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.VersionController.GetAll (NLayer.API)'
+2023-12-03 18:43:00.782 +03:00 [INF] Executing endpoint 'NLayer.API.Controllers.VersionController.GetAll (NLayer.API)'
+2023-12-03 18:43:00.815 +03:00 [INF] Route matched with {action = "GetAll", controller = "Version"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller NLayer.API.Controllers.VersionController (NLayer.API).
+2023-12-03 18:43:00.848 +03:00 [INF] Entity Framework Core 6.0.15 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.15' with options: MigrationsAssembly=NLayer.Repository 
+2023-12-03 18:43:00.991 +03:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Condition], [v].[CreatedDate], [v].[Description], [v].[UpdatedDate], [v].[VersionCode], [v].[version]
+FROM [Versions] AS [v]
+2023-12-03 18:43:01.020 +03:00 [INF] Executing ObjectResult, writing value of type 'NLayer.Core.DTOs.CustomResponseDto`1[[System.Collections.Generic.List`1[[NLayer.Core.DTOs.VersionDtos.VersionDto, NLayer.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-12-03 18:43:01.031 +03:00 [INF] Executed action NLayer.API.Controllers.VersionController.GetAll (NLayer.API) in 212.7756ms
+2023-12-03 18:43:01.033 +03:00 [INF] Executed endpoint 'NLayer.API.Controllers.VersionController.GetAll (NLayer.API)'

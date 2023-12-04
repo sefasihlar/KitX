@@ -17,7 +17,9 @@ using NLayer.Core.DTOs.QRCodeDtos;
 using NLayer.Core.DTOs.RoleDtos;
 using NLayer.Core.DTOs.UserDtos;
 using NLayer.Core.DTOs.UserProduct;
-using NLayer.Core.Repositories;
+using NLayer.Core.DTOs.VersionDtos;
+using Version = NLayer.Core.Concreate.Version;
+
 
 namespace NLayer.Service.Mapping
 {
@@ -76,6 +78,9 @@ namespace NLayer.Service.Mapping
             CreateMap<QrCode, QRCodeDto>().ReverseMap();
 
             CreateMap<Location,LocationDto>().ReverseMap();
+
+
+            CreateMap<Version, VersionDto>().ReverseMap();
 
 
 
