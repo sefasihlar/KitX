@@ -53,7 +53,7 @@ namespace NLayer.API.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            // Kullanıcı bilgisini al
+         
             var currentUser = HttpContext.User;
 
 
@@ -68,7 +68,6 @@ namespace NLayer.API.Controllers
 
             _logger.LogInformation("{infouser} Kullanıcı listesi alındı", infouser);
 
-            // Kullanıcı bilgisini SQL Server tablosuna ekleyerek loglama işlemi
             var users = await _userManager.Users.ToListAsync();
             var usersDtos = _mapper.Map<List<UserListDto>>(users.ToList());
 
@@ -96,9 +95,9 @@ namespace NLayer.API.Controllers
             var infouser = username + surname;
 
 
-            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
+            
 
-            // Loglama işlemi
+       
             LogContext.PushProperty("UserName", infouser);
 
             _logger.LogInformation("{infouser} Kullanıcı  arandı", infouser);
@@ -124,7 +123,7 @@ namespace NLayer.API.Controllers
             var infouser = username + surname;
 
 
-            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
+         
 
             // Loglama işlemi
             LogContext.PushProperty("UserName", infouser);
@@ -162,7 +161,7 @@ namespace NLayer.API.Controllers
             var infouser = username + surname;
 
 
-            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
+        
 
             // Loglama işlemi
             LogContext.PushProperty("UserName", infouser);
@@ -236,7 +235,7 @@ namespace NLayer.API.Controllers
             var infouser = username + surname;
 
 
-            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
+          
 
             // Loglama işlemi
             LogContext.PushProperty("UserName", infouser);
@@ -287,7 +286,7 @@ namespace NLayer.API.Controllers
                     {
                         if (error.Code == "DuplicateEmail")
                         {
-                            // E-posta adresi daha önce kullanılmış, bu nedenle hatayı döndürelim
+                        
                             messageError += "Bu e-posta adresi zaten kullanılıyor.";
                             return CreateActionResult(CustomResponseDto<UserRegisterDto>.Fail(400, messageError));
                         }
@@ -346,7 +345,6 @@ namespace NLayer.API.Controllers
             var infouser = username + surname;
 
 
-            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
 
             // Loglama işlemi
             LogContext.PushProperty("UserName", infouser);
@@ -405,35 +403,22 @@ namespace NLayer.API.Controllers
 
         private string TranslateToTurkish(string englishMessage)
         {
-            // Hata mesajlarını Türkçeye çevirin
-            // Örnek: "Passwords must match." -> "Şifreler uyuşmalıdır."
 
-            // Bu metodu kullanarak hata mesajlarını çevirebilirsiniz.
-            // Örneğin:
+
+  
             if (englishMessage == "Passwords must match.")
             {
                 return "Şifreler uyuşmalıdır.";
             }
-            // Diğer hata mesajlarını da benzer şekilde çevirebilirsiniz.
+   
 
-            // Çevirilmemiş hata mesajlarını olduğu gibi döndürün
+     
             return englishMessage;
         }
 
 
 
-        //[HttpGet]
-        //public async Task<IActionResult> Login(LoginDto loginDto)
-        //{
-        //    AppUser user = new AppUser()
-        //    {
-        //        UserName = loginDto.UserName,
-        //        PasswordHash = loginDto.Password
-
-        //    };
-
-        //    return CreateActionResult(CustomResponseDto<LoginDto>.Success(201, loginDto));
-        //}
+   
 
 
 
@@ -451,9 +436,9 @@ namespace NLayer.API.Controllers
             var infouser = loginDto.UserName;
 
 
-            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
+        
 
-            // Loglama işlemi
+  
             LogContext.PushProperty("UserName", infouser);
 
             _logger.LogInformation("{infouser} Login işlemi gerçekleştirildi", infouser);
@@ -547,10 +532,6 @@ namespace NLayer.API.Controllers
 
             var infouser = username + surname;
 
-
-            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
-
-            // Loglama işlemi
             LogContext.PushProperty("UserName", infouser);
 
             _logger.LogInformation("{infouser} Şifre yenilenmesi için kullanıcı başvuru yaptı ve mail gönerildi", infouser);
@@ -600,10 +581,6 @@ namespace NLayer.API.Controllers
 
             var infouser = username + surname;
 
-
-            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
-
-            // Loglama işlemi
             LogContext.PushProperty("UserName", infouser);
 
             _logger.LogInformation("{infouser} Kulanıcı şifre yenileme işlemi gerçekleşti", infouser);
@@ -639,9 +616,9 @@ namespace NLayer.API.Controllers
             var infouser = username + surname;
 
 
-            // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
+         
 
-            // Loglama işlemi
+   
             LogContext.PushProperty("UserName", infouser);
 
             _logger.LogInformation("{infouser} Kullanıcı bilgileri güncellendi", infouser);
@@ -649,7 +626,7 @@ namespace NLayer.API.Controllers
 
             if (user == null)
             {
-                // Kullanıcı bulunamadı, hata işleme yapılabilir.
+      
                 return CreateActionResult(CustomResponseDto<NoContentDto>.Fail(400, "Geçersiz kullanıcı"));
             }
 
@@ -664,7 +641,7 @@ namespace NLayer.API.Controllers
 
             if (updateResult.Succeeded)
             {
-                // Güvenlik damgasını güncelleme
+             
                 await _userManager.UpdateSecurityStampAsync(user);
 
                 return CreateActionResult(CustomResponseDto<AppUser>.Success(204, user));
