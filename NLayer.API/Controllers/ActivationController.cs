@@ -49,20 +49,20 @@ namespace NLayer.API.Controllers
             {
           
 
-                // Diğer kullanıcı bilgilerini almak için ihtiyaca göre Claim'leri kontrol edebilirsiniz.
+            
 
-                // Loglama işlemi
+
                 LogContext.PushProperty("UserName", infouser);
 
                 _logger.LogInformation("{infouser} Ürün aktifleştirildi", infouser);
 
-                // Check if the incoming DTO is not null
+           
                 if (dto != null)
                 {
-                    // Retrieve the product by its ID
+     
                     var product = await _productService.GetByIdAsycn(dto.ProductId);
 
-                    // If the product is not found, return an error response
+               
                     if (product == null)
                     {
                         _logger.LogError("{infouser} Ürün bulunamadı. ProductId: {productId}", infouser, dto.ProductId);
